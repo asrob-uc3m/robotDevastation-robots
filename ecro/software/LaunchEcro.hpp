@@ -13,8 +13,8 @@
 
 #include "RdMacros.hpp"
 
-#define DEFAULT_TYPE "pwmbot"
-#define DEFAULT_PREFIX "0/ecro"
+#define DEFAULT_TYPE "nanobot"
+#define DEFAULT_PREFIX "1/ecro"
 #define DEFAULT_CAMERA "on"
 
 using namespace yarp::os;

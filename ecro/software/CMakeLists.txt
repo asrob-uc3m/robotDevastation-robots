@@ -9,8 +9,8 @@ list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpPlugin)
 
 yarp_begin_plugin_library(EcroYarp)
-#add_subdirectory(emptybot)
-#add_subdirectory(pwmbot)
+add_subdirectory(emptybot)
+add_subdirectory(nanobot)
 yarp_end_plugin_library(EcroYarp)
 add_executable(launchEcro main.cpp LaunchEcro.cpp)
 
