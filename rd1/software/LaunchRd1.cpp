@@ -58,7 +58,7 @@ bool LaunchRd1::configure(ResourceFinder &rf) {
         RD_ERROR("Robot class instantiation not worked.\n");
         RD_ERROR("Be sure CMake \"ENABLE_Rd1Yarp_%s\" variable is set \"ON\"\n",type.c_str());
         RD_ERROR("\"SKIP_%s is set\" --> should be --> \"ENABLE_%s is set\"\n",type.c_str(),type.c_str());
-        RD_ERROR("Also check raspi-motor communications.\n");
+        RD_ERROR("Also check board-motor communications.\n");
         // robotDevice.close();  // un-needed?
         return false;
     }
