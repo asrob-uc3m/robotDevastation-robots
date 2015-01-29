@@ -13,7 +13,7 @@
 
 #include "RdMacros.hpp"
 
-#define DEFAULT_TYPE "pwmbot"
+#define DEFAULT_TYPE "ardubot"
 #define DEFAULT_PREFIX "0/rd2"
 #define DEFAULT_CAMERA "on"
 
