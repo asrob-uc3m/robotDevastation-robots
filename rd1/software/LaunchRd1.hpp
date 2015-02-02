@@ -11,7 +11,7 @@
 
 #include <yarp/dev/PolyDriver.h>
 
-#include "RdMacros.hpp"
+#include "ColorDebug.hpp"
 
 #define DEFAULT_TYPE "pwmbot"
 #define DEFAULT_PREFIX "0/rd1"

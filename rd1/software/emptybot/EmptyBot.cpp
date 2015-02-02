@@ -6,7 +6,7 @@
 
 bool EmptyBot::indexWithinRange(const int& idx) {
     if (idx >= numMotors ){
-        RD_WARNING("Index out of range!! (%d >= %d)!!!\n",idx,numMotors);
+        CD_WARNING("Index out of range!! (%d >= %d)!!!\n",idx,numMotors);
         return false;
     }
     return true;

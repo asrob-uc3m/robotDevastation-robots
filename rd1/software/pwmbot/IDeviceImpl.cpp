@@ -26,7 +26,7 @@ bool PwmBot::open(Searchable& config) {
         int gpio = gpiosBottle.get(j).asInt();
         add_channel_pulse(0, gpio, 0, 0);
         gpios.push_back( gpiosBottle.get(j).asInt() );
-        RD_SUCCESS("Configured gpio %d on channel 0.\n",gpio);
+        CD_SUCCESS("Configured gpio %d on channel 0.\n",gpio);
     }
     
     return true;

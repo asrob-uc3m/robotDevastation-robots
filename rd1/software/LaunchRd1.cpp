@@ -39,7 +39,7 @@ bool LaunchRd1::configure(ResourceFinder &rf) {
 
         if (!cameraDevice.isValid())
         {
-            RD_ERROR("Camera class instantiation not worked.\n");
+            CD_ERROR("Camera class instantiation not worked.\n");
             // cameraDevice.close();  // un-needed?
             return false;
         }
@@ -55,10 +55,10 @@ bool LaunchRd1::configure(ResourceFinder &rf) {
     
     if (!robotDevice.isValid())
     {
-        RD_ERROR("Robot class instantiation not worked.\n");
-        RD_ERROR("Be sure CMake \"ENABLE_Rd1Yarp_%s\" variable is set \"ON\"\n",type.c_str());
-        RD_ERROR("\"SKIP_%s is set\" --> should be --> \"ENABLE_%s is set\"\n",type.c_str(),type.c_str());
-        RD_ERROR("Also check board-motor communications.\n");
+        CD_ERROR("Robot class instantiation not worked.\n");
+        CD_ERROR("Be sure CMake \"ENABLE_Rd1Yarp_%s\" variable is set \"ON\"\n",type.c_str());
+        CD_ERROR("\"SKIP_%s is set\" --> should be --> \"ENABLE_%s is set\"\n",type.c_str(),type.c_str());
+        CD_ERROR("Also check board-motor communications.\n");
         // robotDevice.close();  // un-needed?
         return false;
     }
@@ -69,7 +69,7 @@ bool LaunchRd1::configure(ResourceFinder &rf) {
 /************************************************************************/
 
 bool LaunchRd1::updateModule() {
-    RD_INFO("Alive\n");
+    CD_INFO("Alive\n");
     return true;
 }
 

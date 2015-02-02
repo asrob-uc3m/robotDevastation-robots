@@ -12,9 +12,9 @@ bool EmptyBot::getAxes(int *axes) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setPositionMode() {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -22,7 +22,7 @@ bool EmptyBot::setPositionMode() {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::positionMove(int j, double ref) {  // encExposed = ref;
-    RD_INFO("(%d,%f)\n",j,ref);
+    CD_INFO("(%d,%f)\n",j,ref);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
@@ -33,9 +33,9 @@ bool EmptyBot::positionMove(int j, double ref) {  // encExposed = ref;
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::positionMove(const double *refs) {  // encExposed = refs;
-    RD_INFO("\n");
+    CD_INFO("\n");
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -43,12 +43,12 @@ bool EmptyBot::positionMove(const double *refs) {  // encExposed = refs;
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::relativeMove(int j, double delta) {
-    RD_INFO("(%d, %f)\n",j,delta);
+    CD_INFO("(%d, %f)\n",j,delta);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -57,7 +57,7 @@ bool EmptyBot::relativeMove(int j, double delta) {
 
 bool EmptyBot::relativeMove(const double *deltas) {  // encExposed = deltas + encExposed
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -65,9 +65,9 @@ bool EmptyBot::relativeMove(const double *deltas) {  // encExposed = deltas + en
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::checkMotionDone(int j, bool *flag) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -75,7 +75,7 @@ bool EmptyBot::checkMotionDone(int j, bool *flag) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::checkMotionDone(bool *flag) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(int j=0; j<numMotors; j++)
@@ -88,7 +88,7 @@ bool EmptyBot::checkMotionDone(bool *flag) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setRefSpeed(int j, double sp) {
-    RD_INFO("(%d, %f)\n",j,sp);
+    CD_INFO("(%d, %f)\n",j,sp);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
@@ -99,7 +99,7 @@ bool EmptyBot::setRefSpeed(int j, double sp) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setRefSpeeds(const double *spds) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<numMotors;i++)
@@ -110,12 +110,12 @@ bool EmptyBot::setRefSpeeds(const double *spds) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setRefAcceleration(int j, double acc) {
-    RD_INFO("(%d, %f)\n",j,acc);
+    CD_INFO("(%d, %f)\n",j,acc);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -123,7 +123,7 @@ bool EmptyBot::setRefAcceleration(int j, double acc) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setRefAccelerations(const double *accs) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<numMotors;i++)
@@ -134,12 +134,12 @@ bool EmptyBot::setRefAccelerations(const double *accs) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getRefSpeed(int j, double *ref) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -147,7 +147,7 @@ bool EmptyBot::getRefSpeed(int j, double *ref) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getRefSpeeds(double *spds) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<numMotors;i++)
@@ -158,12 +158,12 @@ bool EmptyBot::getRefSpeeds(double *spds) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getRefAcceleration(int j, double *acc) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -171,7 +171,7 @@ bool EmptyBot::getRefAcceleration(int j, double *acc) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getRefAccelerations(double *accs) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<numMotors;i++)
@@ -182,12 +182,12 @@ bool EmptyBot::getRefAccelerations(double *accs) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::stop(int j) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -195,7 +195,7 @@ bool EmptyBot::stop(int j) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::stop() {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<numMotors;i++)

@@ -12,9 +12,9 @@ bool PwmBot::getAxes(int *axes) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::setPositionMode() {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -22,7 +22,7 @@ bool PwmBot::setPositionMode() {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::positionMove(int j, double ref) {  // encExposed = ref;
-    RD_INFO("(%d,%f)\n",j,ref);
+    CD_INFO("(%d,%f)\n",j,ref);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
@@ -33,9 +33,9 @@ bool PwmBot::positionMove(int j, double ref) {  // encExposed = ref;
 // -----------------------------------------------------------------------------
 
 bool PwmBot::positionMove(const double *refs) {  // encExposed = refs;
-    RD_INFO("\n");
+    CD_INFO("\n");
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -43,12 +43,12 @@ bool PwmBot::positionMove(const double *refs) {  // encExposed = refs;
 // -----------------------------------------------------------------------------
 
 bool PwmBot::relativeMove(int j, double delta) {
-    RD_INFO("(%d, %f)\n",j,delta);
+    CD_INFO("(%d, %f)\n",j,delta);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -57,7 +57,7 @@ bool PwmBot::relativeMove(int j, double delta) {
 
 bool PwmBot::relativeMove(const double *deltas) {  // encExposed = deltas + encExposed
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -65,9 +65,9 @@ bool PwmBot::relativeMove(const double *deltas) {  // encExposed = deltas + encE
 // -----------------------------------------------------------------------------
 
 bool PwmBot::checkMotionDone(int j, bool *flag) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -75,7 +75,7 @@ bool PwmBot::checkMotionDone(int j, bool *flag) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::checkMotionDone(bool *flag) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(int j=0; j<gpios.size(); j++)
@@ -88,7 +88,7 @@ bool PwmBot::checkMotionDone(bool *flag) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::setRefSpeed(int j, double sp) {
-    RD_INFO("(%d, %f)\n",j,sp);
+    CD_INFO("(%d, %f)\n",j,sp);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
@@ -99,7 +99,7 @@ bool PwmBot::setRefSpeed(int j, double sp) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::setRefSpeeds(const double *spds) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<gpios.size();i++)
@@ -110,12 +110,12 @@ bool PwmBot::setRefSpeeds(const double *spds) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::setRefAcceleration(int j, double acc) {
-    RD_INFO("(%d, %f)\n",j,acc);
+    CD_INFO("(%d, %f)\n",j,acc);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -123,7 +123,7 @@ bool PwmBot::setRefAcceleration(int j, double acc) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::setRefAccelerations(const double *accs) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<gpios.size();i++)
@@ -134,12 +134,12 @@ bool PwmBot::setRefAccelerations(const double *accs) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::getRefSpeed(int j, double *ref) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -147,7 +147,7 @@ bool PwmBot::getRefSpeed(int j, double *ref) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::getRefSpeeds(double *spds) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<gpios.size();i++)
@@ -158,12 +158,12 @@ bool PwmBot::getRefSpeeds(double *spds) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::getRefAcceleration(int j, double *acc) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -171,7 +171,7 @@ bool PwmBot::getRefAcceleration(int j, double *acc) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::getRefAccelerations(double *accs) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<gpios.size();i++)
@@ -182,7 +182,7 @@ bool PwmBot::getRefAccelerations(double *accs) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::stop(int j) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
@@ -197,7 +197,7 @@ bool PwmBot::stop(int j) {
 // -----------------------------------------------------------------------------
 
 bool PwmBot::stop() {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<gpios.size();i++)

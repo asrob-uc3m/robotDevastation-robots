@@ -5,12 +5,12 @@
 // ------------------ IEncoder Related -----------------------------------------
 
 bool EmptyBot::resetEncoder(int j) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -18,9 +18,9 @@ bool EmptyBot::resetEncoder(int j) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::resetEncoders() {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -28,12 +28,12 @@ bool EmptyBot::resetEncoders() {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setEncoder(int j, double val) {  // encExposed = val;
-    RD_INFO("(%d,%f)\n",j,val);
+    CD_INFO("(%d,%f)\n",j,val);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -41,7 +41,7 @@ bool EmptyBot::setEncoder(int j, double val) {  // encExposed = val;
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::setEncoders(const double *vals) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0; i < numMotors; i++)
@@ -52,7 +52,7 @@ bool EmptyBot::setEncoders(const double *vals) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getEncoder(int j, double *v) {
-    //RD_INFO("%d\n",j);  //-- Too verbose in stream.
+    //CD_INFO("%d\n",j);  //-- Too verbose in stream.
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
@@ -63,7 +63,7 @@ bool EmptyBot::getEncoder(int j, double *v) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getEncoders(double *encs) {
-    //RD_INFO("\n");  //-- Too verbose in stream.
+    //CD_INFO("\n");  //-- Too verbose in stream.
 
     bool ok = true;
     for(unsigned int i=0; i < numMotors; i++)
@@ -74,12 +74,12 @@ bool EmptyBot::getEncoders(double *encs) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getEncoderSpeed(int j, double *sp) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -87,7 +87,7 @@ bool EmptyBot::getEncoderSpeed(int j, double *sp) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getEncoderSpeeds(double *spds) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
     bool ok = true;
     for(unsigned int i=0;i<numMotors;i++)
@@ -98,12 +98,12 @@ bool EmptyBot::getEncoderSpeeds(double *spds) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getEncoderAcceleration(int j, double *spds) {
-    RD_INFO("(%d)\n",j);
+    CD_INFO("(%d)\n",j);
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
@@ -111,9 +111,9 @@ bool EmptyBot::getEncoderAcceleration(int j, double *spds) {
 // -----------------------------------------------------------------------------
 
 bool EmptyBot::getEncoderAccelerations(double *accs) {
-    RD_INFO("\n");
+    CD_INFO("\n");
 
-    RD_WARNING("Not implemented yet.\n");
+    CD_WARNING("Not implemented yet.\n");
 
     return true;
 }

@@ -10,7 +10,7 @@
 
 #include <stdlib.h>  // just for exit()
 
-#include "../RdMacros.hpp"
+#include "../ColorDebug.hpp"
 
 #define DEFAULT_NUM_MOTORS 2
 

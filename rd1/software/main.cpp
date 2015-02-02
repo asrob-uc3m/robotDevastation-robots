@@ -8,7 +8,7 @@
 #include <yarp/os/all.h>
 #include <yarp/dev/all.h>
 
-#include "RdMacros.hpp"
+#include "ColorDebug.hpp"
 #include "LaunchRd1.hpp"
 
 using namespace yarp::os;
@@ -26,13 +26,13 @@ int main(int argc, char *argv[]) {
     rf.setDefaultConfigFile("launchRd1.ini");
     rf.configure("RD1_YARP_ROOT", argc, argv);
 
-    RD_INFO("Checking for yarp network...\n");
+    CD_INFO("Checking for yarp network...\n");
     Network yarp;
     if (!yarp.checkNetwork()) {
-        RD_ERROR("Found no yarp network (try running \"yarpserver &\"), bye!\n");
+        CD_ERROR("Found no yarp network (try running \"yarpserver &\"), bye!\n");
         return -1;
     }
-    RD_SUCCESS("Found yarp network.\n");
+    CD_SUCCESS("Found yarp network.\n");
 
     LaunchRd1 mod;
     return mod.runModule(rf);
