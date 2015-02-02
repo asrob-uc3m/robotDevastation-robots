@@ -8,6 +8,9 @@ include_directories(${YARP_INCLUDE_DIRS})
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpPlugin)
 
+### options: force default
+option(ENABLE_Rd1Yarp_pwmbot "Enable/disable compilation of Rd1Yarp_pwmbot" TRUE)
+
 yarp_begin_plugin_library(Rd1Yarp)
 add_subdirectory(emptybot)
 add_subdirectory(pwmbot)
