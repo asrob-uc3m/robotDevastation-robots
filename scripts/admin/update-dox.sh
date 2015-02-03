@@ -6,7 +6,7 @@
 # 30 2 * * * /your/command
 
 echo "Update RD repo..."
-cd $RD_ROBOTS_ROOT
+cd $HOME/robotDevastation-robots
 git pull
 
 echo "Doxy rd1..."
