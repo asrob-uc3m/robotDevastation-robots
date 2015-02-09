@@ -1,8 +1,8 @@
 
 /**
- * \page rd_install_yarp_on_raspbian_7 Install YARP (Raspian 7)
+ * \page rd_install_yarp_on_raspbian_7 Install YARP (Raspbian 7)
 
-We use YARP for communications. Installing YARP on Raspian is quite straightforward. Note that you will be prompted for your password upon using '''sudo''' a couple of times:
+We use YARP for communications. Installing YARP on Raspbian is quite straightforward. Note that you will be prompted for your password upon using '''sudo''' a couple of times:
 
 \verbatim
 sudo apt-get install build-essential libace-dev git
