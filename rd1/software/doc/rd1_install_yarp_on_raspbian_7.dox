@@ -7,7 +7,7 @@ We use YARP for communications. Installing YARP on Raspbian is quite straightfor
 \verbatim
 sudo apt-get install build-essential libace-dev git
 sudo apt-get install libgsl0-dev  # Needed for creating YARP lib_math we use for kinematics
-sudo apt-get install libjpeg8-dev   # Needed for mjpeg_carrier for ravebot cam on web
+sudo apt-get install libjpeg8-dev   # Needed for mjpeg_carrier for cam
 git clone https://github.com/robotology/yarp
 cd yarp; mkdir build; cd build
 cmake .. -DCREATE_LIB_MATH=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg_carrier=ON -DCREATE_DEVICE_LIBRARY_MODULES=ON -DENABLE_yarpmod_opencv_grabber=ON
