@@ -6,8 +6,6 @@
 
   \li \ref rd1_install_cmake_on_raspbian_7
   \li \ref rd1_install_opencv_on_raspbian_7
-  \li \ref rd1_install_zbar_on_raspbian_7
-  \li \ref rd1_install_sdl_on_raspbian_7
   \li \ref rd1_install_yarp_on_raspbian_7
 
  * @section rd1_main_install_on_raspbian_7 Download, Configure, Compile and Install the Robot Devastation software
