@@ -22,9 +22,9 @@ int main(int argc, char *argv[]) {
 
     ResourceFinder rf;
     rf.setVerbose(false);
-    rf.setDefaultContext("launchRd1/conf");
+    rf.setDefaultContext("launchRd1");
     rf.setDefaultConfigFile("launchRd1.ini");
-    rf.configure("RD1_YARP_ROOT", argc, argv);
+    rf.configure(argc, argv);
 
     CD_INFO("Checking for yarp network...\n");
     Network yarp;
