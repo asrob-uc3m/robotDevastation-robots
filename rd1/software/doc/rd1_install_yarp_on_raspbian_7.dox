@@ -1,0 +1,25 @@
+
+/**
+ * \page rd_install_yarp_on_raspbian_7 Install YARP (Raspian 7)
+
+We use YARP for communications. Installing YARP on Raspian is quite straightforward. Note that you will be prompted for your password upon using '''sudo''' a couple of times:
+
+\verbatim
+sudo apt-get install build-essential libace-dev git
+sudo apt-get install libgsl0-dev  # Needed for creating YARP lib_math we use for kinematics
+sudo apt-get install libjpeg8-dev   # Needed for mjpeg_carrier for ravebot cam on web
+git clone https://github.com/robotology/yarp
+cd yarp; mkdir build; cd build
+cmake .. -DCREATE_LIB_MATH=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg_carrier=ON -DCREATE_DEVICE_LIBRARY_MODULES=ON -DENABLE_yarpmod_opencv_grabber=ON
+make -j3;  sudo make install; cd ../..
+\endverbatim
+
+For additional options use ccmake instead of cmake.
+
+<br><hr>
+
+This page can be edited at robotDevastation-robots/rd1/software/doc/rd_install_yarp_on_raspbian_7.dox.
+
+*
+*/
+
