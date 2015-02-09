@@ -1,5 +1,5 @@
 rd1
 ===
-
-[![Image](rd1.jpg)](./)
+[Link to RD1 doxygen generated documentation](http://asrob.uc3m.es/rd1doc/index.html)
+![RD1 robot](rd1.jpg)
 
