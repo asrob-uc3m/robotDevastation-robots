@@ -1,0 +1,17 @@
+
+/**
+ * \page rd1_install_opencv_on_raspian_7 Install OpenCV (Raspian 7)
+
+We use OpenCV for vision. Installing OpenCV on Raspian is quite straightforward. Note that you will be prompted for your password upon using '''sudo'''. Type:
+
+\verbatim
+sudo apt-get install libcv-dev
+\endverbatim
+
+<br><hr>
+
+This page can be edited at robotDevastation-robots/rd1/software/doc/rd1_install_opencv_on_raspian_7.dox.
+
+*
+*/
+
