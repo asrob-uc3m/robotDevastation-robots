@@ -6,8 +6,12 @@ cmake_minimum_required(VERSION 2.8.7)
 find_package(YARP REQUIRED)
 include_directories(${YARP_INCLUDE_DIRS})
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
-include(YarpPlugin)
 
+include(YarpInstallationHelpers)
+yarp_configure_external_installation(rd1)
+add_subdirectory(share)
+
+include(YarpPlugin)
 ### options: force default
 option(ENABLE_Rd1Yarp_pwmbot "Enable/disable compilation of Rd1Yarp_pwmbot" TRUE)
 
@@ -19,3 +23,5 @@ add_executable(launchRd1 main.cpp LaunchRd1.cpp)
 
 target_link_libraries(launchRd1 ${YARP_LIBRARIES})
 target_link_libraries(launchRd1 Rd1Yarp)
+install(TARGETS launchRd1 DESTINATION bin)
+
