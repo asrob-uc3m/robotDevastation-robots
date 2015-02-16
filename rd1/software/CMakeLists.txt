@@ -25,3 +25,11 @@ target_link_libraries(launchRd1 ${YARP_LIBRARIES})
 target_link_libraries(launchRd1 Rd1Yarp)
 install(TARGETS launchRd1 DESTINATION bin)
 
+# uninstall target
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/template/RD1ConfigUninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/RD1ConfigUninstall.cmake" IMMEDIATE @ONLY)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/RD1ConfigUninstall.cmake)
+
