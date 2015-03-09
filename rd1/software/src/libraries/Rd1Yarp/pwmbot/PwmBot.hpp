@@ -11,7 +11,7 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
-#include "../ColorDebug.hpp"
+#include "ColorDebug.hpp"
 
 #include "pwm.hpp"
 
