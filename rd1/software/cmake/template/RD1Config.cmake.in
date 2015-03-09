@@ -1,0 +1,14 @@
+# Authors: Juan G Victores
+# CopyPolicy: Released under the terms of the LGPLv2.1 or later, see LGPL.TXT
+# Evident yet unstandarized names
+
+IF (NOT RD1_FOUND)
+
+  SET(RD1_LIBRARIES "@RD1_LIBRARIES@")
+  SET(RD1_INCLUDE_DIRS "@RD1_INCLUDE_DIRS@")
+  SET(RD1_LINK_DIRS "@RD1_LINK_DIRS@")
+  SET(RD1_DEFINES "@RD1_DEFINES@")
+  SET(RD1_MODULE_PATH "@RD1_MODULE_PATH@")
+
+  SET (RD1_FOUND TRUE)
+ENDIF (NOT RD1_FOUND)
