@@ -76,7 +76,7 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 add_subdirectory(share)
 add_subdirectory(src)
 if (ENABLE_tests)
-    add_subdirectory(test)
+#    add_subdirectory(test)
 endif (ENABLE_tests)
 
 # export our variables to a RD1Config.cmake creation
