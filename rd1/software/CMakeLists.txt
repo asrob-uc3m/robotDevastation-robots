@@ -17,7 +17,7 @@ endif(COMMAND cmake_policy)
 project(rd1)
 
 ##### library options
-#option(ENABLE_RdYarp_RdSerialServoBoard "Choose if you want to compile RdYarp_RdSerialServoBoard" TRUE)
+option(ENABLE_Rd1Yarp_pwmbot "Choose if you want to compile Rd1Yarp_pwmbot" TRUE)
 
 ##### program options
 option(ENABLE_launchRd1 "Choose if you want to compile robotDevastation" TRUE)

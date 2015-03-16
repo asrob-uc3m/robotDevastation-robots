@@ -1,13 +1,9 @@
+cmake_minimum_required(VERSION 2.8.9)
 
-cmake_minimum_required(VERSION 2.8.7)
+set(KEYWORD "testColorDebug")
 
-IF (ENABLE_launchRd1)
-
-set(KEYWORD "launchRd1")
-
-# Find YARP.  Point the YARP_DIR environment variable at your build.
-find_package(YARP REQUIRED)
-list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
+# Start a project.
+project(${KEYWORD})
 
 # Search for source code.
 file(GLOB folder_source *.cpp *.cc *.c)
@@ -21,17 +17,9 @@ foreach(header_file ${folder_header})
   include_directories(${p})
 endforeach(header_file ${folder_header})
 
-# Inclue any directories needed for YARP
-include_directories(${YARP_INCLUDE_DIRS} ${RD1_INCLUDE_DIRS})
-
 # Set up our main executable.
 if (folder_source)
   add_executable(${KEYWORD} ${folder_source} ${folder_header})
-  target_link_libraries(${KEYWORD} ${YARP_LIBRARIES} ${RD1_LIBRARIES})
-  install(TARGETS ${KEYWORD} DESTINATION bin)
 else (folder_source)
   message(FATAL_ERROR "No source code files found. Please add something")
 endif (folder_source)
-
-ENDIF (ENABLE_launchRd1)
-

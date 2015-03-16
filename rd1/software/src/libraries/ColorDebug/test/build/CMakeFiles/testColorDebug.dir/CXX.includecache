@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yo/git/ColorDebug/ColorDebug.hpp
+stdio.h
+-
+string
+-
+string.h
+-
+
+/home/yo/git/ColorDebug/test/main.cpp
+../ColorDebug.hpp
+/home/yo/git/ColorDebug/ColorDebug.hpp
+
