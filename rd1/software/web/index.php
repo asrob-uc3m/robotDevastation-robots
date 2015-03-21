@@ -8,10 +8,10 @@
 </h1>
 
 <?php
-$current = file_get_contents("/home/teo/demo.txt") 
+$current = file_get_contents("/home/yo/demo.txt")
 ?>
 
-Robot Name (current): <strong><?php echo $current ?></strong><br>
+Robot Name (current): <strong><span id="current"><?php echo $current ?></span></strong><br>
 Robot Name (new): <input type="text" id="robotName"><br>
 <input type="submit" value="Change robot name" onClick="changeRobotName();">
 
@@ -31,6 +31,8 @@ function changeRobotName() {
     var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
     xhr.open( 'post', 'save.php', true );
     xhr.send(data);
+    document.getElementById("current").innerHTML = robotName;
+    document.getElementById("robotName").value = '';
     alert('Saved new robot name ' + robotName )
 }
 </script>
