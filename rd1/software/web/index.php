@@ -8,7 +8,7 @@
 </h1>
 
 <?php
-$current = file_get_contents("/home/yo/demo.txt")
+$current = file_get_contents("/home/pi/rd1.config")
 ?>
 
 Robot Name (current): <strong><span id="current"><?php echo $current ?></span></strong><br>
