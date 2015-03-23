@@ -8,7 +8,7 @@
 </h1>
 
 <?php
-$current = file_get_contents("/home/pi/rd1.config")
+$current = file_get_contents("/home/pi/robotName")  #-- Remember to create and chmod 666 /home/pi/robotName
 ?>
 
 Robot Name (current): <strong><span id="current"><?php echo $current ?></span></strong><br>
