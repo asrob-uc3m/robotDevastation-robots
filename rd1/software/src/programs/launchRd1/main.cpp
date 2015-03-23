@@ -14,7 +14,7 @@
 using namespace yarp::os;
 using namespace yarp::dev;
 
-YARP_DECLARE_PLUGINS(Rd1Yarp);
+YARP_DECLARE_PLUGINS(Rd1Yarp)
 
 int main(int argc, char *argv[]) {
 

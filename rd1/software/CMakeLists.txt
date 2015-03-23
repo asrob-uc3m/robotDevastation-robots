@@ -20,7 +20,7 @@ project(rd1)
 option(ENABLE_Rd1Yarp_pwmbot "Choose if you want to compile Rd1Yarp_pwmbot" TRUE)
 
 ##### program options
-option(ENABLE_launchRd1 "Choose if you want to compile robotDevastation" TRUE)
+option(ENABLE_launchRd1 "Choose if you want to compile launchRd1" TRUE)
 
 ##### tests options
 option(ENABLE_tests "Choose if you want to compile tests" TRUE)
