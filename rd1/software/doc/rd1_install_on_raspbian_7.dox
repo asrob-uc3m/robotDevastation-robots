@@ -15,7 +15,13 @@ git clone https://github.com/asrob-uc3m/robotDevastation-robots.git  # Download 
 cd robotDevastation-robots/rd1/software; mkdir build; cd build; cmake ..  # Configure the robotDevastation-robots RD1 software
 make  # Compile
 sudo make install  # Install :-)
+
+#- Extra robotName config server:
+sudo apt-get install php5
+sudo ln -s web/index.php /var/www
+sudo ln -s web/save.php /var/www
 \endverbatim
+
 
   \li \ref rd1_post_install
 
