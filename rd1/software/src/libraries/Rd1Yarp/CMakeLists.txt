@@ -16,3 +16,8 @@ yarp_end_plugin_library(Rd1Yarp)
 
 install(TARGETS Rd1Yarp DESTINATION lib)
 
+if(ENABLE_launchRd1Yarp)
+  yarp_add_plugin_library_executable(launchRd1Yarp Rd1Yarp)
+  install(TARGETS launchRd1Yarp DESTINATION bin)
+endif(ENABLE_launchRd1Yarp)
+
