@@ -70,12 +70,12 @@ bool PwmBot::getEncoders(double *encs)
 
 bool PwmBot::getEncoderSpeed(int j, double *sp)
 {
-    CD_INFO("(%d)\n",j);
+    //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    CD_WARNING("Not implemented yet.\n");
+    //CD_WARNING("Not implemented yet.\n");  //-- Too verbose in controlboardwrapper2 stream.
 
     return true;
 }
@@ -92,12 +92,12 @@ bool PwmBot::getEncoderSpeeds(double *spds)
 
 bool PwmBot::getEncoderAcceleration(int j, double *spds)
 {
-    CD_INFO("(%d)\n",j);
+    //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 
     //-- Check index within range
     if ( ! this->indexWithinRange(j) ) return false;
 
-    CD_WARNING("Not implemented yet.\n");
+    //CD_WARNING("Not implemented yet.\n");  //-- Too verbose in controlboardwrapper2 stream.
 
     return true;
 }
