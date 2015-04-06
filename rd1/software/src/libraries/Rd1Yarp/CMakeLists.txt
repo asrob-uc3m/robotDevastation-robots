@@ -11,7 +11,6 @@ set(RD1_LIBRARIES ${RD1_LIBRARIES} Rd1Yarp CACHE INTERNAL "appended libraries")
 # IMPORTANT: Rd1Yarp pwmbot works, but pwmbot Rd1Yarp fails.
 
 yarp_begin_plugin_library(Rd1Yarp)
-add_subdirectory(emptybot)
 add_subdirectory(pwmbot)
 yarp_end_plugin_library(Rd1Yarp)
 
