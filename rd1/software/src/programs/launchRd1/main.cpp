@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     }
     CD_SUCCESS("Found yarp network.\n");
 
-    LaunchRd1 mod;
+    rd::LaunchRd1 mod;
     return mod.runModule(rf);
 }
 

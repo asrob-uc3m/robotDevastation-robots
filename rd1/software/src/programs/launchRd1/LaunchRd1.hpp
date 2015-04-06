@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __RUN_BOT__
-#define __RUN_BOT__
+#ifndef __LAUNCH_RD1__
+#define __LAUNCH_RD1__
 
 #include <yarp/os/RFModule.h>
 #include <yarp/os/Module.h>
@@ -19,6 +19,9 @@
 
 using namespace yarp::os;
 using namespace yarp::dev;
+
+namespace rd
+{
 
 /**
  * @ingroup LaunchRd1
@@ -47,5 +50,7 @@ class LaunchRd1 : public RFModule {
 
 };
 
-#endif  // __RUN_BOT__
+}  // namespace rd
+
+#endif  // __LAUNCH_RD1__
 

@@ -2,12 +2,13 @@
 
 #include "LaunchRd1.hpp"
 
-/************************************************************************/
+namespace rd
+{
+
 LaunchRd1::LaunchRd1() { }
 
-/************************************************************************/
-bool LaunchRd1::configure(ResourceFinder &rf) {
-
+bool LaunchRd1::configure(ResourceFinder &rf)
+{
     printf(BOLDBLUE);
     printf("LaunchRd1 options:\n");
 
@@ -66,16 +67,14 @@ bool LaunchRd1::configure(ResourceFinder &rf) {
     return true;
 }
 
-/************************************************************************/
-
-bool LaunchRd1::updateModule() {
+bool LaunchRd1::updateModule()
+{
     CD_INFO("Alive\n");
     return true;
 }
 
-/************************************************************************/
-
-bool LaunchRd1::close() {
+bool LaunchRd1::close()
+{
     if( camera == "on" )
     {
         cameraDevice.close();
@@ -86,5 +85,5 @@ bool LaunchRd1::close() {
     return true;
 }
 
-/************************************************************************/
+}  // namespace rd
 
