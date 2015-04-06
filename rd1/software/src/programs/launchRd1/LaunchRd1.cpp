@@ -7,20 +7,20 @@ namespace rd
 
 LaunchRd1::LaunchRd1() { }
 
-bool LaunchRd1::configure(ResourceFinder &rf)
+bool LaunchRd1::configure(yarp::os::ResourceFinder &rf)
 {
     printf(BOLDBLUE);
     printf("LaunchRd1 options:\n");
 
-    std::string type = rf.check("type",Value(DEFAULT_TYPE),"Name of robot type").asString();
+    std::string type = rf.check("type",yarp::os::Value(DEFAULT_TYPE),"Name of robot type").asString();
     printf("\t--type %s (Name of robot type)\n", type.c_str() );
 
-    std::string prefix = rf.check("prefix",Value(DEFAULT_PREFIX),"Name of robot without slash").asString();
+    std::string prefix = rf.check("prefix",yarp::os::Value(DEFAULT_PREFIX),"Name of robot without slash").asString();
     printf("\t--prefix %s (Prefix for robot port name, without slash)\n", prefix.c_str() );
     std::string prefixWithSlash("/");
     prefixWithSlash += prefix;
 
-    camera = rf.check("camera",Value(DEFAULT_CAMERA),"Camera on or off").asString();
+    camera = rf.check("camera",yarp::os::Value(DEFAULT_CAMERA),"Camera on or off").asString();
     if( camera == "on" )
         printf("\t--camera on (Camera on or off)\n" );
     else
@@ -32,7 +32,7 @@ bool LaunchRd1::configure(ResourceFinder &rf)
     {
         std::string cameraPortName(prefixWithSlash);
         cameraPortName += "/img:o";
-        Property cameraOptions;
+        yarp::os::Property cameraOptions;
         cameraOptions.put("device","grabber");
         cameraOptions.put("subdevice","opencv_grabber");
         cameraOptions.put("name",cameraPortName);
@@ -46,7 +46,7 @@ bool LaunchRd1::configure(ResourceFinder &rf)
         }
     }    
 
-    Property robotOptions;
+    yarp::os::Property robotOptions;
     robotOptions.fromString(rf.toString());
     robotOptions.put("device","controlboard");
     robotOptions.put("subdevice",type);

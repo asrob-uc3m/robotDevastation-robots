@@ -17,9 +17,6 @@
 #define DEFAULT_PREFIX "0/rd1"
 #define DEFAULT_CAMERA "on"
 
-using namespace yarp::os;
-using namespace yarp::dev;
-
 namespace rd
 {
 
@@ -29,11 +26,11 @@ namespace rd
  * The LaunchRd1 class tests the Pwm class as a controlboard.
  * 
  */
-class LaunchRd1 : public RFModule {
+class LaunchRd1 : public yarp::os::RFModule {
 
     public:
         LaunchRd1();
-        bool configure(ResourceFinder &rf);
+        bool configure(yarp::os::ResourceFinder &rf);
 
     protected:
         yarp::dev::PolyDriver cameraDevice;
