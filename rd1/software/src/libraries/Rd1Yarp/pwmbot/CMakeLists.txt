@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(pwmbot TYPE rd::PwmBot INCLUDE PwmBot.hpp WRAPPER controlboard)
+prepare_device(pwmbot TYPE rd::PwmBot INCLUDE PwmBot.hpp WRAPPER controlboardwrapper2)
 
 IF (NOT SKIP_pwmbot)
 

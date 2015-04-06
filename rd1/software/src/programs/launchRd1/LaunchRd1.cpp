@@ -48,7 +48,7 @@ bool LaunchRd1::configure(yarp::os::ResourceFinder &rf)
 
     yarp::os::Property robotOptions;
     robotOptions.fromString(rf.toString());
-    robotOptions.put("device","controlboard");
+    robotOptions.put("device","controlboardwrapper2");
     robotOptions.put("subdevice",type);
     robotOptions.put("name",prefixWithSlash);
 
