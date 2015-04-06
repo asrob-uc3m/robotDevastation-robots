@@ -2,9 +2,11 @@
 
 #include "PwmBot.hpp"
 
-// ------------------ IVelocity Related ----------------------------------------
+namespace rd
+{
 
-bool PwmBot::setVelocityMode() {
+bool PwmBot::setVelocityMode()
+{
     CD_INFO("\n");
 
     CD_WARNING("Not implemented yet.\n");
@@ -12,9 +14,8 @@ bool PwmBot::setVelocityMode() {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::velocityMove(int j, double sp) {
+bool PwmBot::velocityMove(int j, double sp)
+{
     CD_INFO("(%d)\n",j);
 
     // Clear and start again
@@ -24,9 +25,8 @@ bool PwmBot::velocityMove(int j, double sp) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::velocityMove(const double *sp) {
+bool PwmBot::velocityMove(const double *sp)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -37,5 +37,4 @@ bool PwmBot::velocityMove(const double *sp) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
+}  // namespace rd

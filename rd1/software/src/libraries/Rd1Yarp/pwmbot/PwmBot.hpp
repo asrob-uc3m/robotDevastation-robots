@@ -20,6 +20,9 @@
 using namespace yarp::os;
 using namespace yarp::dev;
 
+namespace rd
+{
+
 class PwmBot : public DeviceDriver, public IPositionControl, public IVelocityControl, public IEncoders {
 
   public:
@@ -285,6 +288,8 @@ class PwmBot : public DeviceDriver, public IPositionControl, public IVelocityCon
         std::vector< int > gpios;
 
 };
+
+}  // namespace rd
 
 #endif
 

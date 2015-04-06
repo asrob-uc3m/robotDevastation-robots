@@ -2,9 +2,11 @@
 
 #include "PwmBot.hpp"
 
-// ------------------- DeviceDriver Related ------------------------------------
+namespace rd
+{
 
-bool PwmBot::open(Searchable& config) {
+bool PwmBot::open(Searchable& config)
+{
 
     Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
@@ -32,12 +34,10 @@ bool PwmBot::open(Searchable& config) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::close() {
+bool PwmBot::close()
+{
 
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
+}  // namespace rd

@@ -2,16 +2,17 @@
 
 #include "PwmBot.hpp"
 
-// ------------------ IPosition Related ----------------------------------------
+namespace rd
+{
 
-bool PwmBot::getAxes(int *axes) {
+bool PwmBot::getAxes(int *axes)
+{
     *axes = gpios.size();
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setPositionMode() {
+bool PwmBot::setPositionMode()
+{
     CD_INFO("\n");
 
     CD_WARNING("Not implemented yet.\n");
@@ -19,9 +20,8 @@ bool PwmBot::setPositionMode() {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::positionMove(int j, double ref) {  // encExposed = ref;
+bool PwmBot::positionMove(int j, double ref)
+{  // encExposed = ref;
     CD_INFO("(%d,%f)\n",j,ref);
 
     //-- Check index within range
@@ -30,9 +30,8 @@ bool PwmBot::positionMove(int j, double ref) {  // encExposed = ref;
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::positionMove(const double *refs) {  // encExposed = refs;
+bool PwmBot::positionMove(const double *refs)
+{  // encExposed = refs;
     CD_INFO("\n");
 
     CD_WARNING("Not implemented yet.\n");
@@ -40,9 +39,8 @@ bool PwmBot::positionMove(const double *refs) {  // encExposed = refs;
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::relativeMove(int j, double delta) {
+bool PwmBot::relativeMove(int j, double delta)
+{
     CD_INFO("(%d, %f)\n",j,delta);
 
     //-- Check index within range
@@ -53,18 +51,16 @@ bool PwmBot::relativeMove(int j, double delta) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::relativeMove(const double *deltas) {  // encExposed = deltas + encExposed
+bool PwmBot::relativeMove(const double *deltas)
+{  // encExposed = deltas + encExposed
 
     CD_WARNING("Not implemented yet.\n");
 
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::checkMotionDone(int j, bool *flag) {
+bool PwmBot::checkMotionDone(int j, bool *flag)
+{
     CD_INFO("(%d)\n",j);
 
     CD_WARNING("Not implemented yet.\n");
@@ -72,9 +68,8 @@ bool PwmBot::checkMotionDone(int j, bool *flag) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::checkMotionDone(bool *flag) {
+bool PwmBot::checkMotionDone(bool *flag)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -85,9 +80,8 @@ bool PwmBot::checkMotionDone(bool *flag) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setRefSpeed(int j, double sp) {
+bool PwmBot::setRefSpeed(int j, double sp)
+{
     CD_INFO("(%d, %f)\n",j,sp);
 
     //-- Check index within range
@@ -96,9 +90,8 @@ bool PwmBot::setRefSpeed(int j, double sp) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setRefSpeeds(const double *spds) {
+bool PwmBot::setRefSpeeds(const double *spds)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -107,9 +100,8 @@ bool PwmBot::setRefSpeeds(const double *spds) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setRefAcceleration(int j, double acc) {
+bool PwmBot::setRefAcceleration(int j, double acc)
+{
     CD_INFO("(%d, %f)\n",j,acc);
 
     //-- Check index within range
@@ -120,9 +112,8 @@ bool PwmBot::setRefAcceleration(int j, double acc) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setRefAccelerations(const double *accs) {
+bool PwmBot::setRefAccelerations(const double *accs)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -131,9 +122,8 @@ bool PwmBot::setRefAccelerations(const double *accs) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getRefSpeed(int j, double *ref) {
+bool PwmBot::getRefSpeed(int j, double *ref)
+{
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -144,9 +134,8 @@ bool PwmBot::getRefSpeed(int j, double *ref) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getRefSpeeds(double *spds) {
+bool PwmBot::getRefSpeeds(double *spds)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -155,9 +144,8 @@ bool PwmBot::getRefSpeeds(double *spds) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getRefAcceleration(int j, double *acc) {
+bool PwmBot::getRefAcceleration(int j, double *acc)
+{
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -168,9 +156,8 @@ bool PwmBot::getRefAcceleration(int j, double *acc) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getRefAccelerations(double *accs) {
+bool PwmBot::getRefAccelerations(double *accs)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -179,9 +166,7 @@ bool PwmBot::getRefAccelerations(double *accs) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::stop(int j) {
+bool PwmBot::stop(int j){
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -194,9 +179,8 @@ bool PwmBot::stop(int j) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::stop() {
+bool PwmBot::stop()
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -205,5 +189,4 @@ bool PwmBot::stop() {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
+}  // namespace rd

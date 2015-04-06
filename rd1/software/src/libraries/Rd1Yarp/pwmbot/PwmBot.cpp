@@ -2,9 +2,11 @@
 
 #include "PwmBot.hpp"
 
-// -----------------------------------------------------------------------------
+namespace rd
+{
 
-bool PwmBot::indexWithinRange(const int& idx) {
+bool PwmBot::indexWithinRange(const int& idx)
+{
     if (idx >= gpios.size() ){
         CD_WARNING("Index out of range!! (%d >= " CD_SIZE_T ")!!!\n",idx,gpios.size());
         return false;
@@ -12,5 +14,5 @@ bool PwmBot::indexWithinRange(const int& idx) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
+}  // namespace rd
 

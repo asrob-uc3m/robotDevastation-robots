@@ -2,9 +2,11 @@
 
 #include "PwmBot.hpp"
 
-// ------------------ IEncoder Related -----------------------------------------
+namespace rd
+{
 
-bool PwmBot::resetEncoder(int j) {
+bool PwmBot::resetEncoder(int j)
+{
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -15,9 +17,8 @@ bool PwmBot::resetEncoder(int j) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::resetEncoders() {
+bool PwmBot::resetEncoders()
+{
     CD_INFO("\n");
 
     CD_WARNING("Not implemented yet.\n");
@@ -25,9 +26,8 @@ bool PwmBot::resetEncoders() {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setEncoder(int j, double val) {  // encExposed = val;
+bool PwmBot::setEncoder(int j, double val)
+{  // encExposed = val;
     CD_INFO("(%d,%f)\n",j,val);
 
     //-- Check index within range
@@ -38,9 +38,8 @@ bool PwmBot::setEncoder(int j, double val) {  // encExposed = val;
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::setEncoders(const double *vals) {
+bool PwmBot::setEncoders(const double *vals)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -49,9 +48,8 @@ bool PwmBot::setEncoders(const double *vals) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getEncoder(int j, double *v) {
+bool PwmBot::getEncoder(int j, double *v)
+{
     //CD_INFO("%d\n",j);  //-- Too verbose in stream.
 
     //-- Check index within range
@@ -60,9 +58,8 @@ bool PwmBot::getEncoder(int j, double *v) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getEncoders(double *encs) {
+bool PwmBot::getEncoders(double *encs)
+{
     //CD_INFO("\n");  //-- Too verbose in stream.
 
     bool ok = true;
@@ -71,9 +68,8 @@ bool PwmBot::getEncoders(double *encs) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getEncoderSpeed(int j, double *sp) {
+bool PwmBot::getEncoderSpeed(int j, double *sp)
+{
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -84,9 +80,8 @@ bool PwmBot::getEncoderSpeed(int j, double *sp) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getEncoderSpeeds(double *spds) {
+bool PwmBot::getEncoderSpeeds(double *spds)
+{
     CD_INFO("\n");
 
     bool ok = true;
@@ -95,9 +90,8 @@ bool PwmBot::getEncoderSpeeds(double *spds) {
     return ok;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getEncoderAcceleration(int j, double *spds) {
+bool PwmBot::getEncoderAcceleration(int j, double *spds)
+{
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -108,9 +102,8 @@ bool PwmBot::getEncoderAcceleration(int j, double *spds) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
-
-bool PwmBot::getEncoderAccelerations(double *accs) {
+bool PwmBot::getEncoderAccelerations(double *accs)
+{
     CD_INFO("\n");
 
     CD_WARNING("Not implemented yet.\n");
@@ -118,5 +111,5 @@ bool PwmBot::getEncoderAccelerations(double *accs) {
     return true;
 }
 
-// -----------------------------------------------------------------------------
+}  // namespace rd
 
