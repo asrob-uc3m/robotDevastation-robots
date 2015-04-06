@@ -27,7 +27,7 @@ class PwmBot : public DeviceDriver, public IPositionControl, public IVelocityCon
 
   public:
 
-  // ------- IPositionControl declarations. Implementation in IPositionImpl.cpp -------
+  // ------- IPositionControl declarations. Implementation in IPositionControlImpl.cpp -------
 
     /**
      * Get the number of controlled axes. This command asks the number of controlled
@@ -152,7 +152,7 @@ class PwmBot : public DeviceDriver, public IPositionControl, public IVelocityCon
      */
     virtual bool stop();
 
-    //  ---------- IEncoder Declarations. Implementation in IEncoderImpl.cpp ----------
+    //  ---------- IEncoders Declarations. Implementation in IEncodersImpl.cpp ----------
 
     /**
      * Reset encoder, single joint. Set the encoder value to zero 
@@ -226,7 +226,7 @@ class PwmBot : public DeviceDriver, public IPositionControl, public IVelocityCon
      */
     virtual bool getEncoderAccelerations(double *accs);
 
-    //  --------- IVelocityControl Declarations. Implementation in IVelocityImpl.cpp ---------
+    //  --------- IVelocityControl Declarations. Implementation in IVelocityControlImpl.cpp ---------
 
     /**
      * Set velocity mode. This command
@@ -252,7 +252,7 @@ class PwmBot : public DeviceDriver, public IPositionControl, public IVelocityCon
      */
     virtual bool velocityMove(const double *sp);
 
-    // -------- DeviceDriver declarations. Implementation in IDeviceImpl.cpp --------
+    // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
     /**
      * Open the DeviceDriver. 
