@@ -15,7 +15,7 @@ IF (NOT SKIP_pwmbot)
   # Include any directories needed for YARP
   include_directories(${YARP_INCLUDE_DIRS} ${RD1_INCLUDE_DIRS})
 
-  yarp_add_plugin(pwmbot PwmBot.cpp DeviceDriverImpl.cpp IEncodersImpl.cpp IPositionControlImpl.cpp IVelocityControlImpl.cpp pwm.cpp )
+  yarp_add_plugin(pwmbot PwmBot.cpp DeviceDriverImpl.cpp IEncodersImpl.cpp IEncodersTimedImpl.cpp IPositionControlImpl.cpp IVelocityControlImpl.cpp pwm.cpp )
   TARGET_LINK_LIBRARIES(pwmbot ${YARP_LIBRARIES})
   #install(TARGETS pwmbot DESTINATION lib)
 
