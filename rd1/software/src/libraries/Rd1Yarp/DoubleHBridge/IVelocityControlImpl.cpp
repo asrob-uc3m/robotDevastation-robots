@@ -16,11 +16,18 @@ bool DoubleHBridge::setVelocityMode()
 
 bool DoubleHBridge::velocityMove(int j, double sp)
 {
-    CD_INFO("(%d)\n",j);
+    CD_INFO("(%d,%f)\n",j,sp);
 
-    // Clear and start again
-    clear_channel_gpio(0, gpios[j]);
-    add_channel_pulse(0, gpios[j], 0, sp / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    if (sp>0) {
+        clear_channel_gpio(0, gpios[j*2+1]);
+        add_channel_pulse(0, gpios[j*2+1], 0, GPIO_MAX / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    } else {
+        clear_channel_gpio(0, gpios[j*2+1]);
+        add_channel_pulse(0, gpios[j*2+1], 0, 0 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    }
+
+    clear_channel_gpio(0, gpios[j*2]);
+    add_channel_pulse(0, gpios[j*2], 0, fabs(sp) / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }

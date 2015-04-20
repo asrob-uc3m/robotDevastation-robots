@@ -10,12 +10,15 @@
 
 #include <vector>
 #include <stdlib.h>  // just for exit()
+#include <math.h>  // fabs
 
 #include "ColorDebug.hpp"
 
 #include "pwm.hpp"
 
 #define DEFAULT_NUM_MOTORS 2
+
+#define GPIO_MAX 19999
 
 using namespace yarp::os;
 using namespace yarp::dev;
