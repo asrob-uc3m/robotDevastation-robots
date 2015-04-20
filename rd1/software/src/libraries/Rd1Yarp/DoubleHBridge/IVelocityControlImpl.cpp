@@ -37,7 +37,7 @@ bool DoubleHBridge::velocityMove(const double *sp)
     CD_INFO("\n");
 
     bool ok = true;
-    for(int j=0; j<gpios.size(); j++)
+    for(int j=0; j<gpios.size()/2; j++)
     {
         ok &= this->velocityMove(j,sp[j]);
     }
