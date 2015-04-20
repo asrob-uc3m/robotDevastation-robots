@@ -7,7 +7,7 @@ namespace rd
 
 bool DoubleHBridge::getAxes(int *axes)
 {
-    *axes = gpios.size();
+    *axes = gpios.size() / 2;
     return true;
 }
 
