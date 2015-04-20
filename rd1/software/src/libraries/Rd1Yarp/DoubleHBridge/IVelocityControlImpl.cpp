@@ -27,7 +27,7 @@ bool DoubleHBridge::velocityMove(int j, double sp)
     }
 
     clear_channel_gpio(0, gpios[j*2]);
-    add_channel_pulse(0, gpios[j*2], 0, fabs(sp) / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, gpios[j*2], 0, fabs(sp) * (GPIO_MAX / 100.0) / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
