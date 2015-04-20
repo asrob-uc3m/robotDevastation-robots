@@ -18,9 +18,9 @@ project(rd1)
 
 ##### library options
 option(ENABLE_Rd1Yarp_pwmbot "Choose if you want to compile Rd1Yarp_pwmbot" TRUE)
+option(ENABLE_Rd1Yarp_DoubleHBridge "Choose if you want to compile Rd1Yarp_DoubleHBridge" TRUE)
 
 ##### program options
-option(ENABLE_launchRd1 "Choose if you want to compile launchRd1" TRUE)
 option(ENABLE_launchRd1Yarp "Choose if you want to compile launchRd1Yarp" TRUE)
 
 ##### tests options

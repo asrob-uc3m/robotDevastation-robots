@@ -12,6 +12,7 @@ set(RD1_LIBRARIES ${RD1_LIBRARIES} Rd1Yarp CACHE INTERNAL "appended libraries")
 
 yarp_begin_plugin_library(Rd1Yarp)
 add_subdirectory(pwmbot)
+add_subdirectory(DoubleHBridge)
 yarp_end_plugin_library(Rd1Yarp)
 
 install(TARGETS Rd1Yarp DESTINATION lib)
