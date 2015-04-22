@@ -10,5 +10,5 @@ yarp_configure_external_installation(rd1)
 
 ### Go through directories
 
-add_subdirectory(launchRd1)
+#add_subdirectory(launchRaspi)
 
