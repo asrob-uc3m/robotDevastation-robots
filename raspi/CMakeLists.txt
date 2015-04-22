@@ -42,7 +42,7 @@ endif(MSVC)
 
 ######################
 
-### this makes everything go in $RD1_DIR/lib and $RD1_DIR/bin
+### this makes everything go in $RD_RASPI_DIR/lib and $RD_RASPI_DIR/bin
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 message(STATUS "Libraries go to ${LIBRARY_OUTPUT_PATH}")
@@ -58,16 +58,16 @@ mark_as_advanced(CMAKE_BACKWARDS_COMPATIBILITY)
 ##########################################
 
 # Pick up our scripts - they are all in the cmake conf subdirectory
-set(RD1_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-list(APPEND CMAKE_MODULE_PATH ${RD1_MODULE_PATH})
+set(RD_RASPI_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${RD_RASPI_MODULE_PATH})
 
 #set_property(GLOBAL PROPERTY RD_INCLUDE_DIRS)
 #set_property(GLOBAL PROPERTY RD_LINK_DIRS)
 #set_property(GLOBAL PROPERTY RD_LIBRARIES)
 #set_property(GLOBAL PROPERTY RD_TARGETS)
-set(RD1_INCLUDE_DIRS CACHE INTERNAL "appended header dirs" FORCE)
-set(RD1_LINK_DIRS CACHE INTERNAL "appended link dirs" FORCE)
-set(RD1_LIBRARIES CACHE INTERNAL "appended libraries" FORCE)
+set(RD_RASPI_INCLUDE_DIRS CACHE INTERNAL "appended header dirs" FORCE)
+set(RD_RASPI_LINK_DIRS CACHE INTERNAL "appended link dirs" FORCE)
+set(RD_RASPI_LIBRARIES CACHE INTERNAL "appended libraries" FORCE)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage") # enabling coverage
@@ -81,16 +81,16 @@ if (ENABLE_tests)
 #    add_subdirectory(test)
 endif (ENABLE_tests)
 
-# export our variables to a RD1Config.cmake creation
-set(RD1_LINK_DIRS ${RD1_LINK_DIRS} ${LIBRARY_OUTPUT_PATH})
-configure_file(${CMAKE_SOURCE_DIR}/cmake/template/RD1Config.cmake.in
-               ${CMAKE_BINARY_DIR}/RD1Config.cmake @ONLY)
+# export our variables to a RD_RASPIConfig.cmake creation
+set(RD_RASPI_LINK_DIRS ${RD_RASPI_LINK_DIRS} ${LIBRARY_OUTPUT_PATH})
+configure_file(${CMAKE_SOURCE_DIR}/cmake/template/RD_RASPIConfig.cmake.in
+               ${CMAKE_BINARY_DIR}/RD_RASPIConfig.cmake @ONLY)
 
 # uninstall target
 configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/template/RD1ConfigUninstall.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/RD1ConfigUninstall.cmake" IMMEDIATE @ONLY)
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/template/RD_RASPIConfigUninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/RD_RASPIConfigUninstall.cmake" IMMEDIATE @ONLY)
 
 add_custom_target(uninstall
-    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/RD1ConfigUninstall.cmake)
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/RD_RASPIConfigUninstall.cmake)
 

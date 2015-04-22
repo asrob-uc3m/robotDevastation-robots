@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>
-    RD1 Configuration Page
+    RD_RASPI Configuration Page
 </h1>
 
 <?php
