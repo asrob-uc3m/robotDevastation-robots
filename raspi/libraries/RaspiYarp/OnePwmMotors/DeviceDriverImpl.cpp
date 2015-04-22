@@ -15,6 +15,11 @@ bool OnePwmMotors::open(Searchable& config)
     printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     printf(RESET);
 
+    if( gpiosBottle.size() < 1) {
+        CD_ERROR("Please specify at least one gpio id.\n");
+        return false;
+    }
+
     if ( config.check("pcm") )
         setup(PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT, DELAY_VIA_PCM);
     else
