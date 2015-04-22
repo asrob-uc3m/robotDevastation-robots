@@ -17,11 +17,11 @@ endif(COMMAND cmake_policy)
 project(rd1)
 
 ##### library options
-option(ENABLE_Rd1Yarp_pwmbot "Choose if you want to compile Rd1Yarp_pwmbot" TRUE)
-option(ENABLE_Rd1Yarp_DoubleHBridge "Choose if you want to compile Rd1Yarp_DoubleHBridge" TRUE)
+option(ENABLE_RaspiYarp_pwmbot "Choose if you want to compile RaspiYarp_pwmbot" TRUE)
+option(ENABLE_RaspiYarp_DoubleHBridge "Choose if you want to compile RaspiYarp_DoubleHBridge" TRUE)
 
 ##### program options
-option(ENABLE_launchRd1Yarp "Choose if you want to compile launchRd1Yarp" TRUE)
+option(ENABLE_launchRaspiYarp "Choose if you want to compile launchRaspiYarp" TRUE)
 
 ##### tests options
 option(ENABLE_tests "Choose if you want to compile tests" TRUE)

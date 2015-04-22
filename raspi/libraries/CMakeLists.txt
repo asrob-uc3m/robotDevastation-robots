@@ -19,5 +19,5 @@ FOREACH(subdir ${SUBDIRS})
     set(RD_RASPI_INCLUDE_DIRS ${RD_RASPI_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/${subdir} CACHE INTERNAL "appended header dirs")
 ENDFOREACH()
 
-add_subdirectory(Rd1Yarp)
+add_subdirectory(RaspiYarp)
 
