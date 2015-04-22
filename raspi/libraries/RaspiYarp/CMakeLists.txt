@@ -6,8 +6,8 @@ include_directories(${YARP_INCLUDE_DIRS})
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpPlugin)#
 
-# Exporting dependencies for RD1Config.cmake quite manually for now... 
-set(RD1_LIBRARIES ${RD1_LIBRARIES} RaspiYarp CACHE INTERNAL "appended libraries") 
+# Exporting dependencies for RD_RASPIConfig.cmake quite manually for now... 
+set(RD_RASPI_LIBRARIES ${RD_RASPI_LIBRARIES} RaspiYarp CACHE INTERNAL "appended libraries") 
 # IMPORTANT: RaspiYarp pwmbot works, but pwmbot RaspiYarp fails.
 
 yarp_begin_plugin_library(RaspiYarp)
