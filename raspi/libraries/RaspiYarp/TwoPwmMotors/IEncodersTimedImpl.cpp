@@ -10,7 +10,7 @@ bool TwoPwmMotors::getEncodersTimed(double *encs, double *time)
     CD_INFO("\n");
 
     bool ok = true;
-    for(unsigned int i=0; i < DEFAULT_NUM_MOTORS; i++)
+    for(unsigned int i=0; i < gpios.size() / 2; i++)
         ok &= getEncoderTimed(i,&(encs[i]),&(time[i]));
     return ok;
 }

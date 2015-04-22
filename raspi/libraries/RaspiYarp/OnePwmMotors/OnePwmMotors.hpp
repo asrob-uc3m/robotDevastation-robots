@@ -15,8 +15,6 @@
 
 #include "pwm.hpp"
 
-#define DEFAULT_NUM_MOTORS 2
-
 using namespace yarp::os;
 using namespace yarp::dev;
 
