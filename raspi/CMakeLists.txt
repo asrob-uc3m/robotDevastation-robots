@@ -14,7 +14,7 @@ if(COMMAND cmake_policy)
   cmake_policy(SET CMP0003 NEW)
 endif(COMMAND cmake_policy)
 
-project(rd1)
+project(raspi)
 
 ##### library options
 option(ENABLE_RaspiYarp_OnePwmMotors "Choose if you want to compile RaspiYarp_OnePwmMotors" TRUE)

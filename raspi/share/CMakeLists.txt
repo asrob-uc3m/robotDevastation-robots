@@ -6,7 +6,7 @@
 find_package(YARP REQUIRED)
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpInstallationHelpers)
-yarp_configure_external_installation(rd1)
+yarp_configure_external_installation(raspi)
 
 ### Go through directories
 
