@@ -16,7 +16,7 @@ bool OnePwmMotors::open(Searchable& config)
     printf(RESET);
 
     if( gpiosBottle.size() < 1) {
-        CD_ERROR("Please specify at least one gpio id.\n");
+        CD_ERROR("Please specify at least one gpio.\n");
         return false;
     }
 

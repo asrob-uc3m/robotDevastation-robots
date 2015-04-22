@@ -10,6 +10,16 @@ bool TwoPwmMotors::open(Searchable& config)
 
     Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
+    if( gpiosBottle.size() < 2) {
+        CD_ERROR("Please specify at least two gpio.\n");
+        return false;
+    }
+
+    if( (gpiosBottle.size() % 2) != 0) {
+        CD_ERROR("Please specify an even number of gpio.\n");
+        return false;
+    }
+
     printf(BOLDBLUE);
     printf("TwoPwmMotors options:\n");
     printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
