@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "DoubleHBridge.hpp"
+#include "TwoPwmMotors.hpp"
 
 namespace rd
 {
 
-bool DoubleHBridge::getEncodersTimed(double *encs, double *time)
+bool TwoPwmMotors::getEncodersTimed(double *encs, double *time)
 {
     CD_INFO("\n");
 
@@ -15,7 +15,7 @@ bool DoubleHBridge::getEncodersTimed(double *encs, double *time)
     return ok;
 }
 
-bool DoubleHBridge::getEncoderTimed(int j, double *encs, double *time)
+bool TwoPwmMotors::getEncoderTimed(int j, double *encs, double *time)
 {
     //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 

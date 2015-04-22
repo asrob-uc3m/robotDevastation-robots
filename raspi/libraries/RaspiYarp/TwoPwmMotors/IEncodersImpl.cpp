@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "DoubleHBridge.hpp"
+#include "TwoPwmMotors.hpp"
 
 namespace rd
 {
 
-bool DoubleHBridge::resetEncoder(int j)
+bool TwoPwmMotors::resetEncoder(int j)
 {
     CD_INFO("(%d)\n",j);
 
@@ -17,7 +17,7 @@ bool DoubleHBridge::resetEncoder(int j)
     return true;
 }
 
-bool DoubleHBridge::resetEncoders()
+bool TwoPwmMotors::resetEncoders()
 {
     CD_INFO("\n");
 
@@ -26,7 +26,7 @@ bool DoubleHBridge::resetEncoders()
     return true;
 }
 
-bool DoubleHBridge::setEncoder(int j, double val)
+bool TwoPwmMotors::setEncoder(int j, double val)
 {  // encExposed = val;
     CD_INFO("(%d,%f)\n",j,val);
 
@@ -38,7 +38,7 @@ bool DoubleHBridge::setEncoder(int j, double val)
     return true;
 }
 
-bool DoubleHBridge::setEncoders(const double *vals)
+bool TwoPwmMotors::setEncoders(const double *vals)
 {
     CD_INFO("\n");
 
@@ -48,7 +48,7 @@ bool DoubleHBridge::setEncoders(const double *vals)
     return ok;
 }
 
-bool DoubleHBridge::getEncoder(int j, double *v)
+bool TwoPwmMotors::getEncoder(int j, double *v)
 {
     //CD_INFO("%d\n",j);  //-- Too verbose in stream.
 
@@ -58,7 +58,7 @@ bool DoubleHBridge::getEncoder(int j, double *v)
     return true;
 }
 
-bool DoubleHBridge::getEncoders(double *encs)
+bool TwoPwmMotors::getEncoders(double *encs)
 {
     //CD_INFO("\n");  //-- Too verbose in stream.
 
@@ -68,7 +68,7 @@ bool DoubleHBridge::getEncoders(double *encs)
     return ok;
 }
 
-bool DoubleHBridge::getEncoderSpeed(int j, double *sp)
+bool TwoPwmMotors::getEncoderSpeed(int j, double *sp)
 {
     //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 
@@ -80,7 +80,7 @@ bool DoubleHBridge::getEncoderSpeed(int j, double *sp)
     return true;
 }
 
-bool DoubleHBridge::getEncoderSpeeds(double *spds)
+bool TwoPwmMotors::getEncoderSpeeds(double *spds)
 {
     CD_INFO("\n");
 
@@ -90,7 +90,7 @@ bool DoubleHBridge::getEncoderSpeeds(double *spds)
     return ok;
 }
 
-bool DoubleHBridge::getEncoderAcceleration(int j, double *spds)
+bool TwoPwmMotors::getEncoderAcceleration(int j, double *spds)
 {
     //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 
@@ -102,7 +102,7 @@ bool DoubleHBridge::getEncoderAcceleration(int j, double *spds)
     return true;
 }
 
-bool DoubleHBridge::getEncoderAccelerations(double *accs)
+bool TwoPwmMotors::getEncoderAccelerations(double *accs)
 {
     CD_INFO("\n");
 

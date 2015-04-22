@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "PwmBot.hpp"
+#include "OnePwmMotors.hpp"
 
 namespace rd
 {
 
-bool PwmBot::getAxes(int *axes)
+bool OnePwmMotors::getAxes(int *axes)
 {
     *axes = gpios.size();
     return true;
 }
 
-bool PwmBot::setPositionMode()
+bool OnePwmMotors::setPositionMode()
 {
     CD_INFO("\n");
 
@@ -20,7 +20,7 @@ bool PwmBot::setPositionMode()
     return true;
 }
 
-bool PwmBot::positionMove(int j, double ref)
+bool OnePwmMotors::positionMove(int j, double ref)
 {  // encExposed = ref;
     CD_INFO("(%d,%f)\n",j,ref);
 
@@ -30,7 +30,7 @@ bool PwmBot::positionMove(int j, double ref)
     return true;
 }
 
-bool PwmBot::positionMove(const double *refs)
+bool OnePwmMotors::positionMove(const double *refs)
 {  // encExposed = refs;
     CD_INFO("\n");
 
@@ -39,7 +39,7 @@ bool PwmBot::positionMove(const double *refs)
     return true;
 }
 
-bool PwmBot::relativeMove(int j, double delta)
+bool OnePwmMotors::relativeMove(int j, double delta)
 {
     CD_INFO("(%d, %f)\n",j,delta);
 
@@ -51,7 +51,7 @@ bool PwmBot::relativeMove(int j, double delta)
     return true;
 }
 
-bool PwmBot::relativeMove(const double *deltas)
+bool OnePwmMotors::relativeMove(const double *deltas)
 {  // encExposed = deltas + encExposed
 
     CD_WARNING("Not implemented yet.\n");
@@ -59,7 +59,7 @@ bool PwmBot::relativeMove(const double *deltas)
     return true;
 }
 
-bool PwmBot::checkMotionDone(int j, bool *flag)
+bool OnePwmMotors::checkMotionDone(int j, bool *flag)
 {
     CD_INFO("(%d)\n",j);
 
@@ -68,7 +68,7 @@ bool PwmBot::checkMotionDone(int j, bool *flag)
     return true;
 }
 
-bool PwmBot::checkMotionDone(bool *flag)
+bool OnePwmMotors::checkMotionDone(bool *flag)
 {
     CD_INFO("\n");
 
@@ -80,7 +80,7 @@ bool PwmBot::checkMotionDone(bool *flag)
     return ok;
 }
 
-bool PwmBot::setRefSpeed(int j, double sp)
+bool OnePwmMotors::setRefSpeed(int j, double sp)
 {
     CD_INFO("(%d, %f)\n",j,sp);
 
@@ -90,7 +90,7 @@ bool PwmBot::setRefSpeed(int j, double sp)
     return true;
 }
 
-bool PwmBot::setRefSpeeds(const double *spds)
+bool OnePwmMotors::setRefSpeeds(const double *spds)
 {
     CD_INFO("\n");
 
@@ -100,7 +100,7 @@ bool PwmBot::setRefSpeeds(const double *spds)
     return ok;
 }
 
-bool PwmBot::setRefAcceleration(int j, double acc)
+bool OnePwmMotors::setRefAcceleration(int j, double acc)
 {
     CD_INFO("(%d, %f)\n",j,acc);
 
@@ -112,7 +112,7 @@ bool PwmBot::setRefAcceleration(int j, double acc)
     return true;
 }
 
-bool PwmBot::setRefAccelerations(const double *accs)
+bool OnePwmMotors::setRefAccelerations(const double *accs)
 {
     CD_INFO("\n");
 
@@ -122,7 +122,7 @@ bool PwmBot::setRefAccelerations(const double *accs)
     return ok;
 }
 
-bool PwmBot::getRefSpeed(int j, double *ref)
+bool OnePwmMotors::getRefSpeed(int j, double *ref)
 {
     CD_INFO("(%d)\n",j);
 
@@ -134,7 +134,7 @@ bool PwmBot::getRefSpeed(int j, double *ref)
     return true;
 }
 
-bool PwmBot::getRefSpeeds(double *spds)
+bool OnePwmMotors::getRefSpeeds(double *spds)
 {
     CD_INFO("\n");
 
@@ -144,7 +144,7 @@ bool PwmBot::getRefSpeeds(double *spds)
     return ok;
 }
 
-bool PwmBot::getRefAcceleration(int j, double *acc)
+bool OnePwmMotors::getRefAcceleration(int j, double *acc)
 {
     CD_INFO("(%d)\n",j);
 
@@ -156,7 +156,7 @@ bool PwmBot::getRefAcceleration(int j, double *acc)
     return true;
 }
 
-bool PwmBot::getRefAccelerations(double *accs)
+bool OnePwmMotors::getRefAccelerations(double *accs)
 {
     CD_INFO("\n");
 
@@ -166,7 +166,7 @@ bool PwmBot::getRefAccelerations(double *accs)
     return ok;
 }
 
-bool PwmBot::stop(int j){
+bool OnePwmMotors::stop(int j){
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -179,7 +179,7 @@ bool PwmBot::stop(int j){
     return true;
 }
 
-bool PwmBot::stop()
+bool OnePwmMotors::stop()
 {
     CD_INFO("\n");
 

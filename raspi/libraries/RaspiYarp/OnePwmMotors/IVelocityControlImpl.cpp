@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "PwmBot.hpp"
+#include "OnePwmMotors.hpp"
 
 namespace rd
 {
 
-bool PwmBot::setVelocityMode()
+bool OnePwmMotors::setVelocityMode()
 {
     CD_INFO("\n");
 
@@ -14,7 +14,7 @@ bool PwmBot::setVelocityMode()
     return true;
 }
 
-bool PwmBot::velocityMove(int j, double sp)
+bool OnePwmMotors::velocityMove(int j, double sp)
 {
     CD_INFO("(%d)\n",j);
 
@@ -25,7 +25,7 @@ bool PwmBot::velocityMove(int j, double sp)
     return true;
 }
 
-bool PwmBot::velocityMove(const double *sp)
+bool OnePwmMotors::velocityMove(const double *sp)
 {
     CD_INFO("\n");
 

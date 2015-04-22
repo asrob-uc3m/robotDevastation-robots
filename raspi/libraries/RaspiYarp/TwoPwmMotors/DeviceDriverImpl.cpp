@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "DoubleHBridge.hpp"
+#include "TwoPwmMotors.hpp"
 
 namespace rd
 {
 
-bool DoubleHBridge::open(Searchable& config)
+bool TwoPwmMotors::open(Searchable& config)
 {
 
     Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
     printf(BOLDBLUE);
-    printf("DoubleHBridge options:\n");
+    printf("TwoPwmMotors options:\n");
     printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     printf(RESET);
 
@@ -34,7 +34,7 @@ bool DoubleHBridge::open(Searchable& config)
     return true;
 }
 
-bool DoubleHBridge::close()
+bool TwoPwmMotors::close()
 {
 
     return true;

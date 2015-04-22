@@ -17,8 +17,8 @@ endif(COMMAND cmake_policy)
 project(rd1)
 
 ##### library options
-option(ENABLE_RaspiYarp_pwmbot "Choose if you want to compile RaspiYarp_pwmbot" TRUE)
-option(ENABLE_RaspiYarp_DoubleHBridge "Choose if you want to compile RaspiYarp_DoubleHBridge" TRUE)
+option(ENABLE_RaspiYarp_OnePwmMotors "Choose if you want to compile RaspiYarp_OnePwmMotors" TRUE)
+option(ENABLE_RaspiYarp_TwoPwmMotors "Choose if you want to compile RaspiYarp_TwoPwmMotors" TRUE)
 
 ##### program options
 option(ENABLE_launchRaspiYarp "Choose if you want to compile launchRaspiYarp" TRUE)

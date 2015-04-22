@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "PwmBot.hpp"
+#include "OnePwmMotors.hpp"
 
 namespace rd
 {
 
-bool PwmBot::open(Searchable& config)
+bool OnePwmMotors::open(Searchable& config)
 {
 
     Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
     printf(BOLDBLUE);
-    printf("PwmBot options:\n");
+    printf("OnePwmMotors options:\n");
     printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     printf(RESET);
 
@@ -34,7 +34,7 @@ bool PwmBot::open(Searchable& config)
     return true;
 }
 
-bool PwmBot::close()
+bool OnePwmMotors::close()
 {
 
     return true;

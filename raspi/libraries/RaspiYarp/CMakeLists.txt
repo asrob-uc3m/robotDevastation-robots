@@ -11,8 +11,8 @@ set(RD1_LIBRARIES ${RD1_LIBRARIES} RaspiYarp CACHE INTERNAL "appended libraries"
 # IMPORTANT: RaspiYarp pwmbot works, but pwmbot RaspiYarp fails.
 
 yarp_begin_plugin_library(RaspiYarp)
-add_subdirectory(pwmbot)
-add_subdirectory(DoubleHBridge)
+add_subdirectory(OnePwmMotors)
+add_subdirectory(TwoPwmMotors)
 yarp_end_plugin_library(RaspiYarp)
 
 install(TARGETS RaspiYarp DESTINATION lib)

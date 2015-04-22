@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "PwmBot.hpp"
+#include "OnePwmMotors.hpp"
 
 namespace rd
 {
 
-bool PwmBot::resetEncoder(int j)
+bool OnePwmMotors::resetEncoder(int j)
 {
     CD_INFO("(%d)\n",j);
 
@@ -17,7 +17,7 @@ bool PwmBot::resetEncoder(int j)
     return true;
 }
 
-bool PwmBot::resetEncoders()
+bool OnePwmMotors::resetEncoders()
 {
     CD_INFO("\n");
 
@@ -26,7 +26,7 @@ bool PwmBot::resetEncoders()
     return true;
 }
 
-bool PwmBot::setEncoder(int j, double val)
+bool OnePwmMotors::setEncoder(int j, double val)
 {  // encExposed = val;
     CD_INFO("(%d,%f)\n",j,val);
 
@@ -38,7 +38,7 @@ bool PwmBot::setEncoder(int j, double val)
     return true;
 }
 
-bool PwmBot::setEncoders(const double *vals)
+bool OnePwmMotors::setEncoders(const double *vals)
 {
     CD_INFO("\n");
 
@@ -48,7 +48,7 @@ bool PwmBot::setEncoders(const double *vals)
     return ok;
 }
 
-bool PwmBot::getEncoder(int j, double *v)
+bool OnePwmMotors::getEncoder(int j, double *v)
 {
     //CD_INFO("%d\n",j);  //-- Too verbose in stream.
 
@@ -58,7 +58,7 @@ bool PwmBot::getEncoder(int j, double *v)
     return true;
 }
 
-bool PwmBot::getEncoders(double *encs)
+bool OnePwmMotors::getEncoders(double *encs)
 {
     //CD_INFO("\n");  //-- Too verbose in stream.
 
@@ -68,7 +68,7 @@ bool PwmBot::getEncoders(double *encs)
     return ok;
 }
 
-bool PwmBot::getEncoderSpeed(int j, double *sp)
+bool OnePwmMotors::getEncoderSpeed(int j, double *sp)
 {
     //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 
@@ -80,7 +80,7 @@ bool PwmBot::getEncoderSpeed(int j, double *sp)
     return true;
 }
 
-bool PwmBot::getEncoderSpeeds(double *spds)
+bool OnePwmMotors::getEncoderSpeeds(double *spds)
 {
     CD_INFO("\n");
 
@@ -90,7 +90,7 @@ bool PwmBot::getEncoderSpeeds(double *spds)
     return ok;
 }
 
-bool PwmBot::getEncoderAcceleration(int j, double *spds)
+bool OnePwmMotors::getEncoderAcceleration(int j, double *spds)
 {
     //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 
@@ -102,7 +102,7 @@ bool PwmBot::getEncoderAcceleration(int j, double *spds)
     return true;
 }
 
-bool PwmBot::getEncoderAccelerations(double *accs)
+bool OnePwmMotors::getEncoderAccelerations(double *accs)
 {
     CD_INFO("\n");
 

@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "PwmBot.hpp"
+#include "OnePwmMotors.hpp"
 
 namespace rd
 {
 
-bool PwmBot::getEncodersTimed(double *encs, double *time)
+bool OnePwmMotors::getEncodersTimed(double *encs, double *time)
 {
     CD_INFO("\n");
 
@@ -15,7 +15,7 @@ bool PwmBot::getEncodersTimed(double *encs, double *time)
     return ok;
 }
 
-bool PwmBot::getEncoderTimed(int j, double *encs, double *time)
+bool OnePwmMotors::getEncoderTimed(int j, double *encs, double *time)
 {
     //CD_INFO("(%d)\n",j);  //-- Too verbose in controlboardwrapper2 stream.
 

@@ -4,9 +4,9 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(pwmbot TYPE rd::PwmBot INCLUDE PwmBot.hpp WRAPPER controlboardwrapper2)
+prepare_device(OnePwmMotors TYPE rd::OnePwmMotors INCLUDE OnePwmMotors.hpp WRAPPER controlboardwrapper2)
 
-IF (NOT SKIP_pwmbot)
+IF (NOT SKIP_OnePwmMotors)
 
   find_package(YARP REQUIRED)
 
@@ -15,9 +15,9 @@ IF (NOT SKIP_pwmbot)
   # Include any directories needed for YARP
   include_directories(${YARP_INCLUDE_DIRS} ${RD1_INCLUDE_DIRS})
 
-  yarp_add_plugin(pwmbot PwmBot.cpp DeviceDriverImpl.cpp IEncodersImpl.cpp IEncodersTimedImpl.cpp IPositionControlImpl.cpp IVelocityControlImpl.cpp pwm.cpp )
-  TARGET_LINK_LIBRARIES(pwmbot ${YARP_LIBRARIES})
-  #install(TARGETS pwmbot DESTINATION lib)
+  yarp_add_plugin(OnePwmMotors OnePwmMotors.cpp DeviceDriverImpl.cpp IEncodersImpl.cpp IEncodersTimedImpl.cpp IPositionControlImpl.cpp IVelocityControlImpl.cpp pwm.cpp )
+  TARGET_LINK_LIBRARIES(OnePwmMotors ${YARP_LIBRARIES})
+  #install(TARGETS OnePwmMotors DESTINATION lib)
 
-ENDIF (NOT SKIP_pwmbot)
+ENDIF (NOT SKIP_OnePwmMotors)
 

@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __PWM_BOT__
-#define __PWM_BOT__
+#ifndef __TWO_PWM_MOTORS__
+#define __TWO_PWM_MOTORS__
 
 #include <yarp/os/all.h>
 #include <yarp/dev/ControlBoardInterfaces.h>
@@ -26,7 +26,7 @@ using namespace yarp::dev;
 namespace rd
 {
 
-class DoubleHBridge : public DeviceDriver, public IPositionControl, public IVelocityControl, public IEncodersTimed {
+class TwoPwmMotors : public DeviceDriver, public IPositionControl, public IVelocityControl, public IEncodersTimed {
 
   public:
 

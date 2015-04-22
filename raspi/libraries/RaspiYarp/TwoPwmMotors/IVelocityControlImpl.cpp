@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "DoubleHBridge.hpp"
+#include "TwoPwmMotors.hpp"
 
 namespace rd
 {
 
-bool DoubleHBridge::setVelocityMode()
+bool TwoPwmMotors::setVelocityMode()
 {
     CD_INFO("\n");
 
@@ -14,7 +14,7 @@ bool DoubleHBridge::setVelocityMode()
     return true;
 }
 
-bool DoubleHBridge::velocityMove(int j, double sp)
+bool TwoPwmMotors::velocityMove(int j, double sp)
 {
     CD_INFO("(%d,%f)\n",j,sp);
 
@@ -32,7 +32,7 @@ bool DoubleHBridge::velocityMove(int j, double sp)
     return true;
 }
 
-bool DoubleHBridge::velocityMove(const double *sp)
+bool TwoPwmMotors::velocityMove(const double *sp)
 {
     CD_INFO("\n");
 

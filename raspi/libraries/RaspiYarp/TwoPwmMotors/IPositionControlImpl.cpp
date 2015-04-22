@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "DoubleHBridge.hpp"
+#include "TwoPwmMotors.hpp"
 
 namespace rd
 {
 
-bool DoubleHBridge::getAxes(int *axes)
+bool TwoPwmMotors::getAxes(int *axes)
 {
     *axes = gpios.size() / 2;
     return true;
 }
 
-bool DoubleHBridge::setPositionMode()
+bool TwoPwmMotors::setPositionMode()
 {
     CD_INFO("\n");
 
@@ -20,7 +20,7 @@ bool DoubleHBridge::setPositionMode()
     return true;
 }
 
-bool DoubleHBridge::positionMove(int j, double ref)
+bool TwoPwmMotors::positionMove(int j, double ref)
 {  // encExposed = ref;
     CD_INFO("(%d,%f)\n",j,ref);
 
@@ -30,7 +30,7 @@ bool DoubleHBridge::positionMove(int j, double ref)
     return true;
 }
 
-bool DoubleHBridge::positionMove(const double *refs)
+bool TwoPwmMotors::positionMove(const double *refs)
 {  // encExposed = refs;
     CD_INFO("\n");
 
@@ -39,7 +39,7 @@ bool DoubleHBridge::positionMove(const double *refs)
     return true;
 }
 
-bool DoubleHBridge::relativeMove(int j, double delta)
+bool TwoPwmMotors::relativeMove(int j, double delta)
 {
     CD_INFO("(%d, %f)\n",j,delta);
 
@@ -51,7 +51,7 @@ bool DoubleHBridge::relativeMove(int j, double delta)
     return true;
 }
 
-bool DoubleHBridge::relativeMove(const double *deltas)
+bool TwoPwmMotors::relativeMove(const double *deltas)
 {  // encExposed = deltas + encExposed
 
     CD_WARNING("Not implemented yet.\n");
@@ -59,7 +59,7 @@ bool DoubleHBridge::relativeMove(const double *deltas)
     return true;
 }
 
-bool DoubleHBridge::checkMotionDone(int j, bool *flag)
+bool TwoPwmMotors::checkMotionDone(int j, bool *flag)
 {
     CD_INFO("(%d)\n",j);
 
@@ -68,7 +68,7 @@ bool DoubleHBridge::checkMotionDone(int j, bool *flag)
     return true;
 }
 
-bool DoubleHBridge::checkMotionDone(bool *flag)
+bool TwoPwmMotors::checkMotionDone(bool *flag)
 {
     CD_INFO("\n");
 
@@ -80,7 +80,7 @@ bool DoubleHBridge::checkMotionDone(bool *flag)
     return ok;
 }
 
-bool DoubleHBridge::setRefSpeed(int j, double sp)
+bool TwoPwmMotors::setRefSpeed(int j, double sp)
 {
     CD_INFO("(%d, %f)\n",j,sp);
 
@@ -90,7 +90,7 @@ bool DoubleHBridge::setRefSpeed(int j, double sp)
     return true;
 }
 
-bool DoubleHBridge::setRefSpeeds(const double *spds)
+bool TwoPwmMotors::setRefSpeeds(const double *spds)
 {
     CD_INFO("\n");
 
@@ -100,7 +100,7 @@ bool DoubleHBridge::setRefSpeeds(const double *spds)
     return ok;
 }
 
-bool DoubleHBridge::setRefAcceleration(int j, double acc)
+bool TwoPwmMotors::setRefAcceleration(int j, double acc)
 {
     CD_INFO("(%d, %f)\n",j,acc);
 
@@ -112,7 +112,7 @@ bool DoubleHBridge::setRefAcceleration(int j, double acc)
     return true;
 }
 
-bool DoubleHBridge::setRefAccelerations(const double *accs)
+bool TwoPwmMotors::setRefAccelerations(const double *accs)
 {
     CD_INFO("\n");
 
@@ -122,7 +122,7 @@ bool DoubleHBridge::setRefAccelerations(const double *accs)
     return ok;
 }
 
-bool DoubleHBridge::getRefSpeed(int j, double *ref)
+bool TwoPwmMotors::getRefSpeed(int j, double *ref)
 {
     CD_INFO("(%d)\n",j);
 
@@ -134,7 +134,7 @@ bool DoubleHBridge::getRefSpeed(int j, double *ref)
     return true;
 }
 
-bool DoubleHBridge::getRefSpeeds(double *spds)
+bool TwoPwmMotors::getRefSpeeds(double *spds)
 {
     CD_INFO("\n");
 
@@ -144,7 +144,7 @@ bool DoubleHBridge::getRefSpeeds(double *spds)
     return ok;
 }
 
-bool DoubleHBridge::getRefAcceleration(int j, double *acc)
+bool TwoPwmMotors::getRefAcceleration(int j, double *acc)
 {
     CD_INFO("(%d)\n",j);
 
@@ -156,7 +156,7 @@ bool DoubleHBridge::getRefAcceleration(int j, double *acc)
     return true;
 }
 
-bool DoubleHBridge::getRefAccelerations(double *accs)
+bool TwoPwmMotors::getRefAccelerations(double *accs)
 {
     CD_INFO("\n");
 
@@ -166,7 +166,7 @@ bool DoubleHBridge::getRefAccelerations(double *accs)
     return ok;
 }
 
-bool DoubleHBridge::stop(int j){
+bool TwoPwmMotors::stop(int j){
     CD_INFO("(%d)\n",j);
 
     //-- Check index within range
@@ -179,7 +179,7 @@ bool DoubleHBridge::stop(int j){
     return true;
 }
 
-bool DoubleHBridge::stop()
+bool TwoPwmMotors::stop()
 {
     CD_INFO("\n");
 
