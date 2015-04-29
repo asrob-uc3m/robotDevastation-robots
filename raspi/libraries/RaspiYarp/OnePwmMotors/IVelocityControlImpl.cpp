@@ -18,9 +18,20 @@ bool OnePwmMotors::velocityMove(int j, double sp)
 {
     CD_INFO("(%d)\n",j);
 
-    // Clear and start again
-    clear_channel_gpio(0, gpios[j]);
-    add_channel_pulse(0, gpios[j], 0, sp / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    if (j%2 == 1) {
+        sp *= -1;
+    }
+
+    if (sp>0) {
+        clear_channel_gpio(0, gpios[j]);
+        add_channel_pulse(0, gpios[j], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    } else if (sp<0) {
+        clear_channel_gpio(0, gpios[j]);
+        add_channel_pulse(0, gpios[j], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    } else {
+        clear_channel_gpio(0, gpios[j]);
+        add_channel_pulse(0, gpios[j], 0, 0 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    }
 
     return true;
 }
