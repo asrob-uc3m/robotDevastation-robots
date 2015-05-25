@@ -9,8 +9,8 @@ echo "Update robotDevastation-robots repo..."
 cd $HOME/robotDevastation-robots
 git pull
 
-echo "Doxy rd1..."
-cd rd1/software/doc
+echo "Doxy raspi..."
+cd raspi/software/doc
 rm -r html
 /usr/local/bin/doxygen
 cd ../..
