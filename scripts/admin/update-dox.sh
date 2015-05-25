@@ -10,7 +10,7 @@ cd $HOME/robotDevastation-robots
 git pull
 
 echo "Doxy raspi..."
-cd raspi/software/doc
+cd raspi/doc
 rm -r html
 /usr/local/bin/doxygen
 cd ../..
