@@ -3,10 +3,10 @@ robotDevastation-robots
 
 Bundle of robot software (firmware), electronics and mechanics.
 
-1. [rd1](rd1/)
+1. [rd2](rd2/)
 --------
-[Link to RD1 doxygen generated documentation](http://asrob.uc3m.es/rd1doc/index.html)
-[![RD1 robot](rd1/rd1.jpg)](rd1/) 
+[Cómo montar el robot RD2](http://asrob.uc3m.es/index.php/C%C3%B3mo_montar_el_robot_RD2)
+[![RD2 robot](rd2/rd2.jpg)](rd2/)
 
 2. [ecro](ecro/)
 --------
