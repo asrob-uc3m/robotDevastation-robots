@@ -13,5 +13,5 @@ rpi-update
 
 Got a -2 error on direct load of firmware. The final step is (reading: https://www.raspberrypi.org/forums/viewtopic.php?t=119095&p=808311) to put the firmware .bin file (stored a copy in this directory) in /lib/firmware for raspi 4.1.9+.
 
-Appears as wlan0, so the rest are standard configurations in /etc/network/interfaces and wpa_supplicant.conf
+Appears as wlan0, so the rest are standard configurations in /etc/network/interfaces and /etc/wpa_supplicant/wpa_supplicant.conf
 
