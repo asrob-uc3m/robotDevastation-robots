@@ -12,6 +12,6 @@ git pull
 echo "Doxy raspi..."
 cd raspi/doc
 rm -r html
-/usr/local/bin/doxygen
+/usr/bin/doxygen
 cd ../..
 
