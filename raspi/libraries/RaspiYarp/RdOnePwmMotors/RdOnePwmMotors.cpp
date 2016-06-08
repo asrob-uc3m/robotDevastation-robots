@@ -14,5 +14,66 @@ bool RdOnePwmMotors::indexWithinRange(const int& idx)
     return true;
 }
 
+bool RdOnePwmMotors::moveForward(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::moveBackwards(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::turnLeft(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::turnRight(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::stopMovement()
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+//-- Robot camera related functions
+bool RdOnePwmMotors::tiltUp(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::tiltDown(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::panLeft(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::panRight(int velocity)
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
+bool RdOnePwmMotors::stopCameraMovement()
+{
+    CD_ERROR("Not implemented yet\n");
+    return false;
+}
+
 }  // namespace rd
 
