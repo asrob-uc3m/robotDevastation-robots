@@ -11,6 +11,7 @@ set(RD_RASPI_LIBRARIES ${RD_RASPI_LIBRARIES} RaspiYarp CACHE INTERNAL "appended 
 # IMPORTANT: RaspiYarp pwmbot works, but pwmbot RaspiYarp fails.
 
 yarp_begin_plugin_library(RaspiYarp)
+add_subdirectory(RdOnePwmMotors)
 add_subdirectory(OnePwmMotors)
 add_subdirectory(TwoPwmMotors)
 yarp_end_plugin_library(RaspiYarp)
