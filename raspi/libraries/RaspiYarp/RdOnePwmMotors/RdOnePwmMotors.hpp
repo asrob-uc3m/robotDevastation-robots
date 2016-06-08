@@ -25,6 +25,20 @@ class RdOnePwmMotors : public DeviceDriver {
 
   public:
 
+        //-- Robot movement related functions
+        bool moveForward(int velocity = UNUSED);
+        bool moveBackwards(int velocity = UNUSED);
+        bool turnLeft(int velocity = UNUSED);
+        bool turnRight(int velocity = UNUSED);
+        bool stopMovement();
+
+        //-- Robot camera related functions
+        bool tiltUp(int velocity = UNUSED);
+        bool tiltDown(int velocity = UNUSED);
+        bool panLeft(int velocity = UNUSED);
+        bool panRight(int velocity = UNUSED);
+        bool stopCameraMovement();
+
     // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
     /**
@@ -59,6 +73,8 @@ class RdOnePwmMotors : public DeviceDriver {
         bool indexWithinRange(const int& idx);
 
         std::vector< int > gpios;
+
+        static const int UNUSED = -1;
 
 };
 
