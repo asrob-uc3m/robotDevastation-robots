@@ -5,7 +5,7 @@
 namespace rd
 {
 
-bool RdRobotServer::open(Searchable& config)
+bool RdRobotServer::open(yarp::os::Searchable& config)
 {
     p.setReader(*this);
 

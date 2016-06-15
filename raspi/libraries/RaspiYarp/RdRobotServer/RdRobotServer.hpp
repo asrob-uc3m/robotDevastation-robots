@@ -13,13 +13,10 @@
 
 #include "ColorDebug.hpp"
 
-using namespace yarp::os;
-using namespace yarp::dev;
-
 namespace rd
 {
 
-class RdRobotServer : public DeviceDriver, public yarp::os::PortReader {
+class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReader {
 
   public:
 
@@ -52,7 +49,7 @@ class RdRobotServer : public DeviceDriver, public yarp::os::PortReader {
      * yarp developers to add documentation for your device).
      * @return true/false upon success/failure
      */
-    virtual bool open(Searchable& config);
+    virtual bool open(yarp::os::Searchable& config);
 
     /**
      * Close the DeviceDriver.
@@ -64,7 +61,7 @@ class RdRobotServer : public DeviceDriver, public yarp::os::PortReader {
 
     virtual bool read(yarp::os::ConnectionReader& connection)
     {
-        Bottle in, out;
+        yarp::os::Bottle in, out;
         bool ok = in.read(connection);
         if (!ok) return false;
 
@@ -72,7 +69,7 @@ class RdRobotServer : public DeviceDriver, public yarp::os::PortReader {
         CD_INFO("Got: %s\n",in.toString().c_str());
         out.addVocab(VOCAB_OK);
 
-        ConnectionWriter *returnToSender = connection.getWriter();
+        yarp::os::ConnectionWriter *returnToSender = connection.getWriter();
         if (returnToSender!=NULL) {
             out.write(*returnToSender);
         }
