@@ -16,12 +16,11 @@
 #include "pwm.hpp"
 
 using namespace yarp::os;
-using namespace yarp::dev;
 
 namespace rd
 {
 
-class RdOnePwmMotors : public DeviceDriver {
+class RdOnePwmMotors : public yarp::dev::DeviceDriver {
 
   public:
 
