@@ -91,7 +91,7 @@ class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReade
 
         static const int UNUSED = -1;
 
-        yarp::os::RpcServer p;
+        yarp::os::RpcServer rpcServer;
 
 };
 

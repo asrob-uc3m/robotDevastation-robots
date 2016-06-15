@@ -7,22 +7,22 @@ namespace rd
 
 bool RdRobotServer::open(yarp::os::Searchable& config)
 {
-    p.setReader(*this);
+    rpcServer.setReader(*this);
 
     yarp::os::Value *name;
 
     //Look for the portname to register (--name option)
     if (config.check("name",name))
-        p.open(name->asString());
+        rpcServer.open(name->asString());
     else
-        p.open("/RdRobotServer");
+        rpcServer.open("/RdRobotServer");
 
     return true;
 }
 
 bool RdRobotServer::close()
 {
-    p.close();
+    rpcServer.close();
     return true;
 }
 
