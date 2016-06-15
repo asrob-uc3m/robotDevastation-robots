@@ -21,8 +21,62 @@ bool RdRobotServer::read(yarp::os::ConnectionReader& connection)
     if (!ok) return false;
 
     // process data "in", prepare "out"
-    CD_INFO("Got: %s\n",in.toString().c_str());
-    out.addVocab(VOCAB_OK);
+    CD_DEBUG("Got: %s\n",in.toString().c_str());
+
+    if( in.get(0).asVocab() == VOCAB_MOVE_FORWARD)
+    {
+        iRdRobot->moveForward( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_MOVE_BACKWARDS)
+    {
+        iRdRobot->moveBackwards( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_TURN_LEFT)
+    {
+        iRdRobot->turnLeft( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_TURN_RIGHT)
+    {
+        iRdRobot->turnRight( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_STOP_MOVEMENT)
+    {
+        iRdRobot->stopMovement();
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_TILT_UP)
+    {
+        iRdRobot->tiltUp( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_TILT_DOWN)
+    {
+        iRdRobot->tiltDown( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_PAN_LEFT)
+    {
+        iRdRobot->panLeft( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_PAN_RIGHT)
+    {
+        iRdRobot->panRight( in.get(1).asInt() );
+        out.addVocab(VOCAB_OK);
+    }
+    else if( in.get(0).asVocab() == VOCAB_STOP_CAMERA_MOVEMENT)
+    {
+        iRdRobot->stopCameraMovement();
+        out.addVocab(VOCAB_OK);
+    }
+    else
+    {
+        out.addVocab(VOCAB_FAILED);
+    }
 
     yarp::os::ConnectionWriter *returnToSender = connection.getWriter();
     if (returnToSender!=NULL) {
