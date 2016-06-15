@@ -19,7 +19,7 @@ using namespace yarp::dev;
 namespace rd
 {
 
-class RdRobotServer : public DeviceDriver {
+class RdRobotServer : public DeviceDriver, public yarp::os::PortReader {
 
   public:
 
@@ -60,6 +60,26 @@ class RdRobotServer : public DeviceDriver {
      */
     virtual bool close();
 
+    // -------- PortReader declarations. Implementation here for now --------
+
+    virtual bool read(yarp::os::ConnectionReader& connection)
+    {
+        Bottle in, out;
+        bool ok = in.read(connection);
+        if (!ok) return false;
+
+        // process data "in", prepare "out"
+        CD_INFO("Got: %s\n",in.toString().c_str());
+        out.addVocab(VOCAB_OK);
+
+        ConnectionWriter *returnToSender = connection.getWriter();
+        if (returnToSender!=NULL) {
+            out.write(*returnToSender);
+        }
+        return true;
+    }
+
+
   // ------------------------------- Private -------------------------------------
 
   private:
@@ -73,6 +93,8 @@ class RdRobotServer : public DeviceDriver {
         std::vector< int > gpios;
 
         static const int UNUSED = -1;
+
+        yarp::os::RpcServer p;
 
 };
 
