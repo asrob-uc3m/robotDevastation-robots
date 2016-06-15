@@ -18,12 +18,12 @@ namespace rd
 
 class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReader {
 
-  public:
+public:
 
     // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
     /**
-     * Open the DeviceDriver. 
+     * Open the DeviceDriver.
      * @param config is a list of parameters for the device.
      * Which parameters are effective for your device can vary.
      * See \ref dev_examples "device invocation examples".
@@ -31,7 +31,7 @@ class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReade
      * you can run the "yarpdev" program with the verbose flag
      * set to probe what parameters the device is checking.
      * If that fails too,
-     * you'll need to read the source code (please nag one of the 
+     * you'll need to read the source code (please nag one of the
      * yarp developers to add documentation for your device).
      * @return true/false upon success/failure
      */
@@ -48,21 +48,21 @@ class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReade
     virtual bool read(yarp::os::ConnectionReader& connection);
 
 
-  // ------------------------------- Private -------------------------------------
+// ------------------------------- Private -------------------------------------
 
-  private:
+private:
 
-        /** Check if index is within range (referred to driver vector size).
-         * @param idx index to check.
-         * @return true/false on success/failure.
-         */
-        bool indexWithinRange(const int& idx);
+    /** Check if index is within range (referred to driver vector size).
+     * @param idx index to check.
+     * @return true/false on success/failure.
+     */
+    bool indexWithinRange(const int& idx);
 
-        std::vector< int > gpios;
+    std::vector< int > gpios;
 
-        static const int UNUSED = -1;
+    static const int UNUSED = -1;
 
-        yarp::os::RpcServer rpcServer;
+    yarp::os::RpcServer rpcServer;
 
 };
 
