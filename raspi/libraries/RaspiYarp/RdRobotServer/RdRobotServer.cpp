@@ -73,6 +73,19 @@ bool RdRobotServer::read(yarp::os::ConnectionReader& connection)
         iRdRobot->stopCameraMovement();
         out.addVocab(VOCAB_OK);
     }
+    else if( in.get(0).asString() == "help")
+    {
+        out.addVocab(VOCAB_MOVE_FORWARD);
+        out.addVocab(VOCAB_MOVE_BACKWARDS);
+        out.addVocab(VOCAB_TURN_LEFT);
+        out.addVocab(VOCAB_TURN_RIGHT);
+        out.addVocab(VOCAB_STOP_MOVEMENT);
+        out.addVocab(VOCAB_TILT_UP);
+        out.addVocab(VOCAB_TILT_DOWN);
+        out.addVocab(VOCAB_PAN_LEFT);
+        out.addVocab(VOCAB_PAN_RIGHT);
+        out.addVocab(VOCAB_STOP_CAMERA_MOVEMENT);
+    }
     else
     {
         out.addVocab(VOCAB_FAILED);
