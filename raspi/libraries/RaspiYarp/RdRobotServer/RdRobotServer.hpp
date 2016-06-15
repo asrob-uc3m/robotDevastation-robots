@@ -11,6 +11,8 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
+#include "IRdRobot.h"
+
 #include "ColorDebug.hpp"
 
 namespace rd
@@ -63,6 +65,9 @@ private:
     static const int UNUSED = -1;
 
     yarp::os::RpcServer rpcServer;
+
+    yarp::dev::PolyDriver robotDevice;
+    IRdRobot* iRdRobot;
 
 };
 
