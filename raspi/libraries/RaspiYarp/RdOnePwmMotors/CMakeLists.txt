@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(RdOnePwmMotors TYPE rd::RdOnePwmMotors INCLUDE RdOnePwmMotors.hpp WRAPPER controlboardwrapper2)
+prepare_device(RdOnePwmMotors TYPE rd::RdOnePwmMotors INCLUDE RdOnePwmMotors.hpp WRAPPER RdRobotServer)
 
 IF (NOT SKIP_RdOnePwmMotors)
 
