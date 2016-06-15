@@ -15,8 +15,6 @@
 
 #include "pwm.hpp"
 
-using namespace yarp::os;
-
 namespace rd
 {
 
@@ -53,7 +51,7 @@ class RdOnePwmMotors : public yarp::dev::DeviceDriver {
      * yarp developers to add documentation for your device).
      * @return true/false upon success/failure
      */
-    virtual bool open(Searchable& config);
+    virtual bool open(yarp::os::Searchable& config);
 
     /**
      * Close the DeviceDriver.

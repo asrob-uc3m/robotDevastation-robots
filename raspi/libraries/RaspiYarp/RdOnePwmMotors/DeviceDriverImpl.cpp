@@ -5,10 +5,10 @@
 namespace rd
 {
 
-bool RdOnePwmMotors::open(Searchable& config)
+bool RdOnePwmMotors::open(yarp::os::Searchable& config)
 {
 
-    Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
+    yarp::os::Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
     printf(BOLDBLUE);
     printf("RdOnePwmMotors options:\n");
