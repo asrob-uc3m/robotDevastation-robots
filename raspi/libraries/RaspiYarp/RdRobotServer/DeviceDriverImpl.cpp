@@ -22,7 +22,7 @@ bool RdRobotServer::open(yarp::os::Searchable& config)
 
 bool RdRobotServer::close()
 {
-
+    p.close();
     return true;
 }
 
