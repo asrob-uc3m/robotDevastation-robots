@@ -13,21 +13,25 @@
 
 #include "ColorDebug.hpp"
 
+#include "IRdRobot.h"
+
 #include "pwm.hpp"
 
 namespace rd
 {
 
-class RdOnePwmMotors : public yarp::dev::DeviceDriver {
+class RdOnePwmMotors : public yarp::dev::DeviceDriver, public IRdRobot {
 
 public:
 
+    // -------- IRdRobot declarations. Implementation in RdOnePwmMotors.cpp --------
+
     //-- Robot movement related functions
-    bool moveForward(int velocity = UNUSED);
-    bool moveBackwards(int velocity = UNUSED);
-    bool turnLeft(int velocity = UNUSED);
-    bool turnRight(int velocity = UNUSED);
-    bool stopMovement();
+    virtual bool moveForward(int velocity = UNUSED);
+    virtual bool moveBackwards(int velocity = UNUSED);
+    virtual bool turnLeft(int velocity = UNUSED);
+    virtual bool turnRight(int velocity = UNUSED);
+    virtual bool stopMovement();
 
     //-- Robot camera related functions
     bool tiltUp(int velocity = UNUSED);
@@ -70,8 +74,6 @@ private:
     bool indexWithinRange(const int& idx);
 
     std::vector< int > gpios;
-
-    static const int UNUSED = -1;
 
 };
 
