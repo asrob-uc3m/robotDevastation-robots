@@ -7,12 +7,6 @@ namespace rd
 
 bool RdRobotServer::open(Searchable& config)
 {
-
-    printf(BOLDBLUE);
-    printf("RdRobotServer options:\n");
-//    printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
-    printf(RESET);
-
     return true;
 }
 
