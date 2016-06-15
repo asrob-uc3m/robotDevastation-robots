@@ -16,25 +16,25 @@ bool RdFakeMotors::indexWithinRange(const int& idx)
 
 bool RdFakeMotors::moveForward(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
 bool RdFakeMotors::moveBackwards(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
 bool RdFakeMotors::turnLeft(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
 bool RdFakeMotors::turnRight(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
@@ -46,25 +46,25 @@ bool RdFakeMotors::stopMovement()
 
 bool RdFakeMotors::tiltUp(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
 bool RdFakeMotors::tiltDown(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
 bool RdFakeMotors::panLeft(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
 bool RdFakeMotors::panRight(int velocity)
 {
-    CD_INFO("\n");
+    CD_INFO("%d.\n",velocity);
     return true;
 }
 
