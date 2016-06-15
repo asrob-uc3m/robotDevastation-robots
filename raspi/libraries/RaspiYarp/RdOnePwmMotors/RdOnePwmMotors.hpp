@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __ONE_PWM_MOTORS__
-#define __ONE_PWM_MOTORS__
+#ifndef __RD_ONE_PWM_MOTORS__
+#define __RD_ONE_PWM_MOTORS__
 
 #include <yarp/os/all.h>
 #include <yarp/dev/ControlBoardInterfaces.h>
@@ -77,5 +77,5 @@ class RdOnePwmMotors : public yarp::dev::DeviceDriver {
 
 }  // namespace rd
 
-#endif
+#endif  // __RD_ONE_PWM_MOTORS__
 
