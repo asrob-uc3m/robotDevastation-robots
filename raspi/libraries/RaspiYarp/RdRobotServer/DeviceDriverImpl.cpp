@@ -36,7 +36,7 @@ bool RdRobotServer::open(yarp::os::Searchable& config)
         CD_ERROR("device not valid\n");
         return false;
     }
-    if( ! robotDevice.view(iRdRobot) )
+    if( ! robotDevice.view( iRdRobot ) )
     {
         CD_ERROR("iRdRobot view failed\n");
         return false;

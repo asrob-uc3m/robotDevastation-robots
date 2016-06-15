@@ -4,9 +4,9 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(RdRobotServer TYPE rd::RdRobotServer INCLUDE RdRobotServer.hpp WRAPPER RdRobotServer)
+prepare_device(RdFakeMotors TYPE rd::RdFakeMotors INCLUDE RdFakeMotors.hpp WRAPPER RdRobotServer)
 
-IF (NOT SKIP_RdRobotServer)
+IF (NOT SKIP_RdFakeMotors)
 
   find_package(YARP REQUIRED)
 
@@ -15,9 +15,9 @@ IF (NOT SKIP_RdRobotServer)
   # Include any directories needed for YARP
   include_directories(${YARP_INCLUDE_DIRS} ${RD_RASPI_INCLUDE_DIRS})
 
-  yarp_add_plugin(RdRobotServer RdRobotServer.cpp DeviceDriverImpl.cpp )
-  TARGET_LINK_LIBRARIES(RdRobotServer ${YARP_LIBRARIES})
-  #install(TARGETS RdRobotServer DESTINATION lib)
+  yarp_add_plugin(RdFakeMotors RdFakeMotors.cpp DeviceDriverImpl.cpp )
+  TARGET_LINK_LIBRARIES(RdFakeMotors ${YARP_LIBRARIES})
+  #install(TARGETS RdFakeMotors DESTINATION lib)
 
-ENDIF (NOT SKIP_RdRobotServer)
+ENDIF (NOT SKIP_RdFakeMotors)
 

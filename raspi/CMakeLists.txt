@@ -18,6 +18,7 @@ project(raspi)
 
 ##### library options
 option(ENABLE_RaspiYarp_RdRobotServer "Choose if you want to compile RaspiYarp_RdRobotServer" TRUE)
+option(ENABLE_RaspiYarp_RdFakeMotors "Choose if you want to compile RaspiYarp_RdFakeMotors" TRUE)
 option(ENABLE_RaspiYarp_RdOnePwmMotors "Choose if you want to compile RaspiYarp_RdOnePwmMotors" TRUE)
 option(ENABLE_RaspiYarp_OnePwmMotors "Choose if you want to compile RaspiYarp_OnePwmMotors" TRUE)
 option(ENABLE_RaspiYarp_TwoPwmMotors "Choose if you want to compile RaspiYarp_TwoPwmMotors" TRUE)
