@@ -20,20 +20,6 @@ class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReade
 
   public:
 
-        //-- Robot movement related functions
-        bool moveForward(int velocity = UNUSED);
-        bool moveBackwards(int velocity = UNUSED);
-        bool turnLeft(int velocity = UNUSED);
-        bool turnRight(int velocity = UNUSED);
-        bool stopMovement();
-
-        //-- Robot camera related functions
-        bool tiltUp(int velocity = UNUSED);
-        bool tiltDown(int velocity = UNUSED);
-        bool panLeft(int velocity = UNUSED);
-        bool panRight(int velocity = UNUSED);
-        bool stopCameraMovement();
-
     // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
     /**
@@ -57,24 +43,9 @@ class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReade
      */
     virtual bool close();
 
-    // -------- PortReader declarations. Implementation here for now --------
+    // -------- PortReader declarations. Implementation in RdRobotServer.cpp --------
 
-    virtual bool read(yarp::os::ConnectionReader& connection)
-    {
-        yarp::os::Bottle in, out;
-        bool ok = in.read(connection);
-        if (!ok) return false;
-
-        // process data "in", prepare "out"
-        CD_INFO("Got: %s\n",in.toString().c_str());
-        out.addVocab(VOCAB_OK);
-
-        yarp::os::ConnectionWriter *returnToSender = connection.getWriter();
-        if (returnToSender!=NULL) {
-            out.write(*returnToSender);
-        }
-        return true;
-    }
+    virtual bool read(yarp::os::ConnectionReader& connection);
 
 
   // ------------------------------- Private -------------------------------------
