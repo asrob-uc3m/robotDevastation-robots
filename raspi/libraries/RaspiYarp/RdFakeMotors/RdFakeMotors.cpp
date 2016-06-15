@@ -74,5 +74,36 @@ bool RdFakeMotors::stopCameraMovement()
     return true;
 }
 
+bool RdFakeMotors::connect()
+{
+    CD_INFO("\n");
+    return true;
+}
+
+
+bool RdFakeMotors::disconnect()
+{
+    CD_INFO("\n");
+    return true;
+}
+
+bool RdFakeMotors::test()
+{
+    CD_INFO("\n");
+    return true;
+}
+
+void RdFakeMotors::setEnabled(bool enabled)
+{
+    CD_INFO("\n");
+    return;
+}
+
+void RdFakeMotors::onDestroy()
+{
+    CD_INFO("\n");
+    return;
+}
+
 }  // namespace rd
 

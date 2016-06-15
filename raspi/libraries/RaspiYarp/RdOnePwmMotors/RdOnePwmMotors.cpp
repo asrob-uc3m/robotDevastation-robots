@@ -75,5 +75,35 @@ bool RdOnePwmMotors::stopCameraMovement()
     return false;
 }
 
-}  // namespace rd
+bool RdOnePwmMotors::connect()
+{
+    CD_INFO("\n");
+    return true;
+}
 
+
+bool RdOnePwmMotors::disconnect()
+{
+    CD_INFO("\n");
+    return true;
+}
+
+bool RdOnePwmMotors::test()
+{
+    CD_INFO("\n");
+    return true;
+}
+
+void RdOnePwmMotors::setEnabled(bool enabled)
+{
+    CD_INFO("\n");
+    return;
+}
+
+void RdOnePwmMotors::onDestroy()
+{
+    CD_INFO("\n");
+    return;
+}
+
+}  // namespace rd

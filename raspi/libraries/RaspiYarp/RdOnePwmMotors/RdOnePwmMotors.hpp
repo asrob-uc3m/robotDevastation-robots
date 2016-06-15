@@ -13,18 +13,20 @@
 
 #include "ColorDebug.hpp"
 
-#include "IRdRobot.h"
+#include "RdRobotManager.hpp"
 
 #include "pwm.hpp"
 
 namespace rd
 {
 
-class RdOnePwmMotors : public yarp::dev::DeviceDriver, public IRdRobot {
+class RdOnePwmMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    // -------- IRdRobot declarations. Implementation in RdOnePwmMotors.cpp --------
+    RdOnePwmMotors() : RdRobotManager("default") {}
+
+    // -------- RdRobotManager declarations. Implementation in RdOnePwmMotors.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
@@ -34,11 +36,27 @@ public:
     virtual bool stopMovement();
 
     //-- Robot camera related functions
-    bool tiltUp(int velocity = UNUSED);
-    bool tiltDown(int velocity = UNUSED);
-    bool panLeft(int velocity = UNUSED);
-    bool panRight(int velocity = UNUSED);
-    bool stopCameraMovement();
+    virtual bool tiltUp(int velocity = UNUSED);
+    virtual bool tiltDown(int velocity = UNUSED);
+    virtual bool panLeft(int velocity = UNUSED);
+    virtual bool panRight(int velocity = UNUSED);
+    virtual bool stopCameraMovement();
+
+    //-- Robot connection related functions
+    /// @brief Connect to the remote robot
+    virtual bool connect();
+
+    /// @brief Disconnect from the remote robot
+    virtual bool disconnect();
+
+    /// @brief Test connection (not in used yet)
+    virtual bool test();
+
+    /// @brief Enable/disable sending commands through the manager
+    virtual void setEnabled(bool enabled);
+
+    //-- Other
+    virtual void onDestroy();
 
     // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 

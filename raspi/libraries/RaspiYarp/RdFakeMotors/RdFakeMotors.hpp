@@ -13,16 +13,18 @@
 
 #include "ColorDebug.hpp"
 
-#include "IRdRobot.h"
+#include "RdRobotManager.hpp"
 
 namespace rd
 {
 
-class RdFakeMotors : public yarp::dev::DeviceDriver, public IRdRobot {
+class RdFakeMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    // -------- IRdRobot declarations. Implementation in RdFakeMotors.cpp --------
+    RdFakeMotors() : RdRobotManager("default") {}
+
+    // -------- RdRobotManager declarations. Implementation in RdFakeMotors.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
@@ -37,6 +39,22 @@ public:
     virtual bool panLeft(int velocity = UNUSED);
     virtual bool panRight(int velocity = UNUSED);
     virtual bool stopCameraMovement();
+
+    //-- Robot connection related functions
+    /// @brief Connect to the remote robot
+    virtual bool connect();
+
+    /// @brief Disconnect from the remote robot
+    virtual bool disconnect();
+
+    /// @brief Test connection (not in used yet)
+    virtual bool test();
+
+    /// @brief Enable/disable sending commands through the manager
+    virtual void setEnabled(bool enabled);
+
+    //-- Other
+    virtual void onDestroy();
 
     // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
