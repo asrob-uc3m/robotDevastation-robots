@@ -44,9 +44,9 @@ bool RdRobotServer::open(yarp::os::Searchable& config)
 
     //Look for the portname to register (--name option)
     if (config.check("name",name))
-        rpcServer.open(name->asString());
+        rpcServer.open(name->asString()+"/rpc:s");
     else
-        rpcServer.open("/RdRobotServer");
+        rpcServer.open("/RdRobotServer/rpc:s");
 
     return true;
 }
