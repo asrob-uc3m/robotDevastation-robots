@@ -16,32 +16,46 @@ bool RdOnePwmMotors::indexWithinRange(const int& idx)
 
 bool RdOnePwmMotors::moveForward(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
+    CD_WARNING("Under construction, not using velocity (%d) yet.\n",velocity);
+
+    clear_channel_gpio(0, gpios[0]);
+    add_channel_pulse(0, gpios[0], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
+    clear_channel_gpio(0, gpios[1]);
+    add_channel_pulse(0, gpios[1], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
     return false;
 }
 
 bool RdOnePwmMotors::moveBackwards(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
-    return false;
+    return true;
 }
 
 bool RdOnePwmMotors::turnLeft(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
-    return false;
+    return true;
 }
 
 bool RdOnePwmMotors::turnRight(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
-    return false;
+    return true;
 }
 
 bool RdOnePwmMotors::stopMovement()
 {
-    CD_ERROR("Not implemented yet\n");
-    return false;
+    CD_WARNING("Under construction.\n");
+
+    clear_channel_gpio(0, gpios[0]);
+    add_channel_pulse(0, gpios[0], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
+    clear_channel_gpio(0, gpios[1]);
+    add_channel_pulse(0, gpios[1], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
+    return true;
 }
 
 //-- Robot camera related functions
