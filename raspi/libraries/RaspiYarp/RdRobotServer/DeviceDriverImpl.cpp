@@ -54,6 +54,7 @@ bool RdRobotServer::open(yarp::os::Searchable& config)
 bool RdRobotServer::close()
 {
     rpcServer.close();
+    robotDevice.close();
     return true;
 }
 
