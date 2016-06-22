@@ -45,10 +45,10 @@ bool RdOnePwmMotors::turnLeft(int velocity)
     CD_INFO("(%d).\n",velocity);
 
     clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, gpios[0], 0, 1250 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, gpios[1], 0, 1250 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
@@ -58,10 +58,10 @@ bool RdOnePwmMotors::turnRight(int velocity)
     CD_INFO("(%d).\n",velocity);
 
     clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, gpios[0], 0, 1750 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, gpios[1], 0, 1750 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
