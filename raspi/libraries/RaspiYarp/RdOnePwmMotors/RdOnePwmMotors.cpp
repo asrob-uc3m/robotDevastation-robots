@@ -16,7 +16,7 @@ bool RdOnePwmMotors::indexWithinRange(const int& idx)
 
 bool RdOnePwmMotors::moveForward(int velocity)
 {
-    CD_WARNING("Under construction, not using velocity (%d) yet.\n",velocity);
+    CD_INFO("(%d).\n",velocity);
 
     clear_channel_gpio(0, gpios[0]);
     add_channel_pulse(0, gpios[0], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
@@ -24,30 +24,51 @@ bool RdOnePwmMotors::moveForward(int velocity)
     clear_channel_gpio(0, gpios[1]);
     add_channel_pulse(0, gpios[1], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
-    return false;
+    return true;
 }
 
 bool RdOnePwmMotors::moveBackwards(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
+    CD_INFO("(%d).\n",velocity);
+
+    clear_channel_gpio(0, gpios[0]);
+    add_channel_pulse(0, gpios[0], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
+    clear_channel_gpio(0, gpios[1]);
+    add_channel_pulse(0, gpios[1], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
     return true;
 }
 
 bool RdOnePwmMotors::turnLeft(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
+    CD_INFO("(%d).\n",velocity);
+
+    clear_channel_gpio(0, gpios[0]);
+    add_channel_pulse(0, gpios[0], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
+    clear_channel_gpio(0, gpios[1]);
+    add_channel_pulse(0, gpios[1], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
     return true;
 }
 
 bool RdOnePwmMotors::turnRight(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
+    CD_INFO("(%d).\n",velocity);
+
+    clear_channel_gpio(0, gpios[0]);
+    add_channel_pulse(0, gpios[0], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
+    clear_channel_gpio(0, gpios[1]);
+    add_channel_pulse(0, gpios[1], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+
     return true;
 }
 
 bool RdOnePwmMotors::stopMovement()
 {
-    CD_WARNING("Under construction.\n");
+    CD_INFO("(%d).\n",velocity);
 
     clear_channel_gpio(0, gpios[0]);
     add_channel_pulse(0, gpios[0], 0, 0 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
@@ -91,32 +112,32 @@ bool RdOnePwmMotors::stopCameraMovement()
 
 bool RdOnePwmMotors::connect()
 {
-    CD_INFO("\n");
-    return true;
+    CD_ERROR("Not implemented yet\n");
+    return false;
 }
 
 
 bool RdOnePwmMotors::disconnect()
 {
-    CD_INFO("\n");
-    return true;
+    CD_ERROR("Not implemented yet\n");
+    return false;
 }
 
 bool RdOnePwmMotors::test()
 {
-    CD_INFO("\n");
-    return true;
+    CD_ERROR("Not implemented yet\n");
+    return false;
 }
 
 void RdOnePwmMotors::setEnabled(bool enabled)
 {
-    CD_INFO("\n");
+    CD_ERROR("Not implemented yet\n");
     return;
 }
 
 void RdOnePwmMotors::onDestroy()
 {
-    CD_INFO("\n");
+    CD_ERROR("Not implemented yet\n");
     return;
 }
 
