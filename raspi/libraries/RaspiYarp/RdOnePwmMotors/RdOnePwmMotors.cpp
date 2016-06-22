@@ -68,7 +68,7 @@ bool RdOnePwmMotors::turnRight(int velocity)
 
 bool RdOnePwmMotors::stopMovement()
 {
-    CD_INFO("(%d).\n",velocity);
+    CD_INFO(".\n");
 
     clear_channel_gpio(0, gpios[0]);
     add_channel_pulse(0, gpios[0], 0, 0 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
