@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(RdFakeMotors TYPE rd::RdFakeMotors INCLUDE RdFakeMotors.hpp WRAPPER RdRobotServer)
+yarp_prepare_device(RdFakeMotors TYPE rd::RdFakeMotors INCLUDE RdFakeMotors.hpp WRAPPER RdRobotServer)
 
 IF (NOT SKIP_RdFakeMotors)
 

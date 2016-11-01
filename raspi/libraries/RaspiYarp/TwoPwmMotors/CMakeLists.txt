@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(TwoPwmMotors TYPE rd::TwoPwmMotors INCLUDE TwoPwmMotors.hpp WRAPPER controlboardwrapper2)
+yarp_prepare_device(TwoPwmMotors TYPE rd::TwoPwmMotors INCLUDE TwoPwmMotors.hpp WRAPPER controlboardwrapper2)
 
 IF (NOT SKIP_TwoPwmMotors)
 

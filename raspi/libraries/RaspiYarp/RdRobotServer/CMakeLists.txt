@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-prepare_device(RdRobotServer TYPE rd::RdRobotServer INCLUDE RdRobotServer.hpp WRAPPER RdRobotServer)
+yarp_prepare_device(RdRobotServer TYPE rd::RdRobotServer INCLUDE RdRobotServer.hpp WRAPPER RdRobotServer)
 
 IF (NOT SKIP_RdRobotServer)
 
