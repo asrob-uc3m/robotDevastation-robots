@@ -21,7 +21,7 @@ yarp_end_plugin_library(RaspiYarp)
 install(TARGETS RaspiYarp DESTINATION lib)
 
 if(ENABLE_launchRaspiYarp)
-  yarp_add_plugin_library_executable(launchRaspiYarp RaspiYarp)
+  yarp_add_plugin_yarpdev_executable(launchRaspiYarp RaspiYarp)
   install(TARGETS launchRaspiYarp DESTINATION bin)
 endif(ENABLE_launchRaspiYarp)
 
