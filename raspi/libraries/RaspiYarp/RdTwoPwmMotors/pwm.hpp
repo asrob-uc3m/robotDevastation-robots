@@ -71,3 +71,5 @@ int get_channel_subcycle_time_us(int channel);
 
 // Default pulse-width-increment-granularity
 #define PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT 10
+
+#define FULL_TIME (SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT)-1
