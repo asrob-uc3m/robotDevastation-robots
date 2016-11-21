@@ -20,22 +20,14 @@ bool RdTwoPwmMotors::open(yarp::os::Searchable& config)
         return false;
     }
 
-    if ( config.check("pcm") )
-        setup(PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT, DELAY_VIA_PCM);
-    else
-        setup(PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT, DELAY_VIA_PWM);
+    if (wiringPiSetup() == -1)
+        return false;
 
-    init_channel(0, SUBCYCLE_TIME_US_DEFAULT);  //10ms;
-    print_channel(0);
+    pinMode(RdTwoPwmMotors::LEFT_MOTOR_IN1, OUTPUT);
+    pinMode(RdTwoPwmMotors::LEFT_MOTOR_IN2, OUTPUT);
+    pinMode(RdTwoPwmMotors::RIGHT_MOTOR_IN1, OUTPUT);
+    pinMode(RdTwoPwmMotors::RIGHT_MOTOR_IN2, OUTPUT);
 
-    for(int j=0; j < gpiosBottle.size(); j++)
-    {
-        int gpio = gpiosBottle.get(j).asInt();
-        add_channel_pulse(0, gpio, 0, 0);
-        gpios.push_back( gpiosBottle.get(j).asInt() );
-        CD_SUCCESS("Configured gpio %d on channel 0.\n",gpio);
-    }
-    
     return true;
 }
 

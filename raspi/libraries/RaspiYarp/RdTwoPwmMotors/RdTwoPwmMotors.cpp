@@ -5,11 +5,11 @@
 namespace rd
 {
 
-const int RdTwoPwmMotors::LEFT_MOTOR_IN1 = 19;
-const int RdTwoPwmMotors::LEFT_MOTOR_IN2 = 13;
+const int RdTwoPwmMotors::LEFT_MOTOR_IN1 = 24;
+const int RdTwoPwmMotors::LEFT_MOTOR_IN2 = 23;
 
-const int RdTwoPwmMotors::RIGHT_MOTOR_IN1 = 6;
-const int RdTwoPwmMotors::RIGHT_MOTOR_IN2 = 5;
+const int RdTwoPwmMotors::RIGHT_MOTOR_IN1 = 22;
+const int RdTwoPwmMotors::RIGHT_MOTOR_IN2 = 21;
 
 bool RdTwoPwmMotors::indexWithinRange(const int& idx)
 {
@@ -20,23 +20,15 @@ bool RdTwoPwmMotors::indexWithinRange(const int& idx)
     return true;
 }
 
-bool RdTwoPwmMotors::clearChannels()
-{
-    clear_channel_gpio(0, LEFT_MOTOR_IN1);
-    clear_channel_gpio(0, LEFT_MOTOR_IN2);
-    clear_channel_gpio(0, RIGHT_MOTOR_IN1);
-    clear_channel_gpio(0, RIGHT_MOTOR_IN2);
-}
 
 bool RdTwoPwmMotors::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, FULL_TIME);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, FULL_TIME);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, 0);
+    digitalWrite(LEFT_MOTOR_IN1, 1);
+    digitalWrite(LEFT_MOTOR_IN2, 0);
+    digitalWrite(RIGHT_MOTOR_IN1, 1);
+    digitalWrite(RIGHT_MOTOR_IN2, 0);
     return true;
 }
 
@@ -44,11 +36,10 @@ bool RdTwoPwmMotors::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, 0);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, FULL_TIME);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, FULL_TIME);
+    digitalWrite(LEFT_MOTOR_IN1, 0);
+    digitalWrite(LEFT_MOTOR_IN2, 1);
+    digitalWrite(RIGHT_MOTOR_IN1, 0);
+    digitalWrite(RIGHT_MOTOR_IN2, 1);
 
     return true;
 }
@@ -57,11 +48,10 @@ bool RdTwoPwmMotors::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, FULL_TIME);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, FULL_TIME);
+    digitalWrite(LEFT_MOTOR_IN1, 1);
+    digitalWrite(LEFT_MOTOR_IN2, 0);
+    digitalWrite(RIGHT_MOTOR_IN1, 0);
+    digitalWrite(RIGHT_MOTOR_IN2, 1);
 
     return true;
 }
@@ -70,11 +60,10 @@ bool RdTwoPwmMotors::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, 0);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, FULL_TIME);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, FULL_TIME);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, 0);
+    digitalWrite(LEFT_MOTOR_IN1, 0);
+    digitalWrite(LEFT_MOTOR_IN2, 1);
+    digitalWrite(RIGHT_MOTOR_IN1, 1);
+    digitalWrite(RIGHT_MOTOR_IN2, 0);
 
     return true;
 }
@@ -83,11 +72,10 @@ bool RdTwoPwmMotors::stopMovement()
 {
     CD_INFO(".\n");
 
-    clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, FULL_TIME);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, FULL_TIME);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, FULL_TIME);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, FULL_TIME);
+    digitalWrite(LEFT_MOTOR_IN1, 1);
+    digitalWrite(LEFT_MOTOR_IN2, 1);
+    digitalWrite(RIGHT_MOTOR_IN1, 1);
+    digitalWrite(RIGHT_MOTOR_IN2, 1);
 
     return true;
 }
