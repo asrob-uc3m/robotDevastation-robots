@@ -16,7 +16,7 @@ IF (NOT SKIP_RdTwoPwmMotors)
   include_directories(${YARP_INCLUDE_DIRS} ${RD_RASPI_INCLUDE_DIRS})
 
   yarp_add_plugin(RdTwoPwmMotors RdTwoPwmMotors.cpp DeviceDriverImpl.cpp pwm.cpp )
-  TARGET_LINK_LIBRARIES(RdTwoPwmMotors ${YARP_LIBRARIES})
+  TARGET_LINK_LIBRARIES(RdTwoPwmMotors ${YARP_LIBRARIES} wiringPi)
   #install(TARGETS RdTwoPwmMotors DESTINATION lib)
 
 ENDIF (NOT SKIP_RdTwoPwmMotors)
