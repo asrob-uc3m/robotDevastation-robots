@@ -33,9 +33,9 @@ bool RdTwoPwmMotors::moveForward(int velocity)
     CD_INFO("(%d).\n",velocity);
 
     clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
     add_channel_pulse(0, LEFT_MOTOR_IN2,  0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
     add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, 0);
     return true;
 }
@@ -46,9 +46,9 @@ bool RdTwoPwmMotors::moveBackwards(int velocity)
 
     clearChannels();
     add_channel_pulse(0, LEFT_MOTOR_IN1,  0, 0);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
     add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
@@ -58,10 +58,10 @@ bool RdTwoPwmMotors::turnLeft(int velocity)
     CD_INFO("(%d).\n",velocity);
 
     clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
     add_channel_pulse(0, LEFT_MOTOR_IN2,  0, 0);
     add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, 0);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
@@ -72,8 +72,8 @@ bool RdTwoPwmMotors::turnRight(int velocity)
 
     clearChannels();
     add_channel_pulse(0, LEFT_MOTOR_IN1,  0, 0);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
     add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, 0);
 
     return true;
@@ -84,10 +84,10 @@ bool RdTwoPwmMotors::stopMovement()
     CD_INFO(".\n");
 
     clearChannels();
-    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, SUBCYCLE_TIME_US_DEFAULT / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
