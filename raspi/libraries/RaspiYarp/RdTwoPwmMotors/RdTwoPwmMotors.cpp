@@ -5,6 +5,12 @@
 namespace rd
 {
 
+const int RdTwoPwmMotors::LEFT_MOTOR_IN1 = 19;
+const int RdTwoPwmMotors::LEFT_MOTOR_IN2 = 13;
+
+const int RdTwoPwmMotors::RIGHT_MOTOR_IN1 = 6;
+const int RdTwoPwmMotors::RIGHT_MOTOR_IN2 = 5;
+
 bool RdTwoPwmMotors::indexWithinRange(const int& idx)
 {
     if (idx >= gpios.size() ){
@@ -14,16 +20,23 @@ bool RdTwoPwmMotors::indexWithinRange(const int& idx)
     return true;
 }
 
+bool RdTwoPwmMotors::clearChannels()
+{
+    clear_channel_gpio(0, LEFT_MOTOR_IN1);
+    clear_channel_gpio(0, LEFT_MOTOR_IN2);
+    clear_channel_gpio(0, RIGHT_MOTOR_IN1);
+    clear_channel_gpio(0, RIGHT_MOTOR_IN2);
+}
+
 bool RdTwoPwmMotors::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-
-    clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-
+    clearChannels();
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, 0);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, 0);
     return true;
 }
 
@@ -31,11 +44,11 @@ bool RdTwoPwmMotors::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 1000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-
-    clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 2000 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    clearChannels();
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, 0);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, 0);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
@@ -44,11 +57,11 @@ bool RdTwoPwmMotors::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 1250 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-
-    clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 1250 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    clearChannels();
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, 0);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, 0);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
@@ -57,11 +70,11 @@ bool RdTwoPwmMotors::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 1750 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-
-    clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 1750 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    clearChannels();
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, 0);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, 0);
 
     return true;
 }
@@ -70,11 +83,11 @@ bool RdTwoPwmMotors::stopMovement()
 {
     CD_INFO(".\n");
 
-    clear_channel_gpio(0, gpios[0]);
-    add_channel_pulse(0, gpios[0], 0, 0 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
-
-    clear_channel_gpio(0, gpios[1]);
-    add_channel_pulse(0, gpios[1], 0, 0 / PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    clearChannels();
+    add_channel_pulse(0, LEFT_MOTOR_IN1,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, LEFT_MOTOR_IN2,  0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN1, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
+    add_channel_pulse(0, RIGHT_MOTOR_IN2, 0, PULSE_WIDTH_INCREMENT_GRANULARITY_US_DEFAULT);
 
     return true;
 }
