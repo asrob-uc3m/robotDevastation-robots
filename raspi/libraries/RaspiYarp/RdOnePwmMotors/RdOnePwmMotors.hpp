@@ -15,7 +15,7 @@
 
 #include "RdRobotManager.hpp"
 
-#include <wiringPi.h>
+#include "pwm.hpp"
 
 namespace rd
 {

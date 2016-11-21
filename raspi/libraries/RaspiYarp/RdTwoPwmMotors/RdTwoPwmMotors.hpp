@@ -15,7 +15,7 @@
 
 #include "RdRobotManager.hpp"
 
-#include "pwm.hpp"
+#include <wiringPi.h>
 
 namespace rd
 {
@@ -92,8 +92,6 @@ private:
     bool indexWithinRange(const int& idx);
 
     std::vector< int > gpios;
-
-    bool clearChannels();
 
     static const int LEFT_MOTOR_IN1;
     static const int LEFT_MOTOR_IN2;
