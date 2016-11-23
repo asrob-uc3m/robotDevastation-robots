@@ -21,8 +21,6 @@ option(ENABLE_RaspiYarp_RdRobotServer "Choose if you want to compile RaspiYarp_R
 option(ENABLE_RaspiYarp_RdFakeMotors "Choose if you want to compile RaspiYarp_RdFakeMotors" TRUE)
 option(ENABLE_RaspiYarp_RdOnePwmMotors "Choose if you want to compile RaspiYarp_RdOnePwmMotors" TRUE)
 option(ENABLE_RaspiYarp_RdTwoPwmMotors "Choose if you want to compile RaspiYarp_RdTwoPwmMotors" TRUE)
-option(ENABLE_RaspiYarp_OnePwmMotors "Choose if you want to compile DEPRECIATED RaspiYarp_OnePwmMotors" FALSE)
-option(ENABLE_RaspiYarp_TwoPwmMotors "Choose if you want to compile DEPRECIATED RaspiYarp_TwoPwmMotors" FALSE)
 
 ##### program options
 option(ENABLE_launchRaspiYarp "Choose if you want to compile launchRaspiYarp" TRUE)

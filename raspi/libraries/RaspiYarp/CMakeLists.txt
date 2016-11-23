@@ -15,8 +15,6 @@ add_subdirectory(RdRobotServer)
 add_subdirectory(RdFakeMotors)
 add_subdirectory(RdOnePwmMotors)
 add_subdirectory(RdTwoPwmMotors)
-add_subdirectory(OnePwmMotors)
-add_subdirectory(TwoPwmMotors)
 yarp_end_plugin_library(RaspiYarp)
 
 install(TARGETS RaspiYarp DESTINATION lib)
