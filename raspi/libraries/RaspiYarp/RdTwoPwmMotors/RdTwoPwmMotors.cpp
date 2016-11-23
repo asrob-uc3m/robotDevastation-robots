@@ -48,10 +48,10 @@ bool RdTwoPwmMotors::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    digitalWrite(LEFT_MOTOR_IN1, 1);
-    digitalWrite(LEFT_MOTOR_IN2, 0);
-    digitalWrite(RIGHT_MOTOR_IN1, 0);
-    digitalWrite(RIGHT_MOTOR_IN2, 1);
+    digitalWrite(LEFT_MOTOR_IN1, 0);
+    digitalWrite(LEFT_MOTOR_IN2, 1);
+    digitalWrite(RIGHT_MOTOR_IN1, 1);
+    digitalWrite(RIGHT_MOTOR_IN2, 0);
 
     return true;
 }
@@ -60,10 +60,10 @@ bool RdTwoPwmMotors::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    digitalWrite(LEFT_MOTOR_IN1, 0);
-    digitalWrite(LEFT_MOTOR_IN2, 1);
-    digitalWrite(RIGHT_MOTOR_IN1, 1);
-    digitalWrite(RIGHT_MOTOR_IN2, 0);
+    digitalWrite(LEFT_MOTOR_IN1, 1);
+    digitalWrite(LEFT_MOTOR_IN2, 0);
+    digitalWrite(RIGHT_MOTOR_IN1, 0);
+    digitalWrite(RIGHT_MOTOR_IN2, 1);
 
     return true;
 }
