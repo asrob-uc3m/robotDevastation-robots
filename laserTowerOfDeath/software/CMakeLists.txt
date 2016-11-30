@@ -17,6 +17,8 @@ include(YarpPlugin)#
 set(RD_RASPI_LIBRARIES ${RD_RASPI_LIBRARIES} LaserTowerOfDeathYarp CACHE INTERNAL "appended libraries") 
 # IMPORTANT: RaspiYarp pwmbot works, but pwmbot RaspiYarp fails.
 
+option(ENABLE_LaserTowerOfDeathYarp_LaserTowerOfDeath "Choose if you want to compile LaserTowerOfDeathYarp_LaserTowerOfDeath" TRUE)
+
 yarp_begin_plugin_library(LaserTowerOfDeathYarp)
 add_subdirectory(LaserTowerOfDeath)
 yarp_end_plugin_library(LaserTowerOfDeathYarp)
