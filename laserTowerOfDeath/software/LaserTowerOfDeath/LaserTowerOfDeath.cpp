@@ -25,21 +25,12 @@ bool LaserTowerOfDeath::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    digitalWrite(LEFT_MOTOR_IN1, 1);
-    digitalWrite(LEFT_MOTOR_IN2, 0);
-    digitalWrite(RIGHT_MOTOR_IN1, 1);
-    digitalWrite(RIGHT_MOTOR_IN2, 0);
     return true;
 }
 
 bool LaserTowerOfDeath::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
-
-    digitalWrite(LEFT_MOTOR_IN1, 0);
-    digitalWrite(LEFT_MOTOR_IN2, 1);
-    digitalWrite(RIGHT_MOTOR_IN1, 0);
-    digitalWrite(RIGHT_MOTOR_IN2, 1);
 
     return true;
 }
@@ -48,11 +39,6 @@ bool LaserTowerOfDeath::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    digitalWrite(LEFT_MOTOR_IN1, 0);
-    digitalWrite(LEFT_MOTOR_IN2, 1);
-    digitalWrite(RIGHT_MOTOR_IN1, 1);
-    digitalWrite(RIGHT_MOTOR_IN2, 0);
-
     return true;
 }
 
@@ -60,22 +46,12 @@ bool LaserTowerOfDeath::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
-    digitalWrite(LEFT_MOTOR_IN1, 1);
-    digitalWrite(LEFT_MOTOR_IN2, 0);
-    digitalWrite(RIGHT_MOTOR_IN1, 0);
-    digitalWrite(RIGHT_MOTOR_IN2, 1);
-
     return true;
 }
 
 bool LaserTowerOfDeath::stopMovement()
 {
     CD_INFO(".\n");
-
-    digitalWrite(LEFT_MOTOR_IN1, 1);
-    digitalWrite(LEFT_MOTOR_IN2, 1);
-    digitalWrite(RIGHT_MOTOR_IN1, 1);
-    digitalWrite(RIGHT_MOTOR_IN2, 1);
 
     return true;
 }

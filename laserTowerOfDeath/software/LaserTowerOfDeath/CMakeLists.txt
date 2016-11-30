@@ -15,7 +15,7 @@ IF (NOT SKIP_LaserTowerOfDeath)
   # Include any directories needed for YARP
   include_directories(${YARP_INCLUDE_DIRS} ${RD_RASPI_INCLUDE_DIRS})
 
-  yarp_add_plugin(LaserTowerOfDeath LaserTowerOfDeath.cpp )
+  yarp_add_plugin(LaserTowerOfDeath LaserTowerOfDeath.cpp DeviceDriverImpl.cpp )
   TARGET_LINK_LIBRARIES(LaserTowerOfDeath ${YARP_LIBRARIES})
   #install(TARGETS LaserTowerOfDeath DESTINATION lib)
 
