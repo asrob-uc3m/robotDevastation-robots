@@ -23,6 +23,9 @@ yarp_end_plugin_library(LaserTowerOfDeathYarp)
 
 install(TARGETS LaserTowerOfDeathYarp DESTINATION lib)
 
+
+option(ENABLE_launchLaserTowerOfDeathYarp "Choose if you want to compile launchLaserTowerOfDeathYarp" TRUE)
+
 if(ENABLE_launchLaserTowerOfDeathYarp)
   yarp_add_plugin_yarpdev_executable(launchLaserTowerOfDeathYarp LaserTowerOfDeathYarp)
   install(TARGETS launchLaserTowerOfDeathYarp DESTINATION bin)
