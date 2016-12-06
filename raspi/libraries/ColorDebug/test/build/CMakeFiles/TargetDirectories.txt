@@ -1,1 +1,0 @@
-/home/yo/git/ColorDebug/test/build/CMakeFiles/testColorDebug.dir
