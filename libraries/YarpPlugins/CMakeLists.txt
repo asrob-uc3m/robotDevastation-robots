@@ -11,6 +11,6 @@ add_subdirectory(RdRobotServer)
 add_subdirectory(RdFakeMotors)
 add_subdirectory(RdOnePwmMotors)
 add_subdirectory(RdTwoPwmMotors)
-add_subdirectory(RdArduinoClient)
+add_subdirectory(RdSerialClient)
 #yarp_end_plugin_library(YarpPlugins)
 
