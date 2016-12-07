@@ -11,9 +11,13 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
+#include <SerialStream.h>
+
 #include "ColorDebug.hpp"
 
 #include "../RdRobotManager.hpp"
+
+#define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
 namespace rd
 {
@@ -83,18 +87,23 @@ public:
 
 private:
 
-    /** Check if index is within range (referred to driver vector size).
-     * @param idx index to check.
-     * @return true/false on success/failure.
-     */
-    bool indexWithinRange(const int& idx);
+    SerialPort * serialPort;
+    bool sendCurrentJointValues();
+    bool checkConnection();
 
-    std::vector< int > gpios;
+    int panJointValue;
+    int tiltJointValue;
 
-    static const int LEFT_MOTOR_IN1;
-    static const int LEFT_MOTOR_IN2;
-    static const int RIGHT_MOTOR_IN1;
-    static const int RIGHT_MOTOR_IN2;
+    static const int panRangeMin = 0;
+    static const int panRangeMax = 180;
+    static const int panStep = 10;
+    static const int panInitial = 90;
+
+    static const int tiltRangeMin = 0;
+    static const int tiltRangeMax = 180;
+    static const int tiltStep = 10;
+    static const int tiltInitial = 90;
+
 };
 
 }  // namespace rd

@@ -17,7 +17,7 @@ IF (NOT SKIP_RdArduinoClient)
 
     yarp_add_plugin(RdArduinoClient RdArduinoClient.cpp DeviceDriverImpl.cpp )
 
-    TARGET_LINK_LIBRARIES(RdArduinoClient ${YARP_LIBRARIES})
+    TARGET_LINK_LIBRARIES(RdArduinoClient ${YARP_LIBRARIES} serial)
 
     yarp_install(TARGETS RdArduinoClient
                  EXPORT YARP
