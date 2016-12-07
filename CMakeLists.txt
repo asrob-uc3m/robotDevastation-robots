@@ -13,6 +13,8 @@ endif(COMMAND cmake_policy)
 
 project(ROBOT_DEVASTATION_ROBOTS)
 
+option(BUILD_SHARED_LIBS "All shared libs" TRUE)
+
 ### options: cpp libraries
 #option(ENABLE_ExampleLibrary "Choose if you want to compile ExampleLibrary" TRUE)
 
