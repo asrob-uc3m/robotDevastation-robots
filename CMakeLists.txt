@@ -14,7 +14,7 @@ endif(COMMAND cmake_policy)
 project(ROBOT_DEVASTATION_ROBOTS)
 
 ### options: cpp libraries
-option(ENABLE_ExampleLibrary "Choose if you want to compile ExampleLibrary" TRUE)
+#option(ENABLE_ExampleLibrary "Choose if you want to compile ExampleLibrary" TRUE)
 
 ### options: cpp programs
 #option(ENABLE_exampleProgram "Choose if you want to compile exampleProgram" TRUE)
