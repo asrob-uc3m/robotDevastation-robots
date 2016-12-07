@@ -5,12 +5,6 @@
 namespace rd
 {
 
-const int RdArduinoClient::LEFT_MOTOR_IN1 = 24;
-const int RdArduinoClient::LEFT_MOTOR_IN2 = 23;
-
-const int RdArduinoClient::RIGHT_MOTOR_IN1 = 22;
-const int RdArduinoClient::RIGHT_MOTOR_IN2 = 21;
-
 bool RdArduinoClient::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);

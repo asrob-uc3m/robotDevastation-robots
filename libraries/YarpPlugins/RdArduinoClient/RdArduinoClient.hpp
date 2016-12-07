@@ -85,10 +85,6 @@ private:
 
     std::vector< int > gpios;
 
-    static const int LEFT_MOTOR_IN1;
-    static const int LEFT_MOTOR_IN2;
-    static const int RIGHT_MOTOR_IN1;
-    static const int RIGHT_MOTOR_IN2;
 };
 
 }  // namespace rd
