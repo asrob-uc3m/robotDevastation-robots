@@ -39,6 +39,10 @@ bool RdSerialClient::open(yarp::os::Searchable& config)
 
 bool RdSerialClient::close()
 {
+    CD_INFO("Close Serial Port: %p\n",serialPort);
+    serialPort->Close();
+    delete serialPort;
+    serialPort = 0;
 
     return true;
 }
