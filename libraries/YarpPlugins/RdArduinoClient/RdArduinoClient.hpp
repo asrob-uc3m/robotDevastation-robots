@@ -17,6 +17,8 @@
 
 #include "../RdRobotManager.hpp"
 
+#define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
+
 namespace rd
 {
 
@@ -87,6 +89,8 @@ private:
 
     SerialPort * serialPort;
     bool sendCurrentJointValues();
+    bool checkConnection();
+
     int panJointValue;
     int tiltJointValue;
 
