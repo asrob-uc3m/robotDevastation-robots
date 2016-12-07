@@ -1,23 +1,33 @@
-# Copyright: (C) 2013 Universidad Carlos III de Madrid
+# Copyright: (C) 2016 ASROB
 # Author: Juan G. Victores
 # CopyPolicy: Released under the terms of the LGPLv2.1 or later, see LGPL.TXT
 
 cmake_minimum_required(VERSION 2.6)
 
-yarp_prepare_device(LaserTowerOfDeath TYPE rd::LaserTowerOfDeath INCLUDE LaserTowerOfDeath.hpp WRAPPER RdRobotServer)
+find_package(YARP REQUIRED)
+
+yarp_prepare_device(LaserTowerOfDeath
+                    TYPE rd::LaserTowerOfDeath
+                    INCLUDE LaserTowerOfDeath.hpp
+                    WRAPPER RdRobotServer)
 
 IF (NOT SKIP_LaserTowerOfDeath)
 
-  find_package(YARP REQUIRED)
+    include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
-  set ( CMAKE_CXX_FLAGS "-fpermissive")
+    yarp_add_plugin(LaserTowerOfDeath LaserTowerOfDeath.cpp DeviceDriverImpl.cpp )
 
-  # Include any directories needed for YARP
-  include_directories(${YARP_INCLUDE_DIRS} ${RD_RASPI_INCLUDE_DIRS})
+    TARGET_LINK_LIBRARIES(LaserTowerOfDeath ${YARP_LIBRARIES})
 
-  yarp_add_plugin(LaserTowerOfDeath LaserTowerOfDeath.cpp DeviceDriverImpl.cpp )
-  TARGET_LINK_LIBRARIES(LaserTowerOfDeath ${YARP_LIBRARIES})
-  #install(TARGETS LaserTowerOfDeath DESTINATION lib)
+    yarp_install(TARGETS LaserTowerOfDeath
+                 EXPORT YARP
+                 COMPONENT runtime
+                 LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
+                 ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR})
+
+    yarp_install(FILES LaserTowerOfDeath.ini
+                 COMPONENT runtime
+                 DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
 
 ENDIF (NOT SKIP_LaserTowerOfDeath)
 
