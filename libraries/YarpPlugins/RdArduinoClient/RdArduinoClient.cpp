@@ -43,26 +43,38 @@ bool RdArduinoClient::stopMovement()
 //-- Robot camera related functions
 bool RdArduinoClient::tiltUp(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
-    return false;
+    CD_INFO("\n");
+    if (tiltJointValue < tiltRangeMax)
+        tiltJointValue+=tiltStep;
+
+    return sendCurrentJointValues();
 }
 
 bool RdArduinoClient::tiltDown(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
-    return false;
+    CD_INFO("\n");
+    if (  tiltJointValue > tiltRangeMin )
+        tiltJointValue-=tiltStep;
+
+    return sendCurrentJointValues();
 }
 
 bool RdArduinoClient::panLeft(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
-    return false;
+    CD_INFO("\n");
+    if (panJointValue < panRangeMax)
+        panJointValue+=panStep;
+
+    return sendCurrentJointValues();
 }
 
 bool RdArduinoClient::panRight(int velocity)
 {
-    CD_ERROR("Not implemented yet\n");
-    return false;
+    CD_INFO("\n");
+    if (  panJointValue > panRangeMin )
+        panJointValue-=panStep;
+
+    return sendCurrentJointValues();
 }
 
 bool RdArduinoClient::stopCameraMovement()
