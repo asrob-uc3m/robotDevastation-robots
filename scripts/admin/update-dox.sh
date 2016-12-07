@@ -5,12 +5,11 @@
 # crontab -e
 # 30 2 * * * /your/command
 
-echo "Update robotDevastation-robots repo..."
+echo "Update robotDevastation-robots..."
 cd $HOME/robotDevastation-robots
 git pull
-
-echo "Doxy raspi..."
-cd raspi/doc
+echo "Doxy robotDevastation-robots..."
+cd doc
 rm -r html
 /usr/bin/doxygen
 cd ../..
