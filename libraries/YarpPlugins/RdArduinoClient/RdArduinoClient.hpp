@@ -18,13 +18,13 @@
 namespace rd
 {
 
-class LaserTowerOfDeath : public yarp::dev::DeviceDriver, public RdRobotManager {
+class RdArduinoClient : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    LaserTowerOfDeath() : RdRobotManager("default") {}
+    RdArduinoClient() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in LaserTowerOfDeath.cpp --------
+    // -------- RdRobotManager declarations. Implementation in RdArduinoClient.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);

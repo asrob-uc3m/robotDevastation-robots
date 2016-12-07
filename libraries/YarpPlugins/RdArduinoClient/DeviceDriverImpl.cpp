@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "LaserTowerOfDeath.hpp"
+#include "RdArduinoClient.hpp"
 
 namespace rd
 {
 
-bool LaserTowerOfDeath::open(yarp::os::Searchable& config)
+bool RdArduinoClient::open(yarp::os::Searchable& config)
 {
 
     yarp::os::Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
     //printf(BOLDBLUE);
-    //printf("LaserTowerOfDeath options:\n");
+    //printf("RdArduinoClient options:\n");
     //printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     //printf(RESET);
 
@@ -23,7 +23,7 @@ bool LaserTowerOfDeath::open(yarp::os::Searchable& config)
     return true;
 }
 
-bool LaserTowerOfDeath::close()
+bool RdArduinoClient::close()
 {
 
     return true;
