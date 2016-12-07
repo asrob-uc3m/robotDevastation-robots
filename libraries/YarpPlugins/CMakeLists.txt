@@ -6,10 +6,10 @@ include_directories(${YARP_INCLUDE_DIRS})
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpPlugin)
 
-yarp_begin_plugin_library(YarpPlugins)
+#yarp_begin_plugin_library(YarpPlugins)
 add_subdirectory(RdRobotServer)
 add_subdirectory(RdFakeMotors)
 add_subdirectory(RdOnePwmMotors)
 add_subdirectory(RdTwoPwmMotors)
-yarp_end_plugin_library(YarpPlugins)
+#yarp_end_plugin_library(YarpPlugins)
 
