@@ -18,6 +18,10 @@
 namespace rd
 {
 
+/**
+ * @ingroup YarpPlugins
+ * @brief RdFakeMotors
+ */
 class RdFakeMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:

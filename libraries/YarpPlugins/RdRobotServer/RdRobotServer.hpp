@@ -30,6 +30,10 @@
 namespace rd
 {
 
+/**
+ * @ingroup YarpPlugins
+ * @brief RdRobotServer
+ */
 class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReader {
 
 public:

@@ -15,13 +15,17 @@
 
 #include "ColorDebug.hpp"
 
-#include "../RdRobotManager.hpp"
+#include "RdRobotManager.hpp"
 
 #define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
 namespace rd
 {
 
+/**
+ * @ingroup YarpPlugins
+ * @brief RdSerialClient
+ */
 class RdSerialClient : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
