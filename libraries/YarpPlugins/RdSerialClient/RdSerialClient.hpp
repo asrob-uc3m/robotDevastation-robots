@@ -22,6 +22,10 @@
 namespace rd
 {
 
+/**
+ * @ingroup YarpPlugins
+ * @brief RdSerialClient
+ */
 class RdSerialClient : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:

@@ -20,6 +20,10 @@
 namespace rd
 {
 
+/**
+ * @ingroup YarpPlugins
+ * @brief RdOnePwmMotors
+ */
 class RdOnePwmMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:

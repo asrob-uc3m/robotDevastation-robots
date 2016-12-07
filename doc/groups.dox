@@ -29,5 +29,13 @@ namespace teo {}
  * @brief robotDevastation-robots examples.
  */
 
+/**
+ * @ingroup robotDevastation-robots_libraries
+ *
+ * \defgroup YarpPlugins YarpPlugins
+ *
+ * @brief robotDevastation-robots YARP plugin libraries.
+ *
+ */
 
 
