@@ -1,5 +1,0 @@
-/**
-@brief The main, catch-all namespace for Robot Devastation.
- */
-namespace rd {}
-

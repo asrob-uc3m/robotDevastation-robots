@@ -1,0 +1,33 @@
+# Copyright: (C) 2016 ASROB
+# Author: Juan G. Victores
+# CopyPolicy: Released under the terms of the LGPLv2.1 or later, see LGPL.TXT
+
+cmake_minimum_required(VERSION 2.6)
+
+find_package(YARP REQUIRED)
+
+yarp_prepare_device(RdRobotServer
+                    TYPE rd::RdRobotServer
+                    INCLUDE RdRobotServer.hpp
+                    WRAPPER RdRobotServer)
+
+IF (NOT SKIP_RdRobotServer)
+
+    include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
+
+    yarp_add_plugin(RdRobotServer RdRobotServer.cpp DeviceDriverImpl.cpp )
+
+    TARGET_LINK_LIBRARIES(RdRobotServer ${YARP_LIBRARIES})
+
+    yarp_install(TARGETS RdRobotServer
+                 EXPORT YARP
+                 COMPONENT runtime
+                 LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
+                 ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR})
+
+    yarp_install(FILES RdRobotServer.ini
+                 COMPONENT runtime
+                 DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
+
+ENDIF (NOT SKIP_RdRobotServer)
+
