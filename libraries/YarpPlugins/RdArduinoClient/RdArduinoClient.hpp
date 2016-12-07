@@ -83,12 +83,6 @@ public:
 
 private:
 
-    /** Check if index is within range (referred to driver vector size).
-     * @param idx index to check.
-     * @return true/false on success/failure.
-     */
-    bool indexWithinRange(const int& idx);
-
     std::vector< int > gpios;
 
     static const int LEFT_MOTOR_IN1;

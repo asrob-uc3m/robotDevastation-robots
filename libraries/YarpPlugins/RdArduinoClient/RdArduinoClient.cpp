@@ -11,16 +11,6 @@ const int RdArduinoClient::LEFT_MOTOR_IN2 = 23;
 const int RdArduinoClient::RIGHT_MOTOR_IN1 = 22;
 const int RdArduinoClient::RIGHT_MOTOR_IN2 = 21;
 
-bool RdArduinoClient::indexWithinRange(const int& idx)
-{
-    if (idx >= gpios.size() ){
-        CD_WARNING("Index out of range!! (%d >= " CD_SIZE_T ")!!!\n",idx,gpios.size());
-        return false;
-    }
-    return true;
-}
-
-
 bool RdArduinoClient::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
