@@ -11,6 +11,9 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
+#include <utility>
+#include <SerialStream.h>
+
 #include "ColorDebug.hpp"
 
 #include "../RdRobotManager.hpp"
@@ -83,7 +86,10 @@ public:
 
 private:
 
-    std::vector< int > gpios;
+    SerialPort * serialPort;
+    bool sendCurrentJointValues();
+    int panJointValue;
+    int tiltJointValue;
 
 };
 

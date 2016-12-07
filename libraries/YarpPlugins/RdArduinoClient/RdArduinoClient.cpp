@@ -102,4 +102,24 @@ void RdArduinoClient::onDestroy()
     return;
 }
 
+bool RdArduinoClient::sendCurrentJointValues()
+{
+    if ( serialPort->IsOpen() )
+    {
+        SerialPort::DataBuffer outputBuff;
+        outputBuff.push_back(0x50); //-- 0x50 -> Set pos to all joints
+
+        outputBuff.push_back( (char) panJointValue );
+        outputBuff.push_back( (char) tiltJointValue );
+        serialPort->Write( outputBuff );
+
+        return true;
+    }
+    else
+    {
+        CD_WARNING("Robot could not send joints (because it is not connected).\n");
+        return false;
+    }
+}
+
 }  // namespace rd

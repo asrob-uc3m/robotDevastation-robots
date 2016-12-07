@@ -15,10 +15,6 @@ bool RdArduinoClient::open(yarp::os::Searchable& config)
     //printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     //printf(RESET);
 
-    //if( gpiosBottle.size() < 1) {
-    //    CD_ERROR("Please specify at least one gpio.\n");
-    //    return false;
-    //}
 
     return true;
 }
