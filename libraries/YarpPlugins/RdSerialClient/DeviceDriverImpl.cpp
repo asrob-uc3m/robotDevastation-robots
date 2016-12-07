@@ -1,16 +1,16 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdArduinoClient.hpp"
+#include "RdSerialClient.hpp"
 
 namespace rd
 {
 
-bool RdArduinoClient::open(yarp::os::Searchable& config)
+bool RdSerialClient::open(yarp::os::Searchable& config)
 {
 
     std::string serialPortName = config.check("serialPortName",yarp::os::Value(DEFAULT_SERIAL_PORT_NAME),"serialPortName").asString();
 
-    printf("RdArduinoClient options:\n");
+    printf("RdSerialClient options:\n");
     printf("\t--serialPortName %s [%s]\n",serialPortName.c_str(),DEFAULT_SERIAL_PORT_NAME);
 
     CD_DEBUG("init Serial Port.\n");
@@ -37,7 +37,7 @@ bool RdArduinoClient::open(yarp::os::Searchable& config)
     return true;
 }
 
-bool RdArduinoClient::close()
+bool RdSerialClient::close()
 {
 
     return true;

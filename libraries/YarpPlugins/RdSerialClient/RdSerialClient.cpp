@@ -1,39 +1,39 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdArduinoClient.hpp"
+#include "RdSerialClient.hpp"
 
 namespace rd
 {
 
-bool RdArduinoClient::moveForward(int velocity)
+bool RdSerialClient::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdArduinoClient::moveBackwards(int velocity)
+bool RdSerialClient::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdArduinoClient::turnLeft(int velocity)
+bool RdSerialClient::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdArduinoClient::turnRight(int velocity)
+bool RdSerialClient::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdArduinoClient::stopMovement()
+bool RdSerialClient::stopMovement()
 {
     CD_INFO(".\n");
 
@@ -41,7 +41,7 @@ bool RdArduinoClient::stopMovement()
 }
 
 //-- Robot camera related functions
-bool RdArduinoClient::tiltUp(int velocity)
+bool RdSerialClient::tiltUp(int velocity)
 {
     CD_INFO("\n");
     if (tiltJointValue < tiltRangeMax)
@@ -50,7 +50,7 @@ bool RdArduinoClient::tiltUp(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdArduinoClient::tiltDown(int velocity)
+bool RdSerialClient::tiltDown(int velocity)
 {
     CD_INFO("\n");
     if (  tiltJointValue > tiltRangeMin )
@@ -59,7 +59,7 @@ bool RdArduinoClient::tiltDown(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdArduinoClient::panLeft(int velocity)
+bool RdSerialClient::panLeft(int velocity)
 {
     CD_INFO("\n");
     if (panJointValue < panRangeMax)
@@ -68,7 +68,7 @@ bool RdArduinoClient::panLeft(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdArduinoClient::panRight(int velocity)
+bool RdSerialClient::panRight(int velocity)
 {
     CD_INFO("\n");
     if (  panJointValue > panRangeMin )
@@ -77,44 +77,44 @@ bool RdArduinoClient::panRight(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdArduinoClient::stopCameraMovement()
+bool RdSerialClient::stopCameraMovement()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdArduinoClient::connect()
+bool RdSerialClient::connect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
 
-bool RdArduinoClient::disconnect()
+bool RdSerialClient::disconnect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdArduinoClient::test()
+bool RdSerialClient::test()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-void RdArduinoClient::setEnabled(bool enabled)
+void RdSerialClient::setEnabled(bool enabled)
 {
     CD_ERROR("Not implemented yet\n");
     return;
 }
 
-void RdArduinoClient::onDestroy()
+void RdSerialClient::onDestroy()
 {
     CD_ERROR("Not implemented yet\n");
     return;
 }
 
-bool RdArduinoClient::sendCurrentJointValues()
+bool RdSerialClient::sendCurrentJointValues()
 {
     if ( serialPort->IsOpen() )
     {
@@ -134,7 +134,7 @@ bool RdArduinoClient::sendCurrentJointValues()
     }
 }
 
-bool RdArduinoClient::checkConnection()
+bool RdSerialClient::checkConnection()
 {
     //-- Read welcome message to check if connected to the robot
     SerialPort::DataBuffer buffer;

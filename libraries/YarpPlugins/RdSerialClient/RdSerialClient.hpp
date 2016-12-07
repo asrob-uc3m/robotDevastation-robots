@@ -22,13 +22,13 @@
 namespace rd
 {
 
-class RdArduinoClient : public yarp::dev::DeviceDriver, public RdRobotManager {
+class RdSerialClient : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    RdArduinoClient() : RdRobotManager("default") {}
+    RdSerialClient() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RdArduinoClient.cpp --------
+    // -------- RdRobotManager declarations. Implementation in RdSerialClient.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
