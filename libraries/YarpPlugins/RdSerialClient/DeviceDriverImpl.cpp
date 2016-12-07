@@ -34,6 +34,9 @@ bool RdSerialClient::open(yarp::os::Searchable& config)
     }
     CD_SUCCESS("Ok Serial Port: %p\n",serialPort);
 
+    panJointValue = panInitial;
+    tiltJointValue = tiltInitial;
+
     return true;
 }
 
