@@ -11,7 +11,6 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
-#include <utility>
 #include <SerialStream.h>
 
 #include "ColorDebug.hpp"
