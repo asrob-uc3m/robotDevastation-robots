@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdRobotServer.hpp"
+#include "RobotServer.hpp"
 
 namespace rd
 {
 
-bool RdRobotServer::open(yarp::os::Searchable& config)
+bool RobotServer::open(yarp::os::Searchable& config)
 {
     rpcServer.setReader(*this);
 
@@ -28,7 +28,7 @@ bool RdRobotServer::open(yarp::os::Searchable& config)
         }
     else
         {
-            CD_ERROR("\"--subdevice <name>\" not set in RdRobotServer\n");
+            CD_ERROR("\"--subdevice <name>\" not set in RobotServer\n");
             return false;
         }
     if( ! robotDevice.isValid() )
@@ -46,12 +46,12 @@ bool RdRobotServer::open(yarp::os::Searchable& config)
     if (config.check("name",name))
         rpcServer.open(name->asString()+"/rpc:s");
     else
-        rpcServer.open("/RdRobotServer/rpc:s");
+        rpcServer.open("/RobotServer/rpc:s");
 
     return true;
 }
 
-bool RdRobotServer::close()
+bool RobotServer::close()
 {
     rpcServer.close();
     robotDevice.close();
