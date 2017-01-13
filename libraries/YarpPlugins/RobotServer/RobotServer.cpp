@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdRobotServer.hpp"
+#include "RobotServer.hpp"
 
 namespace rd
 {
 
-bool RdRobotServer::indexWithinRange(const int& idx)
+bool RobotServer::indexWithinRange(const int& idx)
 {
     if (idx >= gpios.size() ){
         CD_WARNING("Index out of range!! (%d >= " CD_SIZE_T ")!!!\n",idx,gpios.size());
@@ -14,7 +14,7 @@ bool RdRobotServer::indexWithinRange(const int& idx)
     return true;
 }
 
-bool RdRobotServer::read(yarp::os::ConnectionReader& connection)
+bool RobotServer::read(yarp::os::ConnectionReader& connection)
 {
     yarp::os::Bottle in, out;
     bool ok = in.read(connection);

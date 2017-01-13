@@ -6,28 +6,28 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(RdTwoPwmMotors
-                    TYPE rd::RdTwoPwmMotors
-                    INCLUDE RdTwoPwmMotors.hpp
-                    WRAPPER RdRobotServer)
+yarp_prepare_device(RaspiOnePwmMotorController
+                    TYPE rd::RaspiOnePwmMotorController
+                    INCLUDE RaspiOnePwmMotorController.hpp
+                    WRAPPER RobotServer)
 
-IF (NOT SKIP_RdTwoPwmMotors)
+IF (NOT SKIP_RaspiOnePwmMotorController)
 
     include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
-    yarp_add_plugin(RdTwoPwmMotors RdTwoPwmMotors.cpp DeviceDriverImpl.cpp )
+    yarp_add_plugin(RaspiOnePwmMotorController RaspiOnePwmMotorController.cpp DeviceDriverImpl.cpp )
 
-    TARGET_LINK_LIBRARIES(RdTwoPwmMotors ${YARP_LIBRARIES})
+    TARGET_LINK_LIBRARIES(RaspiOnePwmMotorController ${YARP_LIBRARIES})
 
-    yarp_install(TARGETS RdTwoPwmMotors
+    yarp_install(TARGETS RaspiOnePwmMotorController
                  EXPORT YARP
                  COMPONENT runtime
                  LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
                  ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR})
 
-    yarp_install(FILES RdTwoPwmMotors.ini
+    yarp_install(FILES RaspiOnePwmMotorController.ini
                  COMPONENT runtime
                  DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
 
-ENDIF (NOT SKIP_RdTwoPwmMotors)
+ENDIF (NOT SKIP_RaspiOnePwmMotorController)
 

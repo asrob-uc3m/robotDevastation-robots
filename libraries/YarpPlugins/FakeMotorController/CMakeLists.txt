@@ -6,28 +6,28 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(RdOnePwmMotors
-                    TYPE rd::RdOnePwmMotors
-                    INCLUDE RdOnePwmMotors.hpp
-                    WRAPPER RdRobotServer)
+yarp_prepare_device(FakeMotorController
+                    TYPE rd::FakeMotorController
+                    INCLUDE FakeMotorController.hpp
+                    WRAPPER RobotServer)
 
-IF (NOT SKIP_RdOnePwmMotors)
+IF (NOT SKIP_FakeMotorController)
 
     include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
-    yarp_add_plugin(RdOnePwmMotors RdOnePwmMotors.cpp DeviceDriverImpl.cpp )
+    yarp_add_plugin(FakeMotorController FakeMotorController.cpp DeviceDriverImpl.cpp )
 
-    TARGET_LINK_LIBRARIES(RdOnePwmMotors ${YARP_LIBRARIES})
+    TARGET_LINK_LIBRARIES(FakeMotorController ${YARP_LIBRARIES})
 
-    yarp_install(TARGETS RdOnePwmMotors
+    yarp_install(TARGETS FakeMotorController
                  EXPORT YARP
                  COMPONENT runtime
                  LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
                  ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR})
 
-    yarp_install(FILES RdOnePwmMotors.ini
+    yarp_install(FILES FakeMotorController.ini
                  COMPONENT runtime
                  DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
 
-ENDIF (NOT SKIP_RdOnePwmMotors)
+ENDIF (NOT SKIP_FakeMotorController)
 

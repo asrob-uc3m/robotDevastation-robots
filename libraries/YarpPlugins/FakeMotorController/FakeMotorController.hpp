@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __LASER_TOWER_OF_DEATH__
-#define __LASER_TOWER_OF_DEATH__
+#ifndef __RD_FAKE_MOTORS__
+#define __RD_FAKE_MOTORS__
 
 #include <yarp/os/all.h>
 #include <yarp/dev/ControlBoardInterfaces.h>
@@ -11,28 +11,24 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
-#include <SerialStream.h>
-
 #include "ColorDebug.hpp"
 
 #include "RdRobotManager.hpp"
-
-#define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
 namespace rd
 {
 
 /**
  * @ingroup YarpPlugins
- * @brief RdSerialClient
+ * @brief FakeMotorController
  */
-class RdSerialClient : public yarp::dev::DeviceDriver, public RdRobotManager {
+class FakeMotorController : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    RdSerialClient() : RdRobotManager("default") {}
+    FakeMotorController() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RdSerialClient.cpp --------
+    // -------- RdRobotManager declarations. Implementation in FakeMotorController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
@@ -91,26 +87,17 @@ public:
 
 private:
 
-    SerialPort * serialPort;
-    bool sendCurrentJointValues();
-    bool checkConnection();
+    /** Check if index is within range (referred to driver vector size).
+     * @param idx index to check.
+     * @return true/false on success/failure.
+     */
+    bool indexWithinRange(const int& idx);
 
-    int panJointValue;
-    int tiltJointValue;
-
-    static const int panRangeMin = 0;
-    static const int panRangeMax = 180;
-    static const int panStep = 10;
-    static const int panInitial = 90;
-
-    static const int tiltRangeMin = 0;
-    static const int tiltRangeMax = 180;
-    static const int tiltStep = 10;
-    static const int tiltInitial = 90;
+    std::vector< int > gpios;
 
 };
 
 }  // namespace rd
 
-#endif  // __LASER_TOWER_OF_DEATH__
+#endif  // __RD_FAKE_MOTORS__
 

@@ -6,28 +6,28 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(RdSerialClient
-                    TYPE rd::RdSerialClient
-                    INCLUDE RdSerialClient.hpp
-                    WRAPPER RdRobotServer)
+yarp_prepare_device(RobotServer
+                    TYPE rd::RobotServer
+                    INCLUDE RobotServer.hpp
+                    WRAPPER RobotServer)
 
-IF (NOT SKIP_RdSerialClient)
+IF (NOT SKIP_RobotServer)
 
     include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
-    yarp_add_plugin(RdSerialClient RdSerialClient.cpp DeviceDriverImpl.cpp )
+    yarp_add_plugin(RobotServer RobotServer.cpp DeviceDriverImpl.cpp )
 
-    TARGET_LINK_LIBRARIES(RdSerialClient ${YARP_LIBRARIES} serial)
+    TARGET_LINK_LIBRARIES(RobotServer ${YARP_LIBRARIES})
 
-    yarp_install(TARGETS RdSerialClient
+    yarp_install(TARGETS RobotServer
                  EXPORT YARP
                  COMPONENT runtime
                  LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
                  ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR})
 
-    yarp_install(FILES RdSerialClient.ini
+    yarp_install(FILES RobotServer.ini
                  COMPONENT runtime
                  DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
 
-ENDIF (NOT SKIP_RdSerialClient)
+ENDIF (NOT SKIP_RobotServer)
 

@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __RD_FAKE_MOTORS__
-#define __RD_FAKE_MOTORS__
+#ifndef __LASER_TOWER_OF_DEATH__
+#define __LASER_TOWER_OF_DEATH__
 
 #include <yarp/os/all.h>
 #include <yarp/dev/ControlBoardInterfaces.h>
@@ -11,24 +11,28 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
+#include <SerialStream.h>
+
 #include "ColorDebug.hpp"
 
 #include "RdRobotManager.hpp"
+
+#define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
 namespace rd
 {
 
 /**
  * @ingroup YarpPlugins
- * @brief RdFakeMotors
+ * @brief LaserTowerOfDeathController
  */
-class RdFakeMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
+class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    RdFakeMotors() : RdRobotManager("default") {}
+    LaserTowerOfDeathController() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RdFakeMotors.cpp --------
+    // -------- RdRobotManager declarations. Implementation in LaserTowerOfDeathController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
@@ -87,17 +91,26 @@ public:
 
 private:
 
-    /** Check if index is within range (referred to driver vector size).
-     * @param idx index to check.
-     * @return true/false on success/failure.
-     */
-    bool indexWithinRange(const int& idx);
+    SerialPort * serialPort;
+    bool sendCurrentJointValues();
+    bool checkConnection();
 
-    std::vector< int > gpios;
+    int panJointValue;
+    int tiltJointValue;
+
+    static const int panRangeMin = 0;
+    static const int panRangeMax = 180;
+    static const int panStep = 10;
+    static const int panInitial = 90;
+
+    static const int tiltRangeMin = 0;
+    static const int tiltRangeMax = 180;
+    static const int tiltStep = 10;
+    static const int tiltInitial = 90;
 
 };
 
 }  // namespace rd
 
-#endif  // __RD_FAKE_MOTORS__
+#endif  // __LASER_TOWER_OF_DEATH__
 

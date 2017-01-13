@@ -32,9 +32,9 @@ namespace rd
 
 /**
  * @ingroup YarpPlugins
- * @brief RdRobotServer
+ * @brief RobotServer
  */
-class RdRobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReader {
+class RobotServer : public yarp::dev::DeviceDriver, public yarp::os::PortReader {
 
 public:
 
@@ -61,7 +61,7 @@ public:
      */
     virtual bool close();
 
-    // -------- PortReader declarations. Implementation in RdRobotServer.cpp --------
+    // -------- PortReader declarations. Implementation in RobotServer.cpp --------
 
     virtual bool read(yarp::os::ConnectionReader& connection);
 

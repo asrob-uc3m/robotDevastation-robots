@@ -6,28 +6,28 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(RdFakeMotors
-                    TYPE rd::RdFakeMotors
-                    INCLUDE RdFakeMotors.hpp
-                    WRAPPER RdRobotServer)
+yarp_prepare_device(LaserTowerOfDeathController
+                    TYPE rd::LaserTowerOfDeathController
+                    INCLUDE LaserTowerOfDeathController.hpp
+                    WRAPPER RobotServer)
 
-IF (NOT SKIP_RdFakeMotors)
+IF (NOT SKIP_LaserTowerOfDeathController)
 
     include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
-    yarp_add_plugin(RdFakeMotors RdFakeMotors.cpp DeviceDriverImpl.cpp )
+    yarp_add_plugin(LaserTowerOfDeathController LaserTowerOfDeathController.cpp DeviceDriverImpl.cpp )
 
-    TARGET_LINK_LIBRARIES(RdFakeMotors ${YARP_LIBRARIES})
+    TARGET_LINK_LIBRARIES(LaserTowerOfDeathController ${YARP_LIBRARIES} serial)
 
-    yarp_install(TARGETS RdFakeMotors
+    yarp_install(TARGETS LaserTowerOfDeathController
                  EXPORT YARP
                  COMPONENT runtime
                  LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
                  ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR})
 
-    yarp_install(FILES RdFakeMotors.ini
+    yarp_install(FILES LaserTowerOfDeathController.ini
                  COMPONENT runtime
                  DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
 
-ENDIF (NOT SKIP_RdFakeMotors)
+ENDIF (NOT SKIP_LaserTowerOfDeathController)
 

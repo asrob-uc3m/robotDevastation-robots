@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdOnePwmMotors.hpp"
+#include "RaspiOnePwmMotorController.hpp"
 
 namespace rd
 {
 
-bool RdOnePwmMotors::indexWithinRange(const int& idx)
+bool RaspiOnePwmMotorController::indexWithinRange(const int& idx)
 {
     if (idx >= gpios.size() ){
         CD_WARNING("Index out of range!! (%d >= " CD_SIZE_T ")!!!\n",idx,gpios.size());
@@ -14,7 +14,7 @@ bool RdOnePwmMotors::indexWithinRange(const int& idx)
     return true;
 }
 
-bool RdOnePwmMotors::moveForward(int velocity)
+bool RaspiOnePwmMotorController::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -27,7 +27,7 @@ bool RdOnePwmMotors::moveForward(int velocity)
     return true;
 }
 
-bool RdOnePwmMotors::moveBackwards(int velocity)
+bool RaspiOnePwmMotorController::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -40,7 +40,7 @@ bool RdOnePwmMotors::moveBackwards(int velocity)
     return true;
 }
 
-bool RdOnePwmMotors::turnLeft(int velocity)
+bool RaspiOnePwmMotorController::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -53,7 +53,7 @@ bool RdOnePwmMotors::turnLeft(int velocity)
     return true;
 }
 
-bool RdOnePwmMotors::turnRight(int velocity)
+bool RaspiOnePwmMotorController::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -66,7 +66,7 @@ bool RdOnePwmMotors::turnRight(int velocity)
     return true;
 }
 
-bool RdOnePwmMotors::stopMovement()
+bool RaspiOnePwmMotorController::stopMovement()
 {
     CD_INFO(".\n");
 
@@ -80,62 +80,62 @@ bool RdOnePwmMotors::stopMovement()
 }
 
 //-- Robot camera related functions
-bool RdOnePwmMotors::tiltUp(int velocity)
+bool RaspiOnePwmMotorController::tiltUp(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdOnePwmMotors::tiltDown(int velocity)
+bool RaspiOnePwmMotorController::tiltDown(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdOnePwmMotors::panLeft(int velocity)
+bool RaspiOnePwmMotorController::panLeft(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdOnePwmMotors::panRight(int velocity)
+bool RaspiOnePwmMotorController::panRight(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdOnePwmMotors::stopCameraMovement()
+bool RaspiOnePwmMotorController::stopCameraMovement()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdOnePwmMotors::connect()
+bool RaspiOnePwmMotorController::connect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
 
-bool RdOnePwmMotors::disconnect()
+bool RaspiOnePwmMotorController::disconnect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdOnePwmMotors::test()
+bool RaspiOnePwmMotorController::test()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-void RdOnePwmMotors::setEnabled(bool enabled)
+void RaspiOnePwmMotorController::setEnabled(bool enabled)
 {
     CD_ERROR("Not implemented yet\n");
     return;
 }
 
-void RdOnePwmMotors::onDestroy()
+void RaspiOnePwmMotorController::onDestroy()
 {
     CD_ERROR("Not implemented yet\n");
     return;

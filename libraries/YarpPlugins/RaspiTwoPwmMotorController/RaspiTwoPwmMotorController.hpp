@@ -22,15 +22,15 @@ namespace rd
 
 /**
  * @ingroup YarpPlugins
- * @brief RdTwoPwmMotors
+ * @brief RaspiTwoPwmMotorController
  */
-class RdTwoPwmMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
+class RaspiTwoPwmMotorController : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    RdTwoPwmMotors() : RdRobotManager("default") {}
+    RaspiTwoPwmMotorController() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RdTwoPwmMotors.cpp --------
+    // -------- RdRobotManager declarations. Implementation in RaspiTwoPwmMotorController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
