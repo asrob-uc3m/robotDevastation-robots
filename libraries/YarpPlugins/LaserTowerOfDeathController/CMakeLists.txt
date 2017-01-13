@@ -9,7 +9,7 @@ find_package(YARP REQUIRED)
 yarp_prepare_device(LaserTowerOfDeathController
                     TYPE rd::LaserTowerOfDeathController
                     INCLUDE LaserTowerOfDeathController.hpp
-                    WRAPPER RdRobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_LaserTowerOfDeathController)
 

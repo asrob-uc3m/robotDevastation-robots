@@ -9,7 +9,7 @@ find_package(YARP REQUIRED)
 yarp_prepare_device(FakeMotorController
                     TYPE rd::FakeMotorController
                     INCLUDE FakeMotorController.hpp
-                    WRAPPER RdRobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_FakeMotorController)
 

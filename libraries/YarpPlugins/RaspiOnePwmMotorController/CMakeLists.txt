@@ -9,7 +9,7 @@ find_package(YARP REQUIRED)
 yarp_prepare_device(RaspiOnePwmMotorController
                     TYPE rd::RaspiOnePwmMotorController
                     INCLUDE RaspiOnePwmMotorController.hpp
-                    WRAPPER RdRobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_RaspiOnePwmMotorController)
 
