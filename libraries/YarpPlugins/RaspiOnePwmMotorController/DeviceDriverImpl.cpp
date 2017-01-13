@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdOnePwmMotors.hpp"
+#include "RaspiOnePwmMotorController.hpp"
 
 namespace rd
 {
 
-bool RdOnePwmMotors::open(yarp::os::Searchable& config)
+bool RaspiOnePwmMotorController::open(yarp::os::Searchable& config)
 {
 
     yarp::os::Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
     printf(BOLDBLUE);
-    printf("RdOnePwmMotors options:\n");
+    printf("RaspiOnePwmMotorController options:\n");
     printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     printf(RESET);
 
@@ -39,7 +39,7 @@ bool RdOnePwmMotors::open(yarp::os::Searchable& config)
     return true;
 }
 
-bool RdOnePwmMotors::close()
+bool RaspiOnePwmMotorController::close()
 {
 
     return true;
