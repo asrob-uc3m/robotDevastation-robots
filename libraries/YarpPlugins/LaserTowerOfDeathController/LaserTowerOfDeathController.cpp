@@ -1,39 +1,39 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdSerialClient.hpp"
+#include "LaserTowerOfDeathController.hpp"
 
 namespace rd
 {
 
-bool RdSerialClient::moveForward(int velocity)
+bool LaserTowerOfDeathController::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdSerialClient::moveBackwards(int velocity)
+bool LaserTowerOfDeathController::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdSerialClient::turnLeft(int velocity)
+bool LaserTowerOfDeathController::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdSerialClient::turnRight(int velocity)
+bool LaserTowerOfDeathController::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
     return true;
 }
 
-bool RdSerialClient::stopMovement()
+bool LaserTowerOfDeathController::stopMovement()
 {
     CD_INFO(".\n");
 
@@ -41,7 +41,7 @@ bool RdSerialClient::stopMovement()
 }
 
 //-- Robot camera related functions
-bool RdSerialClient::tiltUp(int velocity)
+bool LaserTowerOfDeathController::tiltUp(int velocity)
 {
     CD_INFO("\n");
     if (tiltJointValue < tiltRangeMax)
@@ -50,7 +50,7 @@ bool RdSerialClient::tiltUp(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdSerialClient::tiltDown(int velocity)
+bool LaserTowerOfDeathController::tiltDown(int velocity)
 {
     CD_INFO("\n");
     if (  tiltJointValue > tiltRangeMin )
@@ -59,7 +59,7 @@ bool RdSerialClient::tiltDown(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdSerialClient::panLeft(int velocity)
+bool LaserTowerOfDeathController::panLeft(int velocity)
 {
     CD_INFO("\n");
     if (panJointValue < panRangeMax)
@@ -68,7 +68,7 @@ bool RdSerialClient::panLeft(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdSerialClient::panRight(int velocity)
+bool LaserTowerOfDeathController::panRight(int velocity)
 {
     CD_INFO("\n");
     if (  panJointValue > panRangeMin )
@@ -77,44 +77,44 @@ bool RdSerialClient::panRight(int velocity)
     return sendCurrentJointValues();
 }
 
-bool RdSerialClient::stopCameraMovement()
+bool LaserTowerOfDeathController::stopCameraMovement()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdSerialClient::connect()
+bool LaserTowerOfDeathController::connect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
 
-bool RdSerialClient::disconnect()
+bool LaserTowerOfDeathController::disconnect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdSerialClient::test()
+bool LaserTowerOfDeathController::test()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-void RdSerialClient::setEnabled(bool enabled)
+void LaserTowerOfDeathController::setEnabled(bool enabled)
 {
     CD_ERROR("Not implemented yet\n");
     return;
 }
 
-void RdSerialClient::onDestroy()
+void LaserTowerOfDeathController::onDestroy()
 {
     CD_ERROR("Not implemented yet\n");
     return;
 }
 
-bool RdSerialClient::sendCurrentJointValues()
+bool LaserTowerOfDeathController::sendCurrentJointValues()
 {
     if ( serialPort->IsOpen() )
     {
@@ -134,7 +134,7 @@ bool RdSerialClient::sendCurrentJointValues()
     }
 }
 
-bool RdSerialClient::checkConnection()
+bool LaserTowerOfDeathController::checkConnection()
 {
     //-- Read welcome message to check if connected to the robot
     SerialPort::DataBuffer buffer;

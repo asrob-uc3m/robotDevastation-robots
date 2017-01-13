@@ -1,16 +1,16 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdSerialClient.hpp"
+#include "LaserTowerOfDeathController.hpp"
 
 namespace rd
 {
 
-bool RdSerialClient::open(yarp::os::Searchable& config)
+bool LaserTowerOfDeathController::open(yarp::os::Searchable& config)
 {
 
     std::string serialPortName = config.check("serialPortName",yarp::os::Value(DEFAULT_SERIAL_PORT_NAME),"serialPortName").asString();
 
-    printf("RdSerialClient options:\n");
+    printf("LaserTowerOfDeathController options:\n");
     printf("\t--serialPortName %s [%s]\n",serialPortName.c_str(),DEFAULT_SERIAL_PORT_NAME);
 
     CD_DEBUG("init Serial Port.\n");
@@ -40,7 +40,7 @@ bool RdSerialClient::open(yarp::os::Searchable& config)
     return true;
 }
 
-bool RdSerialClient::close()
+bool LaserTowerOfDeathController::close()
 {
     CD_INFO("Close Serial Port: %p\n",serialPort);
     serialPort->Close();

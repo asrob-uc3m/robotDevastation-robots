@@ -24,15 +24,15 @@ namespace rd
 
 /**
  * @ingroup YarpPlugins
- * @brief RdSerialClient
+ * @brief LaserTowerOfDeathController
  */
-class RdSerialClient : public yarp::dev::DeviceDriver, public RdRobotManager {
+class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    RdSerialClient() : RdRobotManager("default") {}
+    LaserTowerOfDeathController() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RdSerialClient.cpp --------
+    // -------- RdRobotManager declarations. Implementation in LaserTowerOfDeathController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
