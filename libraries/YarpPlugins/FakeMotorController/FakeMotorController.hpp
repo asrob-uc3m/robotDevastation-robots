@@ -20,15 +20,15 @@ namespace rd
 
 /**
  * @ingroup YarpPlugins
- * @brief RdFakeMotors
+ * @brief FakeMotorController
  */
-class RdFakeMotors : public yarp::dev::DeviceDriver, public RdRobotManager {
+class FakeMotorController : public yarp::dev::DeviceDriver, public RdRobotManager {
 
 public:
 
-    RdFakeMotors() : RdRobotManager("default") {}
+    FakeMotorController() : RdRobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RdFakeMotors.cpp --------
+    // -------- RdRobotManager declarations. Implementation in FakeMotorController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);

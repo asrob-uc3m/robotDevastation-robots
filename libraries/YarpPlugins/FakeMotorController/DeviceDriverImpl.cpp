@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdFakeMotors.hpp"
+#include "FakeMotorController.hpp"
 
 namespace rd
 {
 
-bool RdFakeMotors::open(yarp::os::Searchable& config)
+bool FakeMotorController::open(yarp::os::Searchable& config)
 {
-    CD_INFO("[RdFakeMotors]\n");
+    CD_INFO("[FakeMotorController]\n");
     return true;
 }
 
-bool RdFakeMotors::close()
+bool FakeMotorController::close()
 {
 
     return true;

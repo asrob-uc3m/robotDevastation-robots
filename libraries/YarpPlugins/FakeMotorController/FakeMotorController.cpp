@@ -1,11 +1,11 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdFakeMotors.hpp"
+#include "FakeMotorController.hpp"
 
 namespace rd
 {
 
-bool RdFakeMotors::indexWithinRange(const int& idx)
+bool FakeMotorController::indexWithinRange(const int& idx)
 {
     if (idx >= gpios.size() ){
         CD_WARNING("Index out of range!! (%d >= " CD_SIZE_T ")!!!\n",idx,gpios.size());
@@ -14,92 +14,92 @@ bool RdFakeMotors::indexWithinRange(const int& idx)
     return true;
 }
 
-bool RdFakeMotors::moveForward(int velocity)
+bool FakeMotorController::moveForward(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::moveBackwards(int velocity)
+bool FakeMotorController::moveBackwards(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::turnLeft(int velocity)
+bool FakeMotorController::turnLeft(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::turnRight(int velocity)
+bool FakeMotorController::turnRight(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::stopMovement()
+bool FakeMotorController::stopMovement()
 {
     CD_INFO("\n");
     return true;
 }
 
-bool RdFakeMotors::tiltUp(int velocity)
+bool FakeMotorController::tiltUp(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::tiltDown(int velocity)
+bool FakeMotorController::tiltDown(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::panLeft(int velocity)
+bool FakeMotorController::panLeft(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::panRight(int velocity)
+bool FakeMotorController::panRight(int velocity)
 {
     CD_INFO("%d.\n",velocity);
     return true;
 }
 
-bool RdFakeMotors::stopCameraMovement()
+bool FakeMotorController::stopCameraMovement()
 {
     CD_INFO("\n");
     return true;
 }
 
-bool RdFakeMotors::connect()
+bool FakeMotorController::connect()
 {
     CD_INFO("\n");
     return true;
 }
 
 
-bool RdFakeMotors::disconnect()
+bool FakeMotorController::disconnect()
 {
     CD_INFO("\n");
     return true;
 }
 
-bool RdFakeMotors::test()
+bool FakeMotorController::test()
 {
     CD_INFO("\n");
     return true;
 }
 
-void RdFakeMotors::setEnabled(bool enabled)
+void FakeMotorController::setEnabled(bool enabled)
 {
     CD_INFO("\n");
     return;
 }
 
-void RdFakeMotors::onDestroy()
+void FakeMotorController::onDestroy()
 {
     CD_INFO("\n");
     return;
