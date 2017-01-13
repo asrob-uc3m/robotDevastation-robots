@@ -7,7 +7,7 @@ list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpPlugin)
 
 option(ENABLE_RobotServer "Enable/disable compilation of RobotServer" TRUE)
-option(ENABLE_FakeMotors "Enable/disable compilation of FakeMotorController" TRUE)
+option(ENABLE_FakeMotorController "Enable/disable compilation of FakeMotorController" TRUE)
 option(ENABLE_LaserTowerOfDeathController "Enable/disable compilation of LaserTowerOfDeathController" TRUE)
 option(ENABLE_EcroWheelController "Enable/disable compilation of EcroWheelController" TRUE)
 option(ENABLE_RaspiOnePwmMotorController "Enable/disable compilation of RaspiOnePwmMotorController" TRUE)
