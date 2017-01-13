@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdTwoPwmMotors.hpp"
+#include "RaspiTwoPwmMotorController.hpp"
 
 namespace rd
 {
 
-bool RdTwoPwmMotors::open(yarp::os::Searchable& config)
+bool RaspiTwoPwmMotorController::open(yarp::os::Searchable& config)
 {
 
     yarp::os::Bottle gpiosBottle = config.findGroup("gpios").tail();  //-- e.g. 17 27
 
     printf(BOLDBLUE);
-    printf("RdTwoPwmMotors options:\n");
+    printf("RaspiTwoPwmMotorController options:\n");
     printf("\t--gpios %s\n",gpiosBottle.toString().c_str());
     printf(RESET);
 
@@ -23,15 +23,15 @@ bool RdTwoPwmMotors::open(yarp::os::Searchable& config)
     if (wiringPiSetup() == -1)
         return false;
 
-    pinMode(RdTwoPwmMotors::LEFT_MOTOR_IN1, OUTPUT);
-    pinMode(RdTwoPwmMotors::LEFT_MOTOR_IN2, OUTPUT);
-    pinMode(RdTwoPwmMotors::RIGHT_MOTOR_IN1, OUTPUT);
-    pinMode(RdTwoPwmMotors::RIGHT_MOTOR_IN2, OUTPUT);
+    pinMode(RaspiTwoPwmMotorController::LEFT_MOTOR_IN1, OUTPUT);
+    pinMode(RaspiTwoPwmMotorController::LEFT_MOTOR_IN2, OUTPUT);
+    pinMode(RaspiTwoPwmMotorController::RIGHT_MOTOR_IN1, OUTPUT);
+    pinMode(RaspiTwoPwmMotorController::RIGHT_MOTOR_IN2, OUTPUT);
 
     return true;
 }
 
-bool RdTwoPwmMotors::close()
+bool RaspiTwoPwmMotorController::close()
 {
 
     return true;

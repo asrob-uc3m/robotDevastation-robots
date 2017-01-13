@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "RdTwoPwmMotors.hpp"
+#include "RaspiTwoPwmMotorController.hpp"
 
 namespace rd
 {
 
-const int RdTwoPwmMotors::LEFT_MOTOR_IN1 = 24;
-const int RdTwoPwmMotors::LEFT_MOTOR_IN2 = 23;
+const int RaspiTwoPwmMotorController::LEFT_MOTOR_IN1 = 24;
+const int RaspiTwoPwmMotorController::LEFT_MOTOR_IN2 = 23;
 
-const int RdTwoPwmMotors::RIGHT_MOTOR_IN1 = 22;
-const int RdTwoPwmMotors::RIGHT_MOTOR_IN2 = 21;
+const int RaspiTwoPwmMotorController::RIGHT_MOTOR_IN1 = 22;
+const int RaspiTwoPwmMotorController::RIGHT_MOTOR_IN2 = 21;
 
-bool RdTwoPwmMotors::indexWithinRange(const int& idx)
+bool RaspiTwoPwmMotorController::indexWithinRange(const int& idx)
 {
     if (idx >= gpios.size() ){
         CD_WARNING("Index out of range!! (%d >= " CD_SIZE_T ")!!!\n",idx,gpios.size());
@@ -21,7 +21,7 @@ bool RdTwoPwmMotors::indexWithinRange(const int& idx)
 }
 
 
-bool RdTwoPwmMotors::moveForward(int velocity)
+bool RaspiTwoPwmMotorController::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -32,7 +32,7 @@ bool RdTwoPwmMotors::moveForward(int velocity)
     return true;
 }
 
-bool RdTwoPwmMotors::moveBackwards(int velocity)
+bool RaspiTwoPwmMotorController::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -44,7 +44,7 @@ bool RdTwoPwmMotors::moveBackwards(int velocity)
     return true;
 }
 
-bool RdTwoPwmMotors::turnLeft(int velocity)
+bool RaspiTwoPwmMotorController::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -56,7 +56,7 @@ bool RdTwoPwmMotors::turnLeft(int velocity)
     return true;
 }
 
-bool RdTwoPwmMotors::turnRight(int velocity)
+bool RaspiTwoPwmMotorController::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
@@ -68,7 +68,7 @@ bool RdTwoPwmMotors::turnRight(int velocity)
     return true;
 }
 
-bool RdTwoPwmMotors::stopMovement()
+bool RaspiTwoPwmMotorController::stopMovement()
 {
     CD_INFO(".\n");
 
@@ -81,62 +81,62 @@ bool RdTwoPwmMotors::stopMovement()
 }
 
 //-- Robot camera related functions
-bool RdTwoPwmMotors::tiltUp(int velocity)
+bool RaspiTwoPwmMotorController::tiltUp(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdTwoPwmMotors::tiltDown(int velocity)
+bool RaspiTwoPwmMotorController::tiltDown(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdTwoPwmMotors::panLeft(int velocity)
+bool RaspiTwoPwmMotorController::panLeft(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdTwoPwmMotors::panRight(int velocity)
+bool RaspiTwoPwmMotorController::panRight(int velocity)
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdTwoPwmMotors::stopCameraMovement()
+bool RaspiTwoPwmMotorController::stopCameraMovement()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdTwoPwmMotors::connect()
+bool RaspiTwoPwmMotorController::connect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
 
-bool RdTwoPwmMotors::disconnect()
+bool RaspiTwoPwmMotorController::disconnect()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-bool RdTwoPwmMotors::test()
+bool RaspiTwoPwmMotorController::test()
 {
     CD_ERROR("Not implemented yet\n");
     return false;
 }
 
-void RdTwoPwmMotors::setEnabled(bool enabled)
+void RaspiTwoPwmMotorController::setEnabled(bool enabled)
 {
     CD_ERROR("Not implemented yet\n");
     return;
 }
 
-void RdTwoPwmMotors::onDestroy()
+void RaspiTwoPwmMotorController::onDestroy()
 {
     CD_ERROR("Not implemented yet\n");
     return;
