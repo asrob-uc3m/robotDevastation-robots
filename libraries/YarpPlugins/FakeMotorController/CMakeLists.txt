@@ -10,7 +10,7 @@ yarp_prepare_plugin(FakeMotorController
                     CATEGORY device
                     TYPE rd::FakeMotorController
                     INCLUDE FakeMotorController.hpp
-                    WRAPPER RobotServer)
+                    EXTRA_CONFIG WRAPPER=RobotServer)
 
 IF (NOT SKIP_FakeMotorController)
 
