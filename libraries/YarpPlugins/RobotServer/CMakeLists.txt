@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(RobotServer
+yarp_prepare_plugin(RobotServer
+                    CATEGORY device
                     TYPE rd::RobotServer
                     INCLUDE RobotServer.hpp
                     WRAPPER RobotServer)

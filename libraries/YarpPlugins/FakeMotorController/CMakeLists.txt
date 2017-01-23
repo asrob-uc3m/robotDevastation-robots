@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(FakeMotorController
+yarp_prepare_plugin(FakeMotorController
+                    CATEGORY device
                     TYPE rd::FakeMotorController
                     INCLUDE FakeMotorController.hpp
                     WRAPPER RobotServer)

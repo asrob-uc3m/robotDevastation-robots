@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(EcroWheelController
+yarp_prepare_plugin(EcroWheelController
+                    CATEGORY device
                     TYPE rd::EcroWheelController
                     INCLUDE EcroWheelController.hpp
                     WRAPPER RobotServer)

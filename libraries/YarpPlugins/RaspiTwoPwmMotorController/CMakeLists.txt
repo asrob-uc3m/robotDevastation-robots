@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(YARP REQUIRED)
 
-yarp_prepare_device(RaspiTwoPwmMotorController
+yarp_prepare_plugin(RaspiTwoPwmMotorController
+                    CATEGORY device
                     TYPE rd::RaspiTwoPwmMotorController
                     INCLUDE RaspiTwoPwmMotorController.hpp
                     WRAPPER RobotServer)
