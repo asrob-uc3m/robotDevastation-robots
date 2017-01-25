@@ -14,7 +14,7 @@ yarp_prepare_plugin(EcroWheelController
 
 IF (NOT SKIP_EcroWheelController)
 
-    include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
+    include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
     yarp_add_plugin(EcroWheelController EcroWheelController.cpp DeviceDriverImpl.cpp )
 

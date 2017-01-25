@@ -14,7 +14,7 @@ yarp_prepare_plugin(RobotServer
 
 IF (NOT SKIP_RobotServer)
 
-    include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
+    include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
     yarp_add_plugin(RobotServer RobotServer.cpp DeviceDriverImpl.cpp )
 
@@ -29,6 +29,7 @@ IF (NOT SKIP_RobotServer)
     yarp_install(FILES RobotServer.ini
                  COMPONENT runtime
                  DESTINATION ${YARP_PLUGIN_MANIFESTS_INSTALL_DIR})
+
 
 ENDIF (NOT SKIP_RobotServer)
 

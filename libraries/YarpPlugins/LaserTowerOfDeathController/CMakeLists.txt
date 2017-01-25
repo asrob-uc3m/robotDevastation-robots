@@ -14,7 +14,7 @@ yarp_prepare_plugin(LaserTowerOfDeathController
 
 IF (NOT SKIP_LaserTowerOfDeathController)
 
-    include_directories( ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
+    include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
     yarp_add_plugin(LaserTowerOfDeathController LaserTowerOfDeathController.cpp DeviceDriverImpl.cpp )
 
