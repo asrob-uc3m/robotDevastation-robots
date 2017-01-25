@@ -13,23 +13,6 @@ option(ENABLE_EcroWheelController "Enable/disable compilation of EcroWheelContro
 option(ENABLE_RaspiOnePwmMotorController "Enable/disable compilation of RaspiOnePwmMotorController" TRUE)
 option(ENABLE_RaspiTwoPwmMotorController "Enable/disable compilation of RaspiTwoPwmMotorController" TRUE)
 
-### macros
-MACRO(SUBDIRLIST result curdir)
-  FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
-  SET(dirlist "")
-  FOREACH(child ${children})
-    IF(IS_DIRECTORY ${curdir}/${child})
-        SET(dirlist ${dirlist} ${child})
-    ENDIF()
-  ENDFOREACH()
-  SET(${result} ${dirlist})
-ENDMACRO()
-
-SUBDIRLIST(SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR})
-FOREACH(subdir ${SUBDIRS})
-    set(ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/${subdir} CACHE INTERNAL "appended header dirs")
-ENDFOREACH()
-
 #yarp_begin_plugin_library(YarpPlugins)
 add_subdirectory(RobotServer)
 add_subdirectory(FakeMotorController)
