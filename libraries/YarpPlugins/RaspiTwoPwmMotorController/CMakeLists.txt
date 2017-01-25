@@ -10,7 +10,7 @@ yarp_prepare_plugin(RaspiTwoPwmMotorController
                     CATEGORY device
                     TYPE rd::RaspiTwoPwmMotorController
                     INCLUDE RaspiTwoPwmMotorController.hpp
-                    EXTRA_CONFIG WRAPPER=RobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_RaspiTwoPwmMotorController)
 

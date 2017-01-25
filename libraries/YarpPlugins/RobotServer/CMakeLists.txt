@@ -10,7 +10,7 @@ yarp_prepare_plugin(RobotServer
                     CATEGORY device
                     TYPE rd::RobotServer
                     INCLUDE RobotServer.hpp
-                    EXTRA_CONFIG WRAPPER=RobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_RobotServer)
 

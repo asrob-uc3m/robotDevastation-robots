@@ -10,7 +10,7 @@ yarp_prepare_plugin(LaserTowerOfDeathController
                     CATEGORY device
                     TYPE rd::LaserTowerOfDeathController
                     INCLUDE LaserTowerOfDeathController.hpp
-                    EXTRA_CONFIG WRAPPER=RobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_LaserTowerOfDeathController)
 

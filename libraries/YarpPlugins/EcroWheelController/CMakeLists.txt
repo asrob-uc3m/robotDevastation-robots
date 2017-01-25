@@ -10,7 +10,7 @@ yarp_prepare_plugin(EcroWheelController
                     CATEGORY device
                     TYPE rd::EcroWheelController
                     INCLUDE EcroWheelController.hpp
-                    EXTRA_CONFIG WRAPPER=RobotServer)
+                    WRAPPER RobotServer)
 
 IF (NOT SKIP_EcroWheelController)
 
