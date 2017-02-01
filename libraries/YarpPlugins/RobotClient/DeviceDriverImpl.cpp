@@ -7,15 +7,18 @@ namespace rd
 
 bool RobotClient::open(yarp::os::Searchable& config)
 {
+    if ( config.check("name") )
+    {
+        robotName = config.find("name").asString();
+    }
 
-    std::string local_s("/robotDevastation/");
+    std::string local_s("/robotDevastation");
     local_s += robotName;
     local_s += "/rpc:c";
 
-    rpcClient.open(local_s);  //-- Default should look like "/robotDevastation/rd1/rpc:c"
+    rpcClient.open(local_s);  //-- Default should look like "/......./rpc:c"
 
-    std::string remote_s("/");
-    remote_s += robotName;
+    std::string remote_s(robotName);
     remote_s += "/rpc:s";
 
     int tries = 0;
@@ -23,7 +26,7 @@ bool RobotClient::open(yarp::os::Searchable& config)
     {
         yarp::os::Network::connect(local_s,remote_s);
         if( rpcClient.getOutputCount() > 0) break;
-        CD_DEBUG("Wait to connect to remote robot, try %d...\n",tries);
+        CD_DEBUG("Wait to connect to remote robot '%s', try %d...\n",remote_s.c_str(),tries);
         yarp::os::Time::delay(0.5);
     }
 

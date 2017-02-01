@@ -81,12 +81,12 @@ public:
     virtual bool stopCameraMovement();
 
     //-- Robot connection related functions
-    virtual bool connect();
-    virtual bool disconnect();
-    virtual bool test();
-    virtual void setEnabled(bool enabled);
+    virtual bool connect() { return true; }
+    virtual bool disconnect() { return true; }
+    virtual bool test() {}
+    virtual void setEnabled(bool enabled) {}
 
-    virtual void onDestroy();
+    virtual void onDestroy() {}
 
 // ------------------------------- Private -------------------------------------
 
