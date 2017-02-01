@@ -34,7 +34,8 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief RobotClient
  */
-class RobotClient : public yarp::dev::DeviceDriver, public yarp::os::PortReader {
+class RobotClient : public yarp::dev::DeviceDriver
+{
 
 public:
 
@@ -61,9 +62,21 @@ public:
      */
     virtual bool close();
 
-    // -------- PortReader declarations. Implementation in RobotClient.cpp --------
+    // -------- Implementation in RobotClient.cpp --------
 
-    virtual bool read(yarp::os::ConnectionReader& connection);
+    //-- Robot movement related functions
+    virtual bool moveForward(int velocity = UNUSED);
+    virtual bool moveBackwards(int velocity = UNUSED);
+    virtual bool turnLeft(int velocity = UNUSED);
+    virtual bool turnRight(int velocity = UNUSED);
+    virtual bool stopMovement();
+
+    //-- Robot camera related functions
+    virtual bool tiltUp(int velocity = UNUSED);
+    virtual bool tiltDown(int velocity = UNUSED);
+    virtual bool panLeft(int velocity = UNUSED);
+    virtual bool panRight(int velocity = UNUSED);
+    virtual bool stopCameraMovement();
 
 
 // ------------------------------- Private -------------------------------------
@@ -80,7 +93,10 @@ private:
 
     static const int UNUSED = -1;
 
-    yarp::os::RpcServer rpcServer;
+    yarp::os::RpcClient rpcClient;
+
+    bool send1vocab1int(int vocab, int integer);
+    bool send1vocab(int vocab);
 
     yarp::dev::PolyDriver robotDevice;
     RdRobotManager* iRdRobot;
@@ -90,4 +106,3 @@ private:
 }  // namespace rd
 
 #endif  // __RD_ROBOT_CLIENT__
-
