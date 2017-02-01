@@ -24,12 +24,14 @@
 /* Parse the header file to generate wrappers */
 %include "RdRobotManager.hpp"
 
-/*%extend ColorClient {
-	int size() {
-		int buffer;
-		bool ok = self->size(buffer);
-		if (!ok) return 0;
-		return buffer;
-	}
-}*/
+%{
+#include <yarp/dev/all.h>
+rd::RdRobotManager *viewRdRobotManager(yarp::dev::PolyDriver& d)
+{
+    rd::RdRobotManager *result;
+    d.view(result);
+    return result;
+}
+%}
+extern rd::RdRobotManager *viewRdRobotManager(yarp::dev::PolyDriver& d);
 
