@@ -18,6 +18,24 @@ bool RobotClient::open(yarp::os::Searchable& config)
     remote_s += robotName;
     remote_s += "/rpc:s";
 
+    int tries = 0;
+    while(tries++ < 10)
+    {
+        yarp::os::Network::connect(local_s,remote_s);
+        if( rpcClient.getOutputCount() > 0) break;
+        CD_DEBUG("Wait to connect to remote robot, try %d...\n",tries);
+        yarp::os::Time::delay(0.5);
+    }
+
+    if (tries == 11)
+    {
+        CD_ERROR("Timeout on connect to remote robot!\n");
+        CD_INFO("If you prefer a fake robot use the '--mockupRobotManager' parameter to run robotDevastation.\n");
+        return false;
+    }
+
+    CD_SUCCESS("Connected to remote robot.\n");
+
     return true;
 }
 
