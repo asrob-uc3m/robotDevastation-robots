@@ -34,10 +34,12 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief RobotClient
  */
-class RobotClient : public yarp::dev::DeviceDriver
+class RobotClient : public yarp::dev::DeviceDriver, public RdRobotManager
 {
 
 public:
+
+    RobotClient();
 
     // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
@@ -78,6 +80,13 @@ public:
     virtual bool panRight(int velocity = UNUSED);
     virtual bool stopCameraMovement();
 
+    //-- Robot connection related functions
+    virtual bool connect();
+    virtual bool disconnect();
+    virtual bool test();
+    virtual void setEnabled(bool enabled);
+
+    virtual void onDestroy();
 
 // ------------------------------- Private -------------------------------------
 

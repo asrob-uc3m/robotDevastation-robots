@@ -5,6 +5,10 @@
 namespace rd
 {
 
+RobotClient::RobotClient() : RdRobotManager("null")
+{
+}
+
 bool RobotClient::indexWithinRange(const int& idx)
 {
     if (idx >= gpios.size() ){
@@ -13,6 +17,7 @@ bool RobotClient::indexWithinRange(const int& idx)
     }
     return true;
 }
+
 
 }  // namespace rd
 

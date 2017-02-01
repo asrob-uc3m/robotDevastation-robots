@@ -8,6 +8,15 @@ namespace rd
 bool RobotClient::open(yarp::os::Searchable& config)
 {
 
+    std::string local_s("/robotDevastation/");
+    local_s += robotName;
+    local_s += "/rpc:c";
+
+    rpcClient.open(local_s);  //-- Default should look like "/robotDevastation/rd1/rpc:c"
+
+    std::string remote_s("/");
+    remote_s += robotName;
+    remote_s += "/rpc:s";
 
     return true;
 }
