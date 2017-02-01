@@ -93,10 +93,6 @@ private:
 
     SerialPort * serialPort;
     bool sendCurrentJointValues();
-    bool checkConnection();
-
-    int panJointValue;
-    int tiltJointValue;
 
     static const int panRangeMin = 0;
     static const int panRangeMax = 180;

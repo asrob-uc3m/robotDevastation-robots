@@ -9,6 +9,8 @@ bool EcroWheelController::moveForward(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
+    sendCurrentJointValues();
+
     return true;
 }
 
@@ -44,37 +46,29 @@ bool EcroWheelController::stopMovement()
 bool EcroWheelController::tiltUp(int velocity)
 {
     CD_INFO("\n");
-    if (tiltJointValue < tiltRangeMax)
-        tiltJointValue+=tiltStep;
 
-    return sendCurrentJointValues();
+    return true;
 }
 
 bool EcroWheelController::tiltDown(int velocity)
 {
     CD_INFO("\n");
-    if (  tiltJointValue > tiltRangeMin )
-        tiltJointValue-=tiltStep;
 
-    return sendCurrentJointValues();
+    return true;
 }
 
 bool EcroWheelController::panLeft(int velocity)
 {
     CD_INFO("\n");
-    if (panJointValue < panRangeMax)
-        panJointValue+=panStep;
 
-    return sendCurrentJointValues();
+    return true;
 }
 
 bool EcroWheelController::panRight(int velocity)
 {
     CD_INFO("\n");
-    if (  panJointValue > panRangeMin )
-        panJointValue-=panStep;
 
-    return sendCurrentJointValues();
+    return true;
 }
 
 bool EcroWheelController::stopCameraMovement()
@@ -119,11 +113,40 @@ bool EcroWheelController::sendCurrentJointValues()
     if ( serialPort->IsOpen() )
     {
         SerialPort::DataBuffer outputBuff;
-        outputBuff.push_back(0x50); //-- 0x50 -> Set pos to all joints
-
-        outputBuff.push_back( (char) panJointValue );
-        outputBuff.push_back( (char) tiltJointValue );
+        outputBuff.push_back(0x32);  //-- clean
         serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.5);
+
+        int16_t positions1 = 126;
+
+        outputBuff.clear();
+        outputBuff.push_back(0x28);  // Wheel 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.5);
+
+        outputBuff.clear();
+        outputBuff.push_back(0x20);  // Wheel 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        /*int8_t positions1_high = positions1;
+        positions1 <<= 8;
+        int8_t positions1_low = positions1;
+        printf("2 bytes: 0x%x\n",positions1);
+        printf("high byte: 0x%x\n",positions1_high);
+        printf("low byte: 0x%x\n",positions1_low);*/
+
+        outputBuff.clear();
+        outputBuff.push_back(0x02);  // Wheel 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(0x01);  // Wheel 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        printf("high byte\n");
 
         return true;
     }
@@ -132,32 +155,6 @@ bool EcroWheelController::sendCurrentJointValues()
         CD_WARNING("Robot could not send joints (because it is not connected).\n");
         return false;
     }
-}
-
-bool EcroWheelController::checkConnection()
-{
-    //-- Read welcome message to check if connected to the robot
-    SerialPort::DataBuffer buffer;
-    try {
-        serialPort->Read( buffer, 13, 1500);
-    }
-    catch ( SerialPort::ReadTimeout e)
-    {
-        std::cout << "Timeout! Exiting..." << std::endl;
-        return false;
-    }
-
-    //-- Check if connected
-    std::string welcomeMessage = "[Debug] Ok!\r\n";
-    bool diffFlag = false;
-
-    for (int i = 0; i < (int) buffer.size(); i++)
-    {
-        if ( welcomeMessage[i] != buffer[i] )
-            diffFlag = true;
-    }
-
-    return !diffFlag;
 }
 
 }  // namespace rd

@@ -17,7 +17,7 @@ bool EcroWheelController::open(yarp::os::Searchable& config)
     serialPort = new SerialPort( serialPortName );  // "/dev/ttyUSB0"
     try
     {
-        serialPort->Open( SerialPort::BAUD_57600, SerialPort::CHAR_SIZE_8,
+        serialPort->Open( SerialPort::BAUD_19200, SerialPort::CHAR_SIZE_8,
                            SerialPort::PARITY_NONE, SerialPort::STOP_BITS_1,
                            SerialPort::FLOW_CONTROL_NONE );
     }
@@ -26,16 +26,6 @@ bool EcroWheelController::open(yarp::os::Searchable& config)
         CD_ERROR("Error opening the serial port: %s\n", serialPortName.c_str());
         return false;
     }
-
-    if ( ! checkConnection() )
-    {
-        CD_ERROR("Error communicating with the robot. Exiting...\n");
-        return false;
-    }
-    CD_SUCCESS("Ok Serial Port: %p\n",serialPort);
-
-    panJointValue = panInitial;
-    tiltJointValue = tiltInitial;
 
     return true;
 }
