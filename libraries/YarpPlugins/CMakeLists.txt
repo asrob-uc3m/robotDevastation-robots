@@ -6,6 +6,7 @@ include_directories(${YARP_INCLUDE_DIRS})
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 include(YarpPlugin)
 
+option(ENABLE_RobotClient "Enable/disable compilation of RobotClient" TRUE)
 option(ENABLE_RobotServer "Enable/disable compilation of RobotServer" TRUE)
 option(ENABLE_FakeMotorController "Enable/disable compilation of FakeMotorController" TRUE)
 option(ENABLE_LaserTowerOfDeathController "Enable/disable compilation of LaserTowerOfDeathController" TRUE)
@@ -14,6 +15,7 @@ option(ENABLE_RaspiOnePwmMotorController "Enable/disable compilation of RaspiOne
 option(ENABLE_RaspiTwoPwmMotorController "Enable/disable compilation of RaspiTwoPwmMotorController" TRUE)
 
 #yarp_begin_plugin_library(YarpPlugins)
+add_subdirectory(RobotClient)
 add_subdirectory(RobotServer)
 add_subdirectory(FakeMotorController)
 add_subdirectory(LaserTowerOfDeathController)
