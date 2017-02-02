@@ -13,7 +13,7 @@
 #define N_SERVOS 2
 #define BAUD_RATE 57600
 
-static const uint8_t pin_map[N_SERVOS] = { 9, 10 };
+static const uint8_t pin_map[N_SERVOS] = { 6, 9 };
 static const uint8_t initial_pos[N_SERVOS] = { 90, 90 };
 
 #define LED_PIN 13
