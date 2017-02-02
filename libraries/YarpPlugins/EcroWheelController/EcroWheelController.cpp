@@ -28,14 +28,15 @@ bool EcroWheelController::moveForward(int velocity)
         printf("low byte: 0x%x\n",positions1_low);
 
         outputBuff.clear();
-        outputBuff.push_back(positions1_high);  // 0x01
+        outputBuff.push_back(positions1_low);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
         outputBuff.clear();
-        outputBuff.push_back(positions1_low);  // 0x01
+        outputBuff.push_back(positions1_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
+
 
         printf("high byte\n");
 
@@ -73,14 +74,15 @@ bool EcroWheelController::moveBackwards(int velocity)
         printf("low byte: 0x%x\n",positions1_low);
 
         outputBuff.clear();
-        outputBuff.push_back(positions1_high);  // 0x01
+        outputBuff.push_back(positions1_low);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
         outputBuff.clear();
-        outputBuff.push_back(positions1_low);  // 0x01
+        outputBuff.push_back(positions1_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
+
 
         printf("high byte\n");
 
@@ -117,12 +119,13 @@ bool EcroWheelController::turnLeft(int velocity)
         printf("low byte: 0x%x\n",positions1_low);
 
         outputBuff.clear();
-        outputBuff.push_back(positions1_high);  // 0x01
+        outputBuff.push_back(positions1_low);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
+
         outputBuff.clear();
-        outputBuff.push_back(positions1_low);  // 0x01
+        outputBuff.push_back(positions1_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
@@ -137,13 +140,13 @@ bool EcroWheelController::turnLeft(int velocity)
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
-        outputBuff.clear();
-        outputBuff.push_back(positions2_high);  // 0x01
-        serialPort->Write( outputBuff );
-        yarp::os::Time::delay(0.05);
 
         outputBuff.clear();
         outputBuff.push_back(positions2_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+        outputBuff.clear();
+        outputBuff.push_back(positions2_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
@@ -181,13 +184,13 @@ bool EcroWheelController::turnRight(int velocity)
         printf("high byte: 0x%x\n",positions1_high);
         printf("low byte: 0x%x\n",positions1_low);
 
-        outputBuff.clear();
-        outputBuff.push_back(positions1_high);  // 0x01
-        serialPort->Write( outputBuff );
-        yarp::os::Time::delay(0.05);
 
         outputBuff.clear();
         outputBuff.push_back(positions1_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+        outputBuff.clear();
+        outputBuff.push_back(positions1_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
@@ -202,13 +205,14 @@ bool EcroWheelController::turnRight(int velocity)
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
+
         outputBuff.clear();
-        outputBuff.push_back(positions2_high);  // 0x01
+        outputBuff.push_back(positions2_low);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
         outputBuff.clear();
-        outputBuff.push_back(positions2_low);  // 0x01
+        outputBuff.push_back(positions2_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
@@ -228,6 +232,25 @@ bool EcroWheelController::turnRight(int velocity)
 bool EcroWheelController::stopMovement()
 {
     CD_INFO(".\n");
+
+    if ( serialPort->IsOpen() )
+    {
+        SerialPort::DataBuffer outputBuff;
+        outputBuff.push_back(0x32);  // Invert motor 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.5);
+
+        outputBuff.clear();
+        outputBuff.push_back(0x28);  // Este ambos, 29 limpiaria 1, 30 el 2 ?
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.5);
+
+    }
+    else
+    {
+        CD_WARNING("Robot could not revert wheel command (because it is not connected).\n");
+        return false;
+    }
 
     return true;
 }
