@@ -32,7 +32,13 @@ bool EcroWheelController::open(yarp::os::Searchable& config)
         SerialPort::DataBuffer outputBuff;
         outputBuff.push_back(0x32);  //-- clean
         serialPort->Write( outputBuff );
-        //yarp::os::Time::delay(0.5);
+        yarp::os::Time::delay(0.5);
+
+        outputBuff.clear();
+        outputBuff.push_back(0x28);  // Wheel 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.5);
+
     }
     else
     {
