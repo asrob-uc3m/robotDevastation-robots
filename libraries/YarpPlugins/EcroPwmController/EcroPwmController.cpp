@@ -8,8 +8,12 @@ namespace rd
 bool EcroPwmController::moveForward(int velocity)
 {
     CD_INFO("\n");
-    if (tiltJointValue < tiltRangeMax)
-        tiltJointValue+=tiltStep;
+    if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
+        velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
+    {
+        rightMotorVelocity = 90+velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = 90+velocity;
+    }
 
     return sendCurrentJointValues();
 }
@@ -17,16 +21,26 @@ bool EcroPwmController::moveForward(int velocity)
 bool EcroPwmController::moveBackwards(int velocity)
 {
     CD_INFO("\n");
-    if (  tiltJointValue > tiltRangeMin )
-        tiltJointValue-=tiltStep;
+    if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
+        velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
+    {
+        rightMotorVelocity = 90-velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = 90-velocity;
+    }
+
 
     return sendCurrentJointValues();
 }
 
 bool EcroPwmController::turnLeft(int velocity)
-{    CD_INFO("\n");
-     if (panJointValue < panRangeMax)
-         panJointValue+=panStep;
+{
+    CD_INFO("\n");
+    if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
+        velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
+    {
+        rightMotorVelocity = 90+velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = 90-velocity;
+    }
 
      return sendCurrentJointValues();
 }
@@ -34,8 +48,12 @@ bool EcroPwmController::turnLeft(int velocity)
 bool EcroPwmController::turnRight(int velocity)
 {
     CD_INFO("\n");
-    if (  panJointValue > panRangeMin )
-        panJointValue-=panStep;
+    if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
+        velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
+    {
+        rightMotorVelocity = 90-velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = 90+velocity;
+    }
 
     return sendCurrentJointValues();
 }
@@ -43,8 +61,8 @@ bool EcroPwmController::turnRight(int velocity)
 bool EcroPwmController::stopMovement()
 {
     CD_INFO("\n");
-    panJointValue=0;
-    tiltJointValue=0;
+    rightMotorVelocity = 90; //-- 90º angle is 0 speed in driver
+    leftMotorVelocity = 90;
 
     return sendCurrentJointValues();
 }
@@ -122,8 +140,8 @@ bool EcroPwmController::sendCurrentJointValues()
         SerialPort::DataBuffer outputBuff;
         outputBuff.push_back(0x50); //-- 0x50 -> Set pos to all joints
 
-        outputBuff.push_back( (char) panJointValue );
-        outputBuff.push_back( (char) tiltJointValue );
+        outputBuff.push_back( (char) leftMotorVelocity );
+        outputBuff.push_back( (char) rightMotorVelocity );
         serialPort->Write( outputBuff );
 
         return true;

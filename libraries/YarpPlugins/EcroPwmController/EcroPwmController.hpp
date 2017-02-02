@@ -95,18 +95,16 @@ private:
     bool sendCurrentJointValues();
     bool checkConnection();
 
-    int panJointValue;
-    int tiltJointValue;
+    int leftMotorVelocity;
+    int rightMotorVelocity;
 
-    static const int panRangeMin = 0;
-    static const int panRangeMax = 180;
-    static const int panStep = 10;
-    static const int panInitial = 90;
+    static const int leftMotorRangeMin = 0;
+    static const int leftMotorRangeMax = 90;
+    static const int leftMotorInitial = 0;
 
-    static const int tiltRangeMin = 0;
-    static const int tiltRangeMax = 180;
-    static const int tiltStep = 10;
-    static const int tiltInitial = 90;
+    static const int rightMotorRangeMin = 0;
+    static const int rightMotorRangeMax = 90;
+    static const int rightMotorInitial = 0;
 
 };
 

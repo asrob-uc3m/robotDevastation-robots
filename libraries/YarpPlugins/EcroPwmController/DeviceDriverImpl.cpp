@@ -34,8 +34,8 @@ bool EcroPwmController::open(yarp::os::Searchable& config)
     }
     CD_SUCCESS("Ok Serial Port: %p\n",serialPort);
 
-    panJointValue = panInitial;
-    tiltJointValue = tiltInitial;
+    leftMotorVelocity = panInitial;
+    rightMotorVelocity = rightMotorInitial;
 
     return true;
 }
