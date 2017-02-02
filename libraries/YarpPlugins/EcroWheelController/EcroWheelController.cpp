@@ -28,12 +28,12 @@ bool EcroWheelController::moveForward(int velocity)
         printf("low byte: 0x%x\n",positions1_low);
 
         outputBuff.clear();
-        outputBuff.push_back(0x02);  //
+        outputBuff.push_back(positions1_high);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
         outputBuff.clear();
-        outputBuff.push_back(0x01);  //
+        outputBuff.push_back(positions1_low);  // 0x01
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.05);
 
@@ -54,6 +54,44 @@ bool EcroWheelController::moveBackwards(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
+    if ( serialPort->IsOpen() )
+    {
+
+        SerialPort::DataBuffer outputBuff;
+
+        outputBuff.push_back(0x20);  // Both Wheels
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        int16_t positions1 = -velocity;
+        int8_t positions1_high = positions1;
+        positions1 <<= 8;
+        int8_t positions1_low = positions1;
+
+        printf("2 bytes: 0x%x\n",positions1);
+        printf("high byte: 0x%x\n",positions1_high);
+        printf("low byte: 0x%x\n",positions1_low);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions1_high);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions1_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        printf("high byte\n");
+
+        return true;
+    }
+    else
+    {
+        CD_WARNING("Robot could not send joints (because it is not connected).\n");
+        return false;
+    }
+
     return true;
 }
 
@@ -61,12 +99,128 @@ bool EcroWheelController::turnLeft(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
 
+    if ( serialPort->IsOpen() )
+    {
+
+        SerialPort::DataBuffer outputBuff;
+        outputBuff.push_back(0x21);  // Wheels 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        int16_t positions1 = velocity;
+        int8_t positions1_high = positions1;
+        positions1 <<= 8;
+        int8_t positions1_low = positions1;
+
+        printf("2 bytes: 0x%x\n",positions1);
+        printf("high byte: 0x%x\n",positions1_high);
+        printf("low byte: 0x%x\n",positions1_low);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions1_high);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions1_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        int16_t positions2 = -velocity;
+        int8_t positions2_high = positions2;
+        positions2 <<= 8;
+        int8_t positions2_low = positions2;
+
+
+        outputBuff.clear();
+        outputBuff.push_back(0x22);  // Wheel2
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions2_high);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions2_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        printf("high byte\n");
+
+        return true;
+    }
+    else
+    {
+        CD_WARNING("Robot could not send joints (because it is not connected).\n");
+        return false;
+    }
+
     return true;
 }
 
 bool EcroWheelController::turnRight(int velocity)
 {
     CD_INFO("(%d).\n",velocity);
+
+    if ( serialPort->IsOpen() )
+    {
+
+        SerialPort::DataBuffer outputBuff;
+        outputBuff.push_back(0x21);  // Wheels 1
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        int16_t positions1 = -velocity;
+        int8_t positions1_high = positions1;
+        positions1 <<= 8;
+        int8_t positions1_low = positions1;
+
+        printf("2 bytes: 0x%x\n",positions1);
+        printf("high byte: 0x%x\n",positions1_high);
+        printf("low byte: 0x%x\n",positions1_low);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions1_high);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions1_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        int16_t positions2 = velocity;
+        int8_t positions2_high = positions2;
+        positions2 <<= 8;
+        int8_t positions2_low = positions2;
+
+
+        outputBuff.clear();
+        outputBuff.push_back(0x22);  // Wheel2
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions2_high);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        outputBuff.clear();
+        outputBuff.push_back(positions2_low);  // 0x01
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.05);
+
+        printf("high byte\n");
+
+        return true;
+    }
+    else
+    {
+        CD_WARNING("Robot could not send joints (because it is not connected).\n");
+        return false;
+    }
 
     return true;
 }
