@@ -27,6 +27,19 @@ bool EcroWheelController::open(yarp::os::Searchable& config)
         return false;
     }
 
+    if ( serialPort->IsOpen() )
+    {
+        SerialPort::DataBuffer outputBuff;
+        outputBuff.push_back(0x32);  //-- clean
+        serialPort->Write( outputBuff );
+        //yarp::os::Time::delay(0.5);
+    }
+    else
+    {
+        CD_WARNING("Robot could not revert wheel command (because it is not connected).\n");
+        return false;
+    }
+
     return true;
 }
 

@@ -112,14 +112,10 @@ bool EcroWheelController::sendCurrentJointValues()
 {
     if ( serialPort->IsOpen() )
     {
-        SerialPort::DataBuffer outputBuff;
-        outputBuff.push_back(0x32);  //-- clean
-        serialPort->Write( outputBuff );
-        yarp::os::Time::delay(0.5);
 
         int16_t positions1 = 126;
 
-        outputBuff.clear();
+        SerialPort::DataBuffer outputBuff;
         outputBuff.push_back(0x28);  // Wheel 1
         serialPort->Write( outputBuff );
         yarp::os::Time::delay(0.5);
