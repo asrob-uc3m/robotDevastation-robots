@@ -27,12 +27,14 @@ bool EcroPwmController::open(yarp::os::Searchable& config)
         return false;
     }
 
-    if ( ! checkConnection() )
+    /*if ( ! checkConnection() )
     {
         CD_ERROR("Error communicating with the robot. Exiting...\n");
         return false;
     }
-    CD_SUCCESS("Ok Serial Port: %p\n",serialPort);
+    CD_SUCCESS("Ok Serial Port: %p \n",serialPort);*/
+
+    CD_SUCCESS("Ok Serial Port: %p (without check)\n",serialPort);
 
     leftMotorVelocity = leftMotorInitial;
     rightMotorVelocity = rightMotorInitial;
