@@ -11,8 +11,8 @@ bool EcroPwmController::moveForward(int velocity)
     if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
         velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
     {
-        rightMotorVelocity = 90+velocity; //-- 90º angle is 0 speed in driver
-        leftMotorVelocity = 90+velocity;
+        rightMotorVelocity = rightMotorOffset+velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = leftMotorOffset+velocity;
     }
 
     return sendCurrentJointValues();
@@ -24,8 +24,8 @@ bool EcroPwmController::moveBackwards(int velocity)
     if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
         velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
     {
-        rightMotorVelocity = 90-velocity; //-- 90º angle is 0 speed in driver
-        leftMotorVelocity = 90-velocity;
+        rightMotorVelocity = rightMotorOffset-velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = leftMotorOffset-velocity;
     }
 
 
@@ -38,8 +38,8 @@ bool EcroPwmController::turnLeft(int velocity)
     if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
         velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
     {
-        rightMotorVelocity = 90+velocity; //-- 90º angle is 0 speed in driver
-        leftMotorVelocity = 90-velocity;
+        rightMotorVelocity = rightMotorOffset+velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = leftMotorOffset-velocity;
     }
 
      return sendCurrentJointValues();
@@ -51,8 +51,8 @@ bool EcroPwmController::turnRight(int velocity)
     if (velocity <= rightMotorRangeMax && velocity >= rightMotorRangeMin &&
         velocity <= leftMotorRangeMax && velocity >= leftMotorRangeMin )
     {
-        rightMotorVelocity = 90-velocity; //-- 90º angle is 0 speed in driver
-        leftMotorVelocity = 90+velocity;
+        rightMotorVelocity = rightMotorOffset-velocity; //-- 90º angle is 0 speed in driver
+        leftMotorVelocity = leftMotorOffset+velocity;
     }
 
     return sendCurrentJointValues();
@@ -61,8 +61,8 @@ bool EcroPwmController::turnRight(int velocity)
 bool EcroPwmController::stopMovement()
 {
     CD_INFO("\n");
-    rightMotorVelocity = 90; //-- 90º angle is 0 speed in driver
-    leftMotorVelocity = 90;
+    rightMotorVelocity = rightMotorOffset; //-- 90º angle is 0 speed in driver
+    leftMotorVelocity = leftMotorOffset;
 
     return sendCurrentJointValues();
 }

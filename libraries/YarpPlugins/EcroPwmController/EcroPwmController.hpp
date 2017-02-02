@@ -106,6 +106,9 @@ private:
     static const int rightMotorRangeMax = 90;
     static const int rightMotorInitial = 0;
 
+    static const int leftMotorOffset = 90;
+    static const int rightMotorOffset = 90;
+
 };
 
 }  // namespace rd
