@@ -92,7 +92,7 @@ public:
 private:
 
     SerialPort * serialPort;
-    bool sendCurrentJointValues();
+    bool sendCurrentJointValues(int16_t positions1);
 
     static const int panRangeMin = 0;
     static const int panRangeMax = 180;

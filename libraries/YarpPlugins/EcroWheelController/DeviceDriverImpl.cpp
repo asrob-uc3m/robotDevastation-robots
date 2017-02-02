@@ -30,9 +30,15 @@ bool EcroWheelController::open(yarp::os::Searchable& config)
     if ( serialPort->IsOpen() )
     {
         SerialPort::DataBuffer outputBuff;
-        outputBuff.push_back(0x32);  //-- clean
+        outputBuff.push_back(0x32);  // Invert motor 1
         serialPort->Write( outputBuff );
-        //yarp::os::Time::delay(0.5);
+        yarp::os::Time::delay(0.5);
+
+        outputBuff.clear();
+        outputBuff.push_back(0x28);  // Este ambos, 29 limpiaria 1, 30 el 2 ?
+        serialPort->Write( outputBuff );
+        yarp::os::Time::delay(0.5);
+
     }
     else
     {
