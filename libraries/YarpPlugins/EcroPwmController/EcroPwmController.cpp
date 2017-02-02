@@ -7,42 +7,6 @@ namespace rd
 
 bool EcroPwmController::moveForward(int velocity)
 {
-    CD_INFO("(%d).\n",velocity);
-
-    return true;
-}
-
-bool EcroPwmController::moveBackwards(int velocity)
-{
-    CD_INFO("(%d).\n",velocity);
-
-    return true;
-}
-
-bool EcroPwmController::turnLeft(int velocity)
-{
-    CD_INFO("(%d).\n",velocity);
-
-    return true;
-}
-
-bool EcroPwmController::turnRight(int velocity)
-{
-    CD_INFO("(%d).\n",velocity);
-
-    return true;
-}
-
-bool EcroPwmController::stopMovement()
-{
-    CD_INFO(".\n");
-
-    return true;
-}
-
-//-- Robot camera related functions
-bool EcroPwmController::tiltUp(int velocity)
-{
     CD_INFO("\n");
     if (tiltJointValue < tiltRangeMax)
         tiltJointValue+=tiltStep;
@@ -50,7 +14,7 @@ bool EcroPwmController::tiltUp(int velocity)
     return sendCurrentJointValues();
 }
 
-bool EcroPwmController::tiltDown(int velocity)
+bool EcroPwmController::moveBackwards(int velocity)
 {
     CD_INFO("\n");
     if (  tiltJointValue > tiltRangeMin )
@@ -59,22 +23,59 @@ bool EcroPwmController::tiltDown(int velocity)
     return sendCurrentJointValues();
 }
 
-bool EcroPwmController::panLeft(int velocity)
-{
-    CD_INFO("\n");
-    if (panJointValue < panRangeMax)
-        panJointValue+=panStep;
+bool EcroPwmController::turnLeft(int velocity)
+{    CD_INFO("\n");
+     if (panJointValue < panRangeMax)
+         panJointValue+=panStep;
 
-    return sendCurrentJointValues();
+     return sendCurrentJointValues();
 }
 
-bool EcroPwmController::panRight(int velocity)
+bool EcroPwmController::turnRight(int velocity)
 {
     CD_INFO("\n");
     if (  panJointValue > panRangeMin )
         panJointValue-=panStep;
 
     return sendCurrentJointValues();
+}
+
+bool EcroPwmController::stopMovement()
+{
+    CD_INFO("\n");
+    panJointValue=0;
+    tiltJointValue=0;
+
+    return sendCurrentJointValues();
+}
+
+//-- Robot camera related functions
+bool EcroPwmController::tiltUp(int velocity)
+{
+    CD_INFO("(%d).\n",velocity);
+
+    return true;
+}
+
+bool EcroPwmController::tiltDown(int velocity)
+{
+    CD_INFO("(%d).\n",velocity);
+
+    return true;
+}
+
+bool EcroPwmController::panLeft(int velocity)
+{
+    CD_INFO("(%d).\n",velocity);
+
+    return true;
+}
+
+bool EcroPwmController::panRight(int velocity)
+{
+    CD_INFO("(%d).\n",velocity);
+
+    return true;
 }
 
 bool EcroPwmController::stopCameraMovement()
