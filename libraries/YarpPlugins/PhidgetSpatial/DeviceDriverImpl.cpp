@@ -43,7 +43,7 @@ bool PhidgetSpatial::open(Searchable& config) {
 	if((result = CPhidget_waitForAttachment((CPhidgetHandle)hSpatial0, 10000))) {
 		CPhidget_getErrorDescription(result, &err);
 		printf("Problem waiting for attachment: %s\n", err);
-		return 0;
+        return false;
 	}
 
 	// Display the properties of the attached encoder device

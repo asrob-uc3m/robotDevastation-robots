@@ -13,7 +13,20 @@ int PhidgetSpatial::read(yarp::sig::Vector &out)
 
     out.resize(DEFAULT_NUM_CHANNELS);
 
+    double Gx = acceleration[0];
+    double Gy = acceleration[1];
+    double Gz = acceleration[2];
+    double modul = sqrt (Gx*Gx+Gy*Gy+Gz*Gz);
+    double angle = acos(-Gy/modul)*180.0/M_PI;
 
+    /*printf("=== Data Set: %d ===\n", i);
+    printf("Acceleration> x: %6f  y: %6f  z: %6f\n", data[i]->acceleration[0], data[i]->acceleration[1], data[i]->acceleration[2]);
+    printf("Angular Rate> x: %6f  y: %6f  z: %6f\n", data[i]->angularRate[0], data[i]->angularRate[1], data[i]->angularRate[2]);
+    printf("Magnetic Field> x: %6f  y: %6f  z: %6f\n", data[i]->magneticField[0], data[i]->magneticField[1], data[i]->magneticField[2]);
+    printf("Timestamp> seconds: %d -- microseconds: %d\n", data[i]->timestamp.seconds, data[i]->timestamp.microseconds);
+    printf("Modul of gravity: %5f  and angle: %6f\n",modul,angle);*/
+
+    out[0] = angle;
 
     hSemaphore.post();
 

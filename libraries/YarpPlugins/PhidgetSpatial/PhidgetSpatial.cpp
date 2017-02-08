@@ -55,25 +55,34 @@ int PhidgetSpatial::ErrorHandler(CPhidgetHandle ENC, void *userptr, int ErrorCod
 
 int PhidgetSpatial::SpatialDataHandler(CPhidgetSpatialHandle spatial, void *userptr, CPhidgetSpatial_SpatialEventDataHandle *data, int count)
 {
-	int i;
-        double Gx,Gy,Gz,modul, angle;
+    PhidgetSpatial* thisObject = static_cast<PhidgetSpatial*>(userptr);
+
     ///printf("Number of Data Packets in this event: %d\n", count);
-	for(i = 0; i < count; i++)
+    for(int i = 0; i < count; i++)
 	{
-        Gx=data[i]->acceleration[0];
-        Gy=data[i]->acceleration[1];
-        Gz=data[i]->acceleration[2];
-        modul = sqrt (Gx*Gx+Gy*Gy+Gz*Gz);
-        angle = acos(-Gy/modul)*180.0/M_PI;
+        thisObject->hSemaphore.wait();
+
+        thisObject->acceleration[0] = data[i]->acceleration[0];
+        thisObject->acceleration[1] = data[i]->acceleration[1];
+        thisObject->acceleration[2] = data[i]->acceleration[2];
+
+        thisObject->angularRate[0] = data[i]->angularRate[0];
+        thisObject->angularRate[1] = data[i]->angularRate[1];
+        thisObject->angularRate[2] = data[i]->angularRate[2];
+
+        thisObject->magneticField[0] = data[i]->magneticField[0];
+        thisObject->magneticField[1] = data[i]->magneticField[1];
+        thisObject->magneticField[2] = data[i]->magneticField[2];
+
+        thisObject->hSemaphore.post();
+
         /*printf("=== Data Set: %d ===\n", i);
         printf("Acceleration> x: %6f  y: %6f  z: %6f\n", data[i]->acceleration[0], data[i]->acceleration[1], data[i]->acceleration[2]);
         printf("Angular Rate> x: %6f  y: %6f  z: %6f\n", data[i]->angularRate[0], data[i]->angularRate[1], data[i]->angularRate[2]);
         printf("Magnetic Field> x: %6f  y: %6f  z: %6f\n", data[i]->magneticField[0], data[i]->magneticField[1], data[i]->magneticField[2]);
-        printf("Timestamp> seconds: %d -- microseconds: %d\n", data[i]->timestamp.seconds, data[i]->timestamp.microseconds);*/
-        //printf("Modul of gravity: %5f  and angle: %6f\n",modul,angle);
-        Bottle b;
-        b.addDouble(angle);
-        //static_cast<PhidgetSpatial*>(userptr)->port.write(b);
+        printf("Timestamp> seconds: %d -- microseconds: %d\n", data[i]->timestamp.seconds, data[i]->timestamp.microseconds);
+        printf("Modul of gravity: %5f  and angle: %6f\n",modul,angle);*/
+
 	}
     ///printf("---------------------------------------------\n");
 	return 0;

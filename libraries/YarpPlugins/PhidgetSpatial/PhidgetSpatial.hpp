@@ -17,7 +17,7 @@ using namespace yarp::os;
 using namespace yarp::dev;
 
 #define DEFAULT_RATE_MS 20.0
-#define DEFAULT_NUM_CHANNELS 6
+#define DEFAULT_NUM_CHANNELS 1
 
 namespace rd
 {
@@ -118,6 +118,9 @@ private:
 
     CPhidgetSpatialHandle hSpatial0;
     yarp::os::Semaphore hSemaphore;
+    double acceleration[3];
+    double angularRate[3];
+    double magneticField[3];
 
 };
 
