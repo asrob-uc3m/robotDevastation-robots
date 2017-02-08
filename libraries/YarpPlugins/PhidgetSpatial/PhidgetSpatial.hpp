@@ -27,7 +27,7 @@ class PhidgetSpatial : public DeviceDriver, public yarp::dev::IAnalogSensor
 {
 public:
 
-    // -------- DeviceDriver declarations. Implementation in IDeviceImpl.cpp --------
+    // -------- DeviceDriver declarations. Implementation in DeviceDriverImpl.cpp --------
 
     /**
      * Open the DeviceDriver. 
