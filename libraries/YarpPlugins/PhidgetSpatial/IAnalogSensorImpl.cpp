@@ -26,7 +26,20 @@ int PhidgetSpatial::read(yarp::sig::Vector &out)
     printf("Timestamp> seconds: %d -- microseconds: %d\n", data[i]->timestamp.seconds, data[i]->timestamp.microseconds);
     printf("Modul of gravity: %5f  and angle: %6f\n",modul,angle);*/
 
-    out[0] = angle;
+    out[0] = acceleration[0];
+    out[1] = acceleration[1];
+    out[2] = acceleration[2];
+
+    out[3] = angularRate[0];
+    out[4] = angularRate[1];
+    out[5] = angularRate[2];
+
+    out[6] = magneticField[0];
+    out[7] = magneticField[1];
+    out[8] = magneticField[2];
+
+    out[9] = modul;
+    out[10] = angle;
 
     hSemaphore.post();
 

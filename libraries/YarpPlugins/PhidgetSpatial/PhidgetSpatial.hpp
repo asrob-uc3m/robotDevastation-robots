@@ -17,7 +17,7 @@ using namespace yarp::os;
 using namespace yarp::dev;
 
 #define DEFAULT_RATE_MS 20.0
-#define DEFAULT_NUM_CHANNELS 1
+#define DEFAULT_NUM_CHANNELS 11
 
 namespace rd
 {
