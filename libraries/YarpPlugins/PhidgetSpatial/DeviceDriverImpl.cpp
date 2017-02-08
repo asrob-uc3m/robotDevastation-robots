@@ -51,8 +51,6 @@ bool PhidgetSpatial::open(Searchable& config) {
     printf("[success] PhidgetSpatial open() phidget\n");
     // \end{encoderInit}
 
-    port.open("/spatial");
-
     return true;
 }
 
@@ -60,7 +58,7 @@ bool PhidgetSpatial::open(Searchable& config) {
 
 bool PhidgetSpatial::close()
 {
-    port.close();
+    return true;
 }
 
 // -----------------------------------------------------------------------------

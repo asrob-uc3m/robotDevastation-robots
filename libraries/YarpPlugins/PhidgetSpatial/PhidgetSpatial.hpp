@@ -16,6 +16,9 @@
 using namespace yarp::os;
 using namespace yarp::dev;
 
+#define DEFAULT_RATE_MS 20.0
+#define DEFAULT_NUM_CHANNELS 6
+
 namespace rd
 {
 
@@ -112,11 +115,9 @@ public:
 // ------------------------------- Private -------------------------------------
 
 private:
-    Port port;
+
     CPhidgetSpatialHandle hSpatial0;
-    Semaphore encRawMutex;  // SharedArea
-    std::vector<int> encRaw;  // SharedArea
-    std::vector<double> encRawExposed;  // For conversion.
+    yarp::os::Semaphore hSemaphore;
 
 };
 

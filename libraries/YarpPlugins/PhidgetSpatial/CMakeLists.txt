@@ -19,7 +19,7 @@ IF (NOT SKIP_PhidgetSpatial)
     # Include any directories needed for YARP
     include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${YARP_INCLUDE_DIRS} )
 
-    yarp_add_plugin(PhidgetSpatial PhidgetSpatial.hpp PhidgetSpatial.cpp DeviceDriverImpl.cpp)
+    yarp_add_plugin(PhidgetSpatial PhidgetSpatial.hpp PhidgetSpatial.cpp DeviceDriverImpl.cpp IAnalogSensorImpl.cpp )
 
     TARGET_LINK_LIBRARIES(PhidgetSpatial ${YARP_LIBRARIES} phidget21)
 

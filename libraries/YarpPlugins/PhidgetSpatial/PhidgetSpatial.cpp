@@ -73,7 +73,7 @@ int PhidgetSpatial::SpatialDataHandler(CPhidgetSpatialHandle spatial, void *user
         //printf("Modul of gravity: %5f  and angle: %6f\n",modul,angle);
         Bottle b;
         b.addDouble(angle);
-        static_cast<PhidgetSpatial*>(userptr)->port.write(b);
+        //static_cast<PhidgetSpatial*>(userptr)->port.write(b);
 	}
     ///printf("---------------------------------------------\n");
 	return 0;
