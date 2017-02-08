@@ -6,6 +6,7 @@
 #include <yarp/os/all.h>
 #include <yarp/dev/Drivers.h>
 #include <yarp/dev/PolyDriver.h>
+#include <yarp/dev/IAnalogSensor.h>
 
 #include <vector>
 #include <math.h>
@@ -22,10 +23,11 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief PhidgetSpatial
  */
-class PhidgetSpatial : public DeviceDriver {
+class PhidgetSpatial : public DeviceDriver, public yarp::dev::IAnalogSensor
+{
 public:
 
-// -------- DeviceDriver declarations. Implementation in IDeviceImpl.cpp --------
+    // -------- DeviceDriver declarations. Implementation in IDeviceImpl.cpp --------
 
     /**
      * Open the DeviceDriver. 
@@ -39,7 +41,59 @@ public:
      */
      ~PhidgetSpatial() {}
 
-// -- Helper Funcion declarations. Implementation in HelperFuncs.cpp --
+    //  --------- IAnalogSensor Declarations. Implementation in IAnalogSensorImpl.cpp ---------
+
+    /**
+     * Read a vector from the sensor.
+     * @param out a vector containing the sensor's last readings.
+     * @return AS_OK or return code. AS_TIMEOUT if the sensor timed-out.
+     */
+    virtual int read(yarp::sig::Vector &out);
+
+    /**
+     * Check the state value of a given channel.
+     * @param ch channel number.
+     * @return status.
+     */
+    virtual int getState(int ch);
+
+    /**
+     * Get the number of channels of the sensor.
+     * @return number of channels (0 in case of errors).
+     */
+    virtual int getChannels();
+
+    /**
+     * Calibrates the whole sensor.
+     * @return status.
+     */
+    virtual int calibrateSensor();
+
+    /**
+     * Calibrates the whole sensor, using an vector of calibration values.
+     * @param value a vector of calibration values.
+     * @return status.
+     */
+    virtual int calibrateSensor(const yarp::sig::Vector& value);
+
+    /**
+     * Calibrates one single channel.
+     * @param ch channel number.
+     * @return status.
+     */
+    virtual int calibrateChannel(int ch);
+
+    /**
+     * Calibrates one single channel, using a calibration value.
+     * @param ch channel number.
+     * @param value calibration value.
+     * @return status.
+     */
+    virtual int calibrateChannel(int ch, double value);
+
+
+    // -- Helper Funcion declarations. Implementation in PhidgetSpatial.cpp --
+
     ///////////////////////////////////////////////////////////////////////////
     // The following six functions have been extracted and modified from the - Spatial simple -
     // example ((creates an Spatial handle, hooks the event handlers, and then waits for an
@@ -54,11 +108,6 @@ public:
     static int SpatialDataHandler(CPhidgetSpatialHandle spatial, void *userptr, CPhidgetSpatial_SpatialEventDataHandle *data, int count);
     int display_properties(CPhidgetSpatialHandle phid);
     ///////////////////////////////////////////////////////////////////////////
-
-// -- Shared Area Funcion declarations. Implementation in SharedArea.cpp --
-    void setEncRaw(const int Index, const int Position);
-    int getEncRaw(const int Index);
-    double getEncExposed(const int Index);
 
 // ------------------------------- Private -------------------------------------
 
