@@ -2,6 +2,9 @@
 
 #include "PhidgetSpatial.hpp"
 
+namespace rd
+{
+
 // -----------------------------------------------------------------------------
 
 int PhidgetSpatial::AttachHandler(CPhidgetHandle ENC, void *userptr) {
@@ -101,3 +104,4 @@ int PhidgetSpatial::display_properties(CPhidgetSpatialHandle phid) {
 
 // ----------------------------------------------------------------------------
 
+}  // namespace rd

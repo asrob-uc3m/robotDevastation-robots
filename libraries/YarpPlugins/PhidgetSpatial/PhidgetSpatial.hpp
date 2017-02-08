@@ -15,6 +15,13 @@
 using namespace yarp::os;
 using namespace yarp::dev;
 
+namespace rd
+{
+
+/**
+ * @ingroup YarpPlugins
+ * @brief PhidgetSpatial
+ */
 class PhidgetSpatial : public DeviceDriver {
 public:
 
@@ -63,6 +70,8 @@ private:
     std::vector<double> encRawExposed;  // For conversion.
 
 };
+
+}  // namespace rd
 
 #endif
 

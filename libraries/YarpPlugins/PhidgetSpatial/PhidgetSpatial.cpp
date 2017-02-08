@@ -2,6 +2,9 @@
 
 #include "PhidgetSpatial.hpp"
 
+namespace rd
+{
+
 // -----------------------------------------------------------------------------
 
 bool PhidgetSpatial::open(Searchable& config) {
@@ -59,3 +62,7 @@ bool PhidgetSpatial::close()
 {
     port.close();
 }
+
+// -----------------------------------------------------------------------------
+
+}  // namespace rd
