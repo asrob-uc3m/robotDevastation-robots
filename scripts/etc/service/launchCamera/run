@@ -1,4 +1,4 @@
 #!/bin/bash
 export PATH=/usr/local/bin:/usr/bin:/bin
 export YARP_CONF=/home/pi/.config/yarp
-yarprun --server /`cat /home/pi/robotName`
+yarpdev --device opencv_grabber --name /`cat /home/pi/robotName`/img:o
