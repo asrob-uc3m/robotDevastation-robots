@@ -1,0 +1,4 @@
+#!/bin/bash
+export PATH=/usr/local/bin:/usr/bin:/bin
+export YARP_CONF=/home/pi/.config/yarp
+yarprun --server /`cat /home/pi/robotName`
