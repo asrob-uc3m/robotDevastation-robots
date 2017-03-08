@@ -16,7 +16,7 @@ IF (NOT SKIP_RaspiOnePwmMotorController)
 
     include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ${YARP_INCLUDE_DIRS} ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} )
 
-    yarp_add_plugin(RaspiOnePwmMotorController RaspiOnePwmMotorController.cpp DeviceDriverImpl.cpp )
+    yarp_add_plugin(RaspiOnePwmMotorController RaspiOnePwmMotorController.cpp DeviceDriverImpl.cpp pwm.cpp)
 
     TARGET_LINK_LIBRARIES(RaspiOnePwmMotorController ${YARP_LIBRARIES})
 
