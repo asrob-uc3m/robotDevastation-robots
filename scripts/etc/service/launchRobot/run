@@ -1,5 +1,6 @@
 #!/bin/bash
 export PATH=/usr/local/bin:/usr/bin:/bin
 export YARP_CONF=/home/pi/.config/yarp
+yarp detect --write
 yarpdev --device RdRobotServer --subdevice RdOnePwmMotors --name /`cat /home/pi/robotName` --gpios 17 27
 sleep 1
