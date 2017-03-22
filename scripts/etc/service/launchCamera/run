@@ -1,0 +1,6 @@
+#!/bin/bash
+export PATH=/usr/local/bin:/usr/bin:/bin
+export YARP_CONF=/home/pi/.config/yarp
+yarp detect --write
+yarpdev --device opencv_grabber --name /`cat /home/pi/robotName`/img:o
+sleep 1
