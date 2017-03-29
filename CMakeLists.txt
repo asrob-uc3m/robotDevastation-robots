@@ -24,6 +24,8 @@ option(BUILD_SHARED_LIBS "All shared libs" TRUE)
 ### options: force default
 #option(ENABLE_exampleExtraOption "Enable/disable option exampleExtraOption" TRUE)
 
+option(INSTALL_SERVICES "Choose if you want to install Robot Devastation services" TRUE)
+
 if(MSVC)
   MESSAGE(STATUS "Running on windows")    
   set(CMAKE_DEBUG_POSTFIX "d")
@@ -65,9 +67,10 @@ set(ROBOT_DEVASTATION_ROBOTS_LINK_DIRS CACHE INTERNAL "appended link dirs" FORCE
 set(ROBOT_DEVASTATION_ROBOTS_LIBRARIES CACHE INTERNAL "appended libraries" FORCE)
 
 # add main contents
-#add_subdirectory(share)
+add_subdirectory(share)
 add_subdirectory(libraries)
 #add_subdirectory(programs)
+add_subdirectory(scripts)
 
 # export our variables to a ROBOT_DEVASTATION_ROBOTSConfig.cmake creation
 set(ROBOT_DEVASTATION_ROBOTS_LINK_DIRS ${ROBOT_DEVASTATION_ROBOTS_LINK_DIRS} ${LIBRARY_OUTPUT_PATH})
