@@ -10,5 +10,5 @@ yarp_configure_external_installation(robotDevastation-robots)
 
 ### Go through single applications
 
-#add_subdirectory(prog)
+add_subdirectory(launch)
 
