@@ -9,7 +9,9 @@
 #yarp_configure_external_installation(robotDevastation-robots)
 
 # Install services for autostart
-install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/etc/service/launchCamera/run
-        DESTINATION /etc/service/launchCamera)
-install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/etc/service/launchRobot/run
-        DESTINATION /etc/service/launchRobot)
+IF(INSTALL_SERVICES)
+    install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/etc/service/launchCamera/run
+            DESTINATION /etc/service/launchCamera)
+    install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/etc/service/launchRobot/run
+            DESTINATION /etc/service/launchRobot)
+ENDIF()

@@ -24,6 +24,8 @@ option(BUILD_SHARED_LIBS "All shared libs" TRUE)
 ### options: force default
 #option(ENABLE_exampleExtraOption "Enable/disable option exampleExtraOption" TRUE)
 
+option(INSTALL_SERVICES "Choose if you want to install Robot Devastation services" TRUE)
+
 if(MSVC)
   MESSAGE(STATUS "Running on windows")    
   set(CMAKE_DEBUG_POSTFIX "d")
