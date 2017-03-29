@@ -67,7 +67,7 @@ set(ROBOT_DEVASTATION_ROBOTS_LINK_DIRS CACHE INTERNAL "appended link dirs" FORCE
 set(ROBOT_DEVASTATION_ROBOTS_LIBRARIES CACHE INTERNAL "appended libraries" FORCE)
 
 # add main contents
-#add_subdirectory(share)
+add_subdirectory(share)
 add_subdirectory(libraries)
 #add_subdirectory(programs)
 add_subdirectory(scripts)
