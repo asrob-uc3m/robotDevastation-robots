@@ -33,7 +33,7 @@ bool RobotClient::open(yarp::os::Searchable& config)
     if (tries == 11)
     {
         CD_ERROR("Timeout on connect to remote robot!\n");
-        CD_INFO("If you prefer a fake robot use the '--mockupRobotManager' parameter to run robotDevastation.\n");
+        CD_INFO("If you prefer a fake robot use the '--mockRobotManager' parameter to run robotDevastation.\n");
         return false;
     }
 
