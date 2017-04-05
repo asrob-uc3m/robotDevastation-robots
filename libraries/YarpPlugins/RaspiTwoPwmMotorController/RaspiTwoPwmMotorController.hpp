@@ -13,7 +13,7 @@
 
 #include "ColorDebug.hpp"
 
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 
 #include <wiringPi.h>
 
@@ -24,13 +24,13 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief RaspiTwoPwmMotorController
  */
-class RaspiTwoPwmMotorController : public yarp::dev::DeviceDriver, public RdRobotManager {
+class RaspiTwoPwmMotorController : public yarp::dev::DeviceDriver, public RobotManager {
 
 public:
 
-    RaspiTwoPwmMotorController() : RdRobotManager("default") {}
+    RaspiTwoPwmMotorController() : RobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in RaspiTwoPwmMotorController.cpp --------
+    // -------- RobotManager declarations. Implementation in RaspiTwoPwmMotorController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);

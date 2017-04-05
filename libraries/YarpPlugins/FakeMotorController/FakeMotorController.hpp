@@ -13,7 +13,7 @@
 
 #include "ColorDebug.hpp"
 
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 
 namespace rd
 {
@@ -22,13 +22,13 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief FakeMotorController
  */
-class FakeMotorController : public yarp::dev::DeviceDriver, public RdRobotManager {
+class FakeMotorController : public yarp::dev::DeviceDriver, public RobotManager {
 
 public:
 
-    FakeMotorController() : RdRobotManager("default") {}
+    FakeMotorController() : RobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in FakeMotorController.cpp --------
+    // -------- RobotManager declarations. Implementation in FakeMotorController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);

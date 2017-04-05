@@ -15,7 +15,7 @@
 
 #include "ColorDebug.hpp"
 
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 
 #define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
@@ -26,13 +26,13 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief LaserTowerOfDeathController
  */
-class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public RdRobotManager {
+class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public RobotManager {
 
 public:
 
-    LaserTowerOfDeathController() : RdRobotManager("default") {}
+    LaserTowerOfDeathController() : RobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in LaserTowerOfDeathController.cpp --------
+    // -------- RobotManager declarations. Implementation in LaserTowerOfDeathController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);
