@@ -18,20 +18,20 @@
 
 %{
 /* Includes the header in the wrapper code */
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 %}
 
 /* Parse the header file to generate wrappers */
-%include "RdRobotManager.hpp"
+%include "RobotManager.hpp"
 
 %{
 #include <yarp/dev/all.h>
-rd::RdRobotManager *viewRdRobotManager(yarp::dev::PolyDriver& d)
+rd::RobotManager *viewRobotManager(yarp::dev::PolyDriver& d)
 {
-    rd::RdRobotManager *result;
+    rd::RobotManager *result;
     d.view(result);
     return result;
 }
 %}
-extern rd::RdRobotManager *viewRdRobotManager(yarp::dev::PolyDriver& d);
+extern rd::RobotManager *viewRobotManager(yarp::dev::PolyDriver& d);
 

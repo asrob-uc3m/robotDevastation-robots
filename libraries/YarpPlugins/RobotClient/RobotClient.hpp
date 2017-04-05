@@ -11,7 +11,7 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 
 #include "ColorDebug.hpp"
 
@@ -34,7 +34,7 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief RobotClient
  */
-class RobotClient : public yarp::dev::DeviceDriver, public RdRobotManager
+class RobotClient : public yarp::dev::DeviceDriver, public RobotManager
 {
 
 public:
@@ -108,7 +108,7 @@ private:
     bool send1vocab(int vocab);
 
     yarp::dev::PolyDriver robotDevice;
-    RdRobotManager* iRdRobot;
+    RobotManager* iRdRobot;
 
 };
 

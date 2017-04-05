@@ -15,7 +15,7 @@
 
 #include "ColorDebug.hpp"
 
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 
 #define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
@@ -26,13 +26,13 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief EcroPwmController
  */
-class EcroPwmController : public yarp::dev::DeviceDriver, public RdRobotManager {
+class EcroPwmController : public yarp::dev::DeviceDriver, public RobotManager {
 
 public:
 
-    EcroPwmController() : RdRobotManager("default") {}
+    EcroPwmController() : RobotManager("default") {}
 
-    // -------- RdRobotManager declarations. Implementation in EcroPwmController.cpp --------
+    // -------- RobotManager declarations. Implementation in EcroPwmController.cpp --------
 
     //-- Robot movement related functions
     virtual bool moveForward(int velocity = UNUSED);

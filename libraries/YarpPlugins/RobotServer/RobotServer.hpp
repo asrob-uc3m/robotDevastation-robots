@@ -11,7 +11,7 @@
 #include <vector>
 #include <stdlib.h>  // just for exit()
 
-#include "RdRobotManager.hpp"
+#include "RobotManager.hpp"
 
 #include "ColorDebug.hpp"
 
@@ -83,7 +83,7 @@ private:
     yarp::os::RpcServer rpcServer;
 
     yarp::dev::PolyDriver robotDevice;
-    RdRobotManager* iRdRobot;
+    RobotManager* iRdRobot;
 
 };
 

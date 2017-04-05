@@ -14,7 +14,7 @@ robotOptions.put('device','RobotClient')
 robotOptions.put('name','/RobotServer')
 robotDevice = yarp.PolyDriver(robotOptions)  # calls open -> connects
 
-robot = rd.viewRdRobotManager(robotDevice)  # view the actual interface
+robot = rd.viewRobotManager(robotDevice)  # view the actual interface
 
 print "moveForward"
 robot.moveForward()
