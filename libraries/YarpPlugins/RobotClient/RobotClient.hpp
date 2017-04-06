@@ -92,6 +92,8 @@ public:
 
 private:
 
+    std::string robotName;
+
     /** Check if index is within range (referred to driver vector size).
      * @param idx index to check.
      * @return true/false on success/failure.

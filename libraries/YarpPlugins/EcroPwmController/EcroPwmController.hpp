@@ -30,7 +30,7 @@ class EcroPwmController : public yarp::dev::DeviceDriver, public RobotManager {
 
 public:
 
-    EcroPwmController() : RobotManager("default") {}
+    EcroPwmController() {}
 
     // -------- RobotManager declarations. Implementation in EcroPwmController.cpp --------
 

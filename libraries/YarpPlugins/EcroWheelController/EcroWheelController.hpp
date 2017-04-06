@@ -30,7 +30,7 @@ class EcroWheelController : public yarp::dev::DeviceDriver, public RobotManager 
 
 public:
 
-    EcroWheelController() : RobotManager("default") {}
+    EcroWheelController() {}
 
     // -------- RobotManager declarations. Implementation in EcroWheelController.cpp --------
 
