@@ -30,7 +30,7 @@ class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public Robot
 
 public:
 
-    LaserTowerOfDeathController() : RobotManager("default") {}
+    LaserTowerOfDeathController() {}
 
     // -------- RobotManager declarations. Implementation in LaserTowerOfDeathController.cpp --------
 

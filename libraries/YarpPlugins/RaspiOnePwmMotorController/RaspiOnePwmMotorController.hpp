@@ -28,7 +28,7 @@ class RaspiOnePwmMotorController : public yarp::dev::DeviceDriver, public RobotM
 
 public:
 
-    RaspiOnePwmMotorController() : RobotManager("default") {}
+    RaspiOnePwmMotorController() {}
 
     // -------- RobotManager declarations. Implementation in RaspiOnePwmMotorController.cpp --------
 

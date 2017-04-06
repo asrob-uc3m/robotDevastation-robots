@@ -26,7 +26,7 @@ class FakeMotorController : public yarp::dev::DeviceDriver, public RobotManager 
 
 public:
 
-    FakeMotorController() : RobotManager("default") {}
+    FakeMotorController() {}
 
     // -------- RobotManager declarations. Implementation in FakeMotorController.cpp --------
 

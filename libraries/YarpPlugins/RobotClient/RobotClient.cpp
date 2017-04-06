@@ -5,7 +5,7 @@
 namespace rd
 {
 
-RobotClient::RobotClient() : RobotManager("/null")
+RobotClient::RobotClient()
 {
 }
 
