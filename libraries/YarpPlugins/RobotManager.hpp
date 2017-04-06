@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __RD_ROBOT_MANAGER_HPP__
-#define __RD_ROBOT_MANAGER_HPP__
+#ifndef __ROBOT_MANAGER_HPP__
+#define __ROBOT_MANAGER_HPP__
 
 
 namespace rd{
@@ -17,7 +17,7 @@ namespace rd{
 /**
  * @ingroup RobotLib
  *
- * @brief A base class for Robot Managers.
+ * @brief Base class for Robot Managers. Original copy of this file at https://github.com/asrob-uc3m/robotDevastation/blob/develop/src/libraries/RobotLib/RobotManager.hpp
  *
  */
 class RobotManager
@@ -64,4 +64,4 @@ class RobotManager
 
 
 
-#endif //-- __RD_ROBOT_MANAGER_HPP__
+#endif //-- __ROBOT_MANAGER_HPP__
