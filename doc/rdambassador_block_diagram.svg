@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="30cm" height="11cm" viewBox="159 319 582 219" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="160" y="320" width="107.8" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160" y="320" width="107.8" height="52" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="213.9" y="341.9">
+      <tspan x="213.9" y="341.9">Battery</tspan>
+      <tspan x="213.9" y="357.9">(LiPo 2s 7.4V)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="320" width="80" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="320" width="80" height="52" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="400" y="341.9">
+      <tspan x="400" y="341.9">DC-DC</tspan>
+      <tspan x="400" y="357.9">(out 5V)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="400" width="80" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="400" width="80" height="52" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="400" y="421.9">
+      <tspan x="400" y="421.9">DC-DC</tspan>
+      <tspan x="400" y="437.9">(out 5V)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="480" y="320" width="112.4" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="480" y="320" width="112.4" height="36" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="536.2" y="341.9">
+      <tspan x="536.2" y="341.9">Raspberry Pi 2</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="400" width="80" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="500" y="400" width="80" height="36" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="540" y="421.9">
+      <tspan x="540" y="421.9">H-Bridge</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="440" y="500" width="80" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="440" y="500" width="80" height="36" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="480" y="521.9">
+      <tspan x="480" y="521.9">L Motor</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="560" y="500" width="80" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="560" y="500" width="80" height="36" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="600" y="521.9">
+      <tspan x="600" y="521.9">R Motor</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="380" width="80" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="380" width="80" height="36" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="700" y="401.9">
+      <tspan x="700" y="401.9">Webcam</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="320" width="80" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="320" width="80" height="36" rx="10" ry="10"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="700" y="341.9">
+      <tspan x="700" y="341.9">WiFi</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="268.803" y1="346" x2="350.264" y2="346"/>
+    <polygon style="fill: #000000" points="357.764,346 347.764,351 350.264,346 347.764,341 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="357.764,346 347.764,351 350.264,346 347.764,341 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="536.2" y1="356" x2="539.162" y2="390.3"/>
+    <polygon style="fill: #000000" points="539.808,397.772 533.966,388.24 539.162,390.3 543.929,387.379 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="539.808,397.772 533.966,388.24 539.162,390.3 543.929,387.379 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="500" y1="436" x2="486.941" y2="489.543"/>
+    <polygon style="fill: #000000" points="485.164,496.829 482.676,485.929 486.941,489.543 492.391,488.299 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="485.164,496.829 482.676,485.929 486.941,489.543 492.391,488.299 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="580" y1="436" x2="593.059" y2="489.543"/>
+    <polygon style="fill: #000000" points="594.836,496.829 587.609,488.299 593.059,489.543 597.324,485.929 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="594.836,496.829 587.609,488.299 593.059,489.543 597.324,485.929 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="441.008" y1="343.591" x2="469.279" y2="341.931"/>
+    <polygon style="fill: #000000" points="476.766,341.491 467.076,347.069 469.279,341.931 466.49,337.086 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="476.766,341.491 467.076,347.069 469.279,341.931 466.49,337.086 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="268.807,346 314.403,346 314.403,426 350.264,426 "/>
+    <polygon style="fill: #000000" points="357.764,426 347.764,431 350.264,426 347.764,421 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="357.764,426 347.764,431 350.264,426 347.764,421 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="602.136" y1="338" x2="650.264" y2="338"/>
+    <polygon style="fill: #000000" points="594.636,338 604.636,333 602.136,338 604.636,343 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="594.636,338 604.636,333 602.136,338 604.636,343 "/>
+    <polygon style="fill: #000000" points="657.764,338 647.764,343 650.264,338 647.764,333 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="657.764,338 647.764,343 650.264,338 647.764,333 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="658.995,398 625.697,398 625.697,356 602.136,356 "/>
+    <polygon style="fill: #000000" points="594.636,356 604.636,351 602.136,356 604.636,361 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="594.636,356 604.636,351 602.136,356 604.636,361 "/>
+  </g>
+</svg>
