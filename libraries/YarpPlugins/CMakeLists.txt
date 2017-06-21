@@ -17,6 +17,7 @@ option(ENABLE_RaspiTwoPwmMotorController "Enable/disable compilation of RaspiTwo
 option(ENABLE_PhidgetSpatial "Enable/disable compilation of PhidgetSpatial" FALSE)
 
 #yarp_begin_plugin_library(YarpPlugins)
+add_subdirectory(BatteryComparatorMeter)
 add_subdirectory(RobotClient)
 add_subdirectory(RobotServer)
 add_subdirectory(FakeMotorController)
