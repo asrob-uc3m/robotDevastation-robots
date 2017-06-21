@@ -7,6 +7,8 @@
 #include <yarp/dev/DeviceDriver.h>
 #include <yarp/dev/IBattery.h>
 
+#include <wiringPi.h>
+
 #include "ColorDebug.hpp"
 
 namespace rd
@@ -44,9 +46,21 @@ public:
 
     // --------- IBattery declarations. Implementations in IBatteryImpl.cpp --------------
 
+    virtual bool getBatteryVoltage(double &voltage);
+
+    virtual bool getBatteryCurrent(double &current);
+
+    virtual bool getBatteryCharge(double &charge);
+
+    virtual bool getBatteryStatus(int &status);
+
+    virtual bool getBatteryTemperature(double &temperature);
+
+    virtual bool getBatteryInfo(yarp::os::ConstString &battery_info);
 
 private:
-
+    double charge;
+    int pin_25, pin_50, pin_75, pin_100;
 
 };
 
