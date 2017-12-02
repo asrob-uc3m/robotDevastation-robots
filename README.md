@@ -8,8 +8,6 @@ Bundle of robot software (firmware), electronics and mechanics.
 
 Installation Guide: https://www.gitbook.com/book/asrob-uc3m/robotdevastation-user-manual/details
 
-Installation Guide: https://www.gitbook.com/book/asrob-uc3m/robotdevastation-user-manual/details
-
 Link to Doxygen documentation: http://asrob.uc3m.es/rdddoc/index.html
 
 Link to Wiki: http://asrob.uc3m.es/index.php/Robot_Devastation
