@@ -18,11 +18,11 @@
 
 %{
 /* Includes the header in the wrapper code */
-#include "RobotManager.hpp"
+#include "IRobotManager.hpp"
 %}
 
 /* Parse the header file to generate wrappers */
-%include "RobotManager.hpp"
+%include "IRobotManager.hpp"
 
 %{
 #include <yarp/dev/all.h>

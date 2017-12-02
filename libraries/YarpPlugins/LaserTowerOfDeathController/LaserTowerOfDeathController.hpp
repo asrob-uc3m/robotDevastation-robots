@@ -15,7 +15,7 @@
 
 #include "ColorDebug.hpp"
 
-#include "RobotManager.hpp"
+#include "IRobotManager.hpp"
 
 #define DEFAULT_SERIAL_PORT_NAME "/dev/ttyUSB0"
 
