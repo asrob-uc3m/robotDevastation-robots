@@ -34,7 +34,7 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief RobotClient
  */
-class RobotClient : public yarp::dev::DeviceDriver, public RobotManager
+class RobotClient : public yarp::dev::DeviceDriver, public IRobotManager
 {
 
 public:
@@ -110,7 +110,7 @@ private:
     bool send1vocab(int vocab);
 
     yarp::dev::PolyDriver robotDevice;
-    RobotManager* iRdRobot;
+    IRobotManager* iRdRobot;
 
 };
 

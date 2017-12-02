@@ -26,7 +26,7 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief LaserTowerOfDeathController
  */
-class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public RobotManager {
+class LaserTowerOfDeathController : public yarp::dev::DeviceDriver, public IRobotManager {
 
 public:
 

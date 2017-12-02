@@ -26,7 +26,7 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief EcroPwmController
  */
-class EcroPwmController : public yarp::dev::DeviceDriver, public RobotManager {
+class EcroPwmController : public yarp::dev::DeviceDriver, public IRobotManager {
 
 public:
 

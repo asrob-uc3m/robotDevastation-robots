@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __RD_ROBOT_MANAGER_HPP__
-#define __RD_ROBOT_MANAGER_HPP__
+#ifndef __RD_I_ROBOT_MANAGER_HPP__
+#define __RD_I_ROBOT_MANAGER_HPP__
 
 
 namespace rd{
@@ -20,7 +20,7 @@ namespace rd{
  * @brief Base class for Robot Managers. Original copy of this file at https://github.com/asrob-uc3m/robotDevastation/blob/develop/src/libraries/RobotLib/RobotManager.hpp
  *
  */
-class RobotManager
+class IRobotManager
 {
     public:
         //-- Robot movement related functions    
@@ -52,7 +52,7 @@ class RobotManager
 
         //-- Other
         virtual void onDestroy() = 0;
-        virtual ~RobotManager() {}
+        virtual ~IRobotManager() {}
 
     protected:
         //-- Constants

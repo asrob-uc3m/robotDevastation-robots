@@ -22,7 +22,7 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief FakeMotorController
  */
-class FakeMotorController : public yarp::dev::DeviceDriver, public RobotManager {
+class FakeMotorController : public yarp::dev::DeviceDriver, public IRobotManager {
 
 public:
 

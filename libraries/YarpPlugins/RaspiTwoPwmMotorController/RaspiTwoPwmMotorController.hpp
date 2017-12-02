@@ -24,7 +24,7 @@ namespace rd
  * @ingroup YarpPlugins
  * @brief RaspiTwoPwmMotorController
  */
-class RaspiTwoPwmMotorController : public yarp::dev::DeviceDriver, public RobotManager {
+class RaspiTwoPwmMotorController : public yarp::dev::DeviceDriver, public IRobotManager {
 
 public:
 

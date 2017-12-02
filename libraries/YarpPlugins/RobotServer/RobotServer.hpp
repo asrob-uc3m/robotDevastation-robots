@@ -83,7 +83,7 @@ private:
     yarp::os::RpcServer rpcServer;
 
     yarp::dev::PolyDriver robotDevice;
-    RobotManager* iRdRobot;
+    IRobotManager* iRdRobot;
 
 };
 
