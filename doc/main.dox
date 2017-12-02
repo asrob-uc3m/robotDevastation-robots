@@ -1,0 +1,28 @@
+/**
+  * \mainpage robotDevastation-robots Repository documentation
+
+Welcome to the robotDevastation-robots Repository documentation for the manipulation and locomotion PCs. <a class=el href="http://robots.uc3m.es">Click here to return to Wiki.</a> <a class=el href="https://github.com/roboticslab-uc3m/robotDevastation-robots">Click here to see robotDevastation-robots on repo.</a>
+
+ \li \ref robotDevastation-robots_install
+
+Other internal links of interest:
+ \li \ref robotDevastation-robots_programs
+ \li \ref robotDevastation-robots_libraries
+ \li \ref robotDevastation-robots_applications
+ \li \ref robotDevastation-robots_examples
+
+Even more internal links of interest:
+ \li <a class=el href="http://robots.uc3m.es/dox-teo-main/index.html">teo-main</a>
+ \li <a class=el href="http://robots.uc3m.es/dox-teo-head/index.html">teo-head</a>
+
+External links (related projects):
+ \li <a class=el href="http://eris.liralab.it/yarpdoc/index.html">YARP doc</a> / <a class=el href="https://github.com/robotology/yarp">YARP github</a>
+ \li <a class=el href="http://eris.liralab.it/iCub/main/dox/html/index.html">iCub Software Repository Documentation</a>
+ \li <a class=el href="http://roboticslab.sourceforge.net/asibot">ASIBOT</a>
+
+<hr>
+
+This page can be edited at robotDevastation-robots/doc/main.dox.
+
+*/
+

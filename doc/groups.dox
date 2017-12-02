@@ -1,0 +1,41 @@
+
+/**
+@brief The main, catch-all namespace for TEO.
+ */
+namespace teo {}
+
+/**
+ * \defgroup robotDevastation-robots_libraries robotDevastation-robots Libraries
+ *
+ * @brief robotDevastation-robots libraries.
+ *
+ */
+
+/**
+ * \defgroup robotDevastation-robots_programs robotDevastation-robots Programs
+ *
+ * @brief robotDevastation-robots programs.
+ */
+
+/**
+ * \defgroup robotDevastation-robots_applications robotDevastation-robots Applications (Collections of Programs)
+ *
+ * @brief robotDevastation-robots applications (collections of programs).
+ */
+
+/**
+ * \defgroup robotDevastation-robots_examples robotDevastation-robots Examples
+ *
+ * @brief robotDevastation-robots examples.
+ */
+
+/**
+ * @ingroup robotDevastation-robots_libraries
+ *
+ * \defgroup YarpPlugins YarpPlugins
+ *
+ * @brief robotDevastation-robots YARP plugin libraries.
+ *
+ */
+
+

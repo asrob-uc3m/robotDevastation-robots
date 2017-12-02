@@ -4,3 +4,6 @@
 tags
 CMakeLists.txt.user
 /build*/
+.project
+.cproject
+.FCStd1

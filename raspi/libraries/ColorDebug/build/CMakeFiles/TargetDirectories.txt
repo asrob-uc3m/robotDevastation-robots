@@ -1,1 +1,0 @@
-/home/yo/git/ColorDebug/build/CMakeFiles/uninstall.dir
