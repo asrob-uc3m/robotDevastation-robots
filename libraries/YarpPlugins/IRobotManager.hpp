@@ -1,4 +1,6 @@
-// -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
+// Authors: see AUTHORS.md at project root.
+// CopyPolicy: released under the terms of the LGPLv2.1, see LICENSE at project root.
+// URL: https://github.com/asrob-uc3m/robotDevastation
 
 #ifndef __RD_I_ROBOT_MANAGER_HPP__
 #define __RD_I_ROBOT_MANAGER_HPP__
@@ -11,30 +13,23 @@ namespace rd{
  *
  * \defgroup RobotLib
  *
- * @brief The RobotLib library contains the \ref RobotManager base class and derived classes.
- */
-
-/**
- * @ingroup RobotLib
- *
- * @brief Base class for Robot Managers. Original copy of this file at https://github.com/asrob-uc3m/robotDevastation/blob/develop/src/libraries/RobotLib/RobotManager.hpp
- *
+  * @brief Base class for Robot Managers. Original copy of this file at https://github.com/asrob-uc3m/robotDevastation/blob/develop/src/libraries/RobotLib/IRobotManager.hpp
  */
 class IRobotManager
 {
     public:
         //-- Robot movement related functions    
-        virtual bool moveForward(int velocity = UNUSED) = 0;
-        virtual bool moveBackwards(int velocity = UNUSED) = 0;
-        virtual bool turnLeft(int velocity = UNUSED) = 0;
-        virtual bool turnRight(int velocity = UNUSED) = 0;
+        virtual bool moveForward(int velocity) = 0;
+        virtual bool moveBackwards(int velocity) = 0;
+        virtual bool turnLeft(int velocity) = 0;
+        virtual bool turnRight(int velocity) = 0;
         virtual bool stopMovement() = 0;
 
         //-- Robot camera related functions
-        virtual bool tiltUp(int velocity = UNUSED) = 0;
-        virtual bool tiltDown(int velocity = UNUSED) = 0;
-        virtual bool panLeft(int velocity = UNUSED) = 0;
-        virtual bool panRight(int velocity = UNUSED) = 0;
+        virtual bool tiltUp(int velocity) = 0;
+        virtual bool tiltDown(int velocity) = 0;
+        virtual bool panLeft(int velocity) = 0;
+        virtual bool panRight(int velocity) = 0;
         virtual bool stopCameraMovement() = 0;
         
         //-- Robot connection related functions
@@ -53,15 +48,8 @@ class IRobotManager
         //-- Other
         virtual void onDestroy() = 0;
         virtual ~IRobotManager() {}
-
-    protected:
-        //-- Constants
-        static const int UNUSED = -1;
-
 };
 
 }
 
-
-
-#endif //-- __RD_ROBOT_MANAGER_HPP__
+#endif //-- __RD_I_ROBOT_MANAGER_HPP__
