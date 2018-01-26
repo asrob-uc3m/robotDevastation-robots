@@ -14,7 +14,6 @@ option(ENABLE_EcroWheelController "Enable/disable compilation of EcroWheelContro
 option(ENABLE_EcroPwmController "Enable/disable compilation of EcroPwmController" TRUE)
 option(ENABLE_RaspiOnePwmMotorController "Enable/disable compilation of RaspiOnePwmMotorController" TRUE)
 option(ENABLE_RaspiTwoPwmMotorController "Enable/disable compilation of RaspiTwoPwmMotorController" TRUE)
-option(ENABLE_PhidgetSpatial "Enable/disable compilation of PhidgetSpatial" FALSE)
 
 #yarp_begin_plugin_library(YarpPlugins)
 add_subdirectory(RobotClient)
@@ -25,6 +24,5 @@ add_subdirectory(EcroWheelController)
 add_subdirectory(EcroPwmController)
 add_subdirectory(RaspiOnePwmMotorController)
 add_subdirectory(RaspiTwoPwmMotorController)
-add_subdirectory(PhidgetSpatial)
 #yarp_end_plugin_library(YarpPlugins)
 
