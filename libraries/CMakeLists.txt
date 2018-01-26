@@ -21,5 +21,5 @@ FOREACH(subdir ${SUBDIRS})
     set(ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS ${ROBOT_DEVASTATION_ROBOTS_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/${subdir} CACHE INTERNAL "appended header dirs")
 ENDFOREACH()
 
-add_subdirectory(YarpPlugins)
+#add_subdirectory(YarpPlugins)
 
