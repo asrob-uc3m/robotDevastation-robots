@@ -1,5 +1,4 @@
 ecro
 ====
 
-[![Image](ecro.jpg)](./)
-
+![Image](ecro.jpg)
