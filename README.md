@@ -1,6 +1,6 @@
 # robotDevastation-robots
 
-Bundle of robot software (firmware), electronics and mechanics.
+[Robot Devastation](http://asrob-uc3m.github.io/workgroups/2017-05-28-robot-devastation.html) robots repository.
 
 **Robot Devastation**: a new-generation shooter with augmented reality and real robots. You can play online with other users with your PC or smartphone, moving robots in championships and campaigns: ¡everything 24/7!
 
