@@ -68,7 +68,7 @@ set(ROBOT_DEVASTATION_ROBOTS_LIBRARIES CACHE INTERNAL "appended libraries" FORCE
 
 # add main contents
 add_subdirectory(share)
-add_subdirectory(libraries)
+#add_subdirectory(libraries)
 #add_subdirectory(programs)
 add_subdirectory(scripts)
 
