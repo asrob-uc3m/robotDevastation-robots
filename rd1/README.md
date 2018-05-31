@@ -1,5 +1,5 @@
-rd1
-===
-[Link to RD1 doxygen generated documentation](http://asrob.uc3m.es/rd1doc/index.html)
-![RD1 robot](rd1.jpg)
+# RD1
 
+[Cómo montar el robot RD1](https://github.com/asrob-uc3m/robotDevastation-user-manual/blob/master/es/robots/rd1.md)
+
+![RD1 robot](rd1.jpg)
