@@ -3,10 +3,10 @@
 [Robot Devastation](http://asrob-uc3m.github.io/workgroups/2017-05-28-robot-devastation.html) robots repository.
 
 ## Robots
+- [RD Ambassador](https://github.com/asrob-uc3m/rd-ambassador)
 - [RD1](https://github.com/asrob-uc3m/rd1)
 - [RD2](https://github.com/asrob-uc3m/rd2)
 - [Laser Tower Of Death](https://github.com/asrob-uc3m/laser-tower-of-death)
-- [RD Ambassador](https://github.com/asrob-uc3m/rd-ambassador)
 - [Old robots](http://asrob.uc3m.es/index.php/Robot_Devastation:_Robots)
 
 ## Other
