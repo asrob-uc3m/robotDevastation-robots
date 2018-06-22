@@ -6,4 +6,4 @@ Installation Guide: https://www.gitbook.com/book/asrob-uc3m/robotdevastation-use
 
 Link to Doxygen documentation: http://asrob.uc3m.es/rdrdoc/index.html
 
-[![Issues](https://img.shields.io/github/issues/asrob-uc3m/robotDevastation.svg?label=Issues)](https://github.com/asrob-uc3m/robotDevastation/issues)
+[![Issues](https://img.shields.io/github/issues/asrob-uc3m/robotDevastation.svg?label=Issues)](https://github.com/asrob-uc3m/robotDevastation-robots/issues)
