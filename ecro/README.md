@@ -1,4 +1,0 @@
-ecro
-====
-
-![Image](ecro.jpg)
