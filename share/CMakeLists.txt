@@ -1,14 +1,6 @@
-# Copyright: UC3M 2016
+# Copyright: UC3M 2018
 # Author: ASROB
 # CopyPolicy: Released under the terms of the GNU GPL v2.0.
-# 
-
-find_package(YARP REQUIRED)
-list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
-include(YarpInstallationHelpers)
-yarp_configure_external_installation(robotDevastation-robots)
 
 ### Go through single applications
-
 add_subdirectory(launch)
-
