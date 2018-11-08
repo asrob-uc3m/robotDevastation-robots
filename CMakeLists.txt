@@ -9,7 +9,8 @@ project(ROBOT_DEVASTATION_ROBOTS NONE)
 # Define custom options.
 option(INSTALL_SERVICES "Choose if you want to install Robot Devastation services" ON)
 
-# Find YARP (main dependency).
+# Find dependencies.
+find_package(YCM REQUIRED)
 find_package(YARP REQUIRED)
 
 # Load YARP modules.
@@ -25,10 +26,5 @@ yarp_configure_external_installation(robotDevastation-robots)
 add_subdirectory(share)
 add_subdirectory(scripts)
 
-# Configure uninstall target.
-configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/template/ROBOT_DEVASTATION_ROBOTSConfigUninstall.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/ROBOT_DEVASTATION_ROBOTSConfigUninstall.cmake" IMMEDIATE @ONLY)
-
-add_custom_target(uninstall
-    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/ROBOT_DEVASTATION_ROBOTSConfigUninstall.cmake)
+# Configure and create uninstall target.
+include(AddUninstallTarget)
