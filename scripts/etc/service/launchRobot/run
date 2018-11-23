@@ -1,6 +1,6 @@
 #!/bin/bash
 export PATH=/usr/local/bin:/usr/bin:/bin
-export YARP_CONF=/home/pi/.config/yarp
+export YARP_CONFIG_HOME=/home/pi/.config/yarp
 yarp detect --write
 yarpdev --from /usr/local/share/robotDevastation-robots/contexts/launch/launchRobot.ini
 sleep 1
