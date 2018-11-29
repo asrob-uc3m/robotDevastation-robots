@@ -7,7 +7,9 @@
 - [RD1](https://github.com/asrob-uc3m/rd1)
 - [RD2](https://github.com/asrob-uc3m/rd2)
 - [Laser Tower Of Death](https://github.com/asrob-uc3m/laser-tower-of-death)
-- [Old robots](http://asrob.uc3m.es/index.php/Robot_Devastation:_Robots)
+- Old robots:
+   - [ECRO](http://asrob.uc3m.es/index.php/Proyecto_Ecro)
+   - [Ichabot](http://asrob.uc3m.es/index.php/Ichabot)
 
 ## Other
 Link to Doxygen documentation: http://asrob.uc3m.es/rdrdoc/index.html
