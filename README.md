@@ -12,6 +12,5 @@
    - [Ichabot](http://asrob.uc3m.es/index.php/Ichabot)
 
 ## Other
-Link to Doxygen documentation: http://asrob.uc3m.es/rdrdoc/index.html
 
 [![Issues](https://img.shields.io/github/issues/asrob-uc3m/robotDevastation-robots.svg?label=Issues)](https://github.com/asrob-uc3m/robotDevastation-robots/issues)
