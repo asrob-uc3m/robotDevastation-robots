@@ -8,8 +8,8 @@
 - [RD2](https://github.com/asrob-uc3m/rd2)
 - [Laser Tower Of Death](https://github.com/asrob-uc3m/laser-tower-of-death)
 - Old robots:
-   - [ECRO](http://asrob.uc3m.es/index.php/Proyecto_Ecro)
-   - [Ichabot](http://asrob.uc3m.es/index.php/Ichabot)
+   - [ECRO](https://apps-robots.uc3m.es/asrob/wiki/Proyecto_Ecro)
+   - [Ichabot](https://apps-robots.uc3m.es/asrob/wiki/Ichabot)
 
 ## Other
 
